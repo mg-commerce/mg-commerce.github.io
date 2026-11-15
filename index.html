@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MG Betriebsmanager – Büro-Software für Maler, Dach &amp; Wand, Hausmeister</title>
-<meta name="description" content="Weniger Büro, mehr Baustelle: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy und Lager mit QR-Etiketten. Einmal kaufen, kein Abo, Daten bleiben im Betrieb. Persönlich aus dem Rems-Murr-Kreis.">
+<title>MG Betriebsmanager – Handwerkersoftware für Maler, Dachdecker &amp; Hausmeister | Rems-Murr</title>
+<meta name="description" content="Handwerkersoftware aus dem Rems-Murr-Kreis – weniger Büro, mehr Baustelle: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy und Lager mit QR-Etiketten. Einmal kaufen, kein Abo, Daten bleiben im Betrieb. Persönlich aus dem Rems-Murr-Kreis.">
 <style>
 :root{--navy:#0a1f44;--blau:#0b3a8c;--gelb:#f5b324;--grund:#fbfaf7;--karte:#ffffff;--linie:#e6e2d8;--text:#1f2a3d;--leise:#5a6474;--hell:#eef3fb}
 *{box-sizing:border-box}
@@ -84,7 +84,15 @@ details p{color:var(--leise);padding:0 0 18px}
 .kontaktkarte{background:#fff;color:var(--text);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:12px}
 .kontaktkarte a.zeile{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--navy);font-weight:600;font-size:1.1rem}
 footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
+.hinweisbox{background:var(--hell);border-radius:16px;padding:26px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+@media (max-width:640px){.hinweisbox{grid-template-columns:1fr}}
+.zeitleiste{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+@media (max-width:860px){.zeitleiste{grid-template-columns:1fr}}
+.zeitleiste .karte{border-top:4px solid var(--gelb)}
+.jahr{font-size:1.6rem;font-weight:800;color:var(--navy)}
+.quelle{font-size:.85rem;color:var(--leise);margin-top:14px}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MG Betriebsmanager","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","description":"Handwerkersoftware für Maler, Dach & Wand, Hausmeister und Entrümpelung: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy, Lager mit QR-Etiketten.","offers":{"@type":"Offer","price":"790","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"MG Commerce","address":{"@type":"PostalAddress","streetAddress":"Im Flieder 4","postalCode":"71554","addressLocality":"Weissach im Tal","addressCountry":"DE"},"telephone":"+49 179 5498071"}}</script>
 </head>
 <body>
 
@@ -95,6 +103,7 @@ footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 <a href="#video">Video</a>
 <a href="#so-gehts">So geht's</a>
 <a href="#beispiel">Beispiel</a>
+<a href="#e-rechnung">E-Rechnung</a>
 <a href="#preise">Preise</a>
 <a href="#fragen">Fragen</a>
 <a class="knopf gelb klein" href="#kontakt">Vorführung anfragen</a>
@@ -107,7 +116,7 @@ footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 <section class="held">
 <div class="wrap">
 <div>
-<span class="eyebrow">Für Maler · Dach &amp; Wand · Hausmeister · Entrümpelung</span>
+<span class="eyebrow">Handwerkersoftware für Maler · Dach &amp; Wand · Hausmeister · Entrümpelung</span>
 <h1>Weniger Büro.<br>Mehr Baustelle.</h1>
 <p class="lead">Vom Anruf bis zur bezahlten Rechnung in einem Programm – einfach genug, dass es auch Ihre Leute auf der Baustelle gern benutzen.</p>
 <div class="knoepfe">
@@ -171,7 +180,7 @@ Ihr Browser kann das Video nicht abspielen – <a href="bilder/video-anfrage-ang
 
 <section id="gewerke" class="weiss">
 <div class="wrap">
-<div class="titel"><h2>Gemacht für Ihr Gewerk</h2><p>Sie zahlen nur, was Sie brauchen – jedes weitere Gewerk lässt sich vorher kostenlos testen.</p></div>
+<div class="titel"><h2>Gemacht für Ihr Gewerk – Malersoftware, Dachdeckersoftware, Hausmeistersoftware</h2><p>Sie zahlen nur, was Sie brauchen – jedes weitere Gewerk lässt sich vorher kostenlos testen.</p></div>
 <div class="raster r3">
 <div class="karte"><h3>Maler</h3><ul class="liste"><li>Raum-Aufmaß mit Flächen und Abzügen</li><li>Ihre Preisliste, Lohn und Material getrennt</li><li>Materialbedarf und Restfarben</li></ul></div>
 <div class="karte"><h3>Dach &amp; Wand</h3><ul class="liste"><li>Dachflächen mit Neigung</li><li>Rinnen, Fallrohre, Bleche nach Metall</li><li>Gerüst und Container im Angebot</li></ul></div>
@@ -203,6 +212,18 @@ Ihr Browser kann das Video nicht abspielen – <a href="bilder/video-anfrage-ang
 </div>
 </section>
 
+<section id="e-rechnung" class="weiss">
+<div class="wrap">
+<div class="titel"><h2>Die E-Rechnung wird Pflicht – sind Sie bereit?</h2><p>Rechnungen an Firmenkunden müssen bald als E-Rechnung verschickt werden. Ein einfaches PDF per E-Mail reicht dann nicht mehr. Mit dem MG Betriebsmanager ist jede Rechnung automatisch eine E-Rechnung (ZUGFeRD).</p></div>
+<div class="zeitleiste">
+<div class="karte"><div class="jahr">seit 2025</div><p>Alle Betriebe müssen E-Rechnungen <b>empfangen</b> können.</p></div>
+<div class="karte"><div class="jahr">ab 2027</div><p>Betriebe mit mehr als 800.000 € Umsatz im Vorjahr müssen E-Rechnungen an Firmenkunden <b>ausstellen</b>.</p></div>
+<div class="karte"><div class="jahr">ab 2028</div><p>Die Pflicht gilt für <b>alle</b> Betriebe bei Rechnungen an Firmenkunden – auch Hausverwaltungen und Bauträger.</p></div>
+</div>
+<p class="quelle">Rechnungen an Privatkunden sind nicht betroffen, ebenso Kleinunternehmer und Kleinbetragsrechnungen bis 250 €. Stand 11/2026, Quellen: <a href="https://www.zdh.de/ueber-uns/fachbereich-steuern-und-finanzen/elektronische-rechnung/">ZDH</a>, <a href="https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnung-5864496">IHK Region Stuttgart</a>. Keine Steuerberatung – fragen Sie im Zweifel Ihren Steuerberater.</p>
+</div>
+</section>
+
 <section id="preise" class="preise">
 <div class="wrap">
 <div class="titel"><h2>Einmal kaufen. Dauerhaft nutzen.</h2><p>Keine Kosten pro Mitarbeiter, keine monatliche Gebühr. Einführungspreise für die ersten 20 Betriebe.</p></div>
@@ -212,6 +233,22 @@ Ihr Browser kann das Video nicht abspielen – <a href="bilder/video-anfrage-ang
 <div class="karte"><h3>In Raten</h3><div class="preis">ab 69 €</div><div style="color:var(--leise);font-size:.95rem">pro Monat, 12 Raten</div><p>Nach der letzten Rate gehört die Software Ihnen.</p></div>
 </div>
 <p class="fussnote">Einführungspreise gültig für die ersten 20 Betriebe bzw. bis 30.06.2027. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Angebot für Unternehmer. Optional: Einrichtung vor Ort 249 €, per Fernwartung 149 €, Software-Pflege &amp; Support 19 € pro Monat.</p>
+</div>
+</section>
+
+<section id="voraussetzungen">
+<div class="wrap">
+<div class="hinweisbox">
+<div class="symbol" style="margin:0;background:#fff"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+<div>
+<h2 style="font-size:1.6rem">Das brauchen Sie</h2>
+<div class="raster r2" style="margin-top:14px;gap:8px 32px">
+<ul class="liste" style="margin:0"><li>Einen Windows-PC im Büro (Windows 10 oder 11)</li><li>Internet nur für Updates – Ihre Daten bleiben auf dem PC</li><li>Einen Drucker für Angebote und Etiketten (optional)</li></ul>
+<ul class="liste" style="margin:0"><li>Handys Ihrer Mitarbeiter mit normalem Browser – keine App nötig</li><li>Für unterwegs: FRITZ!Box mit VPN oder das kostenlose NetBird</li><li>Rund um die Uhr erreichbar: kleiner Mini-PC (ca. 150–300 €)</li></ul>
+</div>
+<p style="color:var(--leise);margin-top:14px">Unsicher, ob es bei Ihnen passt? Ein kurzer Anruf klärt das – und die Einrichtung übernehme ich gern.</p>
+</div>
+</div>
 </div>
 </section>
 
