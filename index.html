@@ -4,116 +4,235 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MG Betriebsmanager – Büro-Software für Maler, Dach &amp; Wand, Hausmeister</title>
-<meta name="description" content="Büro-Software für Handwerksbetriebe: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy, Lager mit QR-Etiketten. Einmal kaufen, kein Abo, Daten bleiben im Betrieb.">
+<meta name="description" content="Weniger Büro, mehr Baustelle: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy und Lager mit QR-Etiketten. Einmal kaufen, kein Abo, Daten bleiben im Betrieb. Persönlich aus dem Rems-Murr-Kreis.">
 <style>
-body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#0a1f44;background:#ffffff}
-a{color:#0b3a8c}a:hover{color:#082a66}
+:root{--navy:#0a1f44;--blau:#0b3a8c;--gelb:#f5b324;--grund:#fbfaf7;--karte:#ffffff;--linie:#e6e2d8;--text:#1f2a3d;--leise:#5a6474;--hell:#eef3fb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);background:var(--grund);font-size:17px;line-height:1.6}
+a{color:var(--blau)}a:hover{color:#082a66}
+h1,h2,h3{color:var(--navy);line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.01em}
+h3{font-size:1.15rem}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:80px 0;scroll-margin-top:70px}
+.kopf{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linie)}
+.kopf .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.marke{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);text-decoration:none;font-size:1.05rem}
+.marke span.icon{width:34px;height:34px;border-radius:9px;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{color:var(--text);text-decoration:none;font-size:.95rem}
+.nav a:hover{color:var(--blau)}
+.knopf{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:12px;font-weight:700;text-decoration:none;font-size:1rem}
+.knopf.gelb{background:var(--gelb);color:var(--navy)}
+.knopf.gelb:hover{background:#e9a514;color:var(--navy)}
+.knopf.rand{border:1.5px solid var(--navy);color:var(--navy);background:transparent}
+.knopf.klein{min-height:40px;padding:8px 16px;font-size:.92rem}
+@media (max-width:860px){.nav a:not(.knopf){display:none}}
+.held{padding:72px 0 64px}
+.held .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media (max-width:860px){.held .wrap{grid-template-columns:1fr}}
+.eyebrow{display:inline-block;background:var(--hell);color:var(--blau);font-weight:600;font-size:.9rem;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.held p.lead{font-size:1.2rem;color:var(--leise);margin:18px 0 28px;max-width:560px}
+.knoepfe{display:flex;flex-wrap:wrap;gap:12px}
+.vertrauen{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;color:var(--leise);font-size:.95rem}
+.vertrauen span{display:flex;align-items:center;gap:8px}
+.haken{width:20px;height:20px;border-radius:50%;background:#e3f2e6;display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px}
+.bild{background:var(--karte);border:1px solid var(--linie);border-radius:18px;padding:14px;box-shadow:0 12px 40px rgba(10,31,68,.10)}
+.bild img{width:100%;height:auto;display:block;border-radius:10px}
+.bild small{display:block;text-align:center;color:var(--leise);margin-top:8px;font-size:.85rem}
+.titel{max-width:680px;margin-bottom:40px}
+.titel p{color:var(--leise);margin-top:12px;font-size:1.1rem}
+.raster{display:grid;gap:20px}
+.r3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.r2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.r3,.r2{grid-template-columns:1fr}}
+.karte{background:var(--karte);border:1px solid var(--linie);border-radius:16px;padding:26px}
+.karte p{color:var(--leise);margin-top:8px}
+.symbol{width:44px;height:44px;border-radius:12px;background:var(--hell);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.schritt{display:flex;gap:16px;align-items:flex-start}
+.nr{flex:0 0 40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.weiss{background:#ffffff;border-top:1px solid var(--linie);border-bottom:1px solid var(--linie)}
+.liste{list-style:none;padding:0;margin:14px 0 0}
+.liste li{display:flex;gap:10px;padding:5px 0;color:var(--text)}
+.liste li::before{content:"";flex:0 0 8px;height:8px;border-radius:50%;background:var(--gelb);margin-top:10px}
+.galerie figure{margin:0}
+.galerie img{width:100%;height:auto;border:1px solid var(--linie);border-radius:12px;display:block;box-shadow:0 6px 20px rgba(10,31,68,.07)}
+.galerie figcaption{font-weight:600;margin-bottom:10px;color:var(--navy)}
+.person{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+@media (max-width:640px){.person{grid-template-columns:1fr}}
+.avatar{width:120px;height:120px;border-radius:50%;background:var(--navy);color:var(--gelb);display:flex;align-items:center;justify-content:center;font-size:2.4rem;font-weight:700}
+.preise .karte{display:flex;flex-direction:column;gap:6px}
+.preis{font-size:2.4rem;font-weight:800;color:var(--navy);line-height:1.1}
+.alt{color:var(--leise);text-decoration:line-through;font-size:.95rem}
+.hervor{border:2px solid var(--navy);position:relative}
+.band{position:absolute;top:-13px;left:24px;background:var(--gelb);color:var(--navy);font-weight:700;font-size:.82rem;padding:4px 12px;border-radius:999px}
+.fussnote{color:var(--leise);font-size:.9rem;margin-top:22px}
+details{background:var(--karte);border:1px solid var(--linie);border-radius:14px;padding:4px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600;color:var(--navy);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--blau)}
+details[open] summary::after{content:"–"}
+details p{color:var(--leise);padding:0 0 18px}
+.kontakt{background:var(--navy);color:#fff}
+.kontakt h2{color:#fff}
+.kontakt .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media (max-width:860px){.kontakt .wrap{grid-template-columns:1fr}}
+.kontakt p{color:#d5deee}
+.kontaktkarte{background:#fff;color:var(--text);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.kontaktkarte a.zeile{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--navy);font-weight:600;font-size:1.1rem}
+footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 </style>
-<style>@media (max-width:600px){h1{font-size:2.4rem !important} h2{font-size:1.7rem !important}}</style>
 </head>
 <body>
-<div style="width: 100%">
-<section style="background: #0a1f44; color: #ffffff; padding: 72px 24px 80px 24px">
-<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
-<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
-<div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 18px; color: #f5b324">MG Betriebsmanager</div>
-<h1 style="margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 3.6rem; line-height: 1.05; text-wrap: balance">Weniger Büro. Mehr Baustelle.</h1>
-<p style="margin: 0; font-size: 1.2rem; line-height: 1.55; color: #dbe4f5; max-width: 620px">Die Büro-Software für Maler, Dach &amp; Wand, Hausmeister und Entrümpelung. Von der Anfrage über Aufmaß und Angebot bis zur E-Rechnung – und Ihre Mitarbeiter stempeln und buchen Material am Handy.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="#kontakt" style="background: #f5b324; color: #0a1f44; text-decoration: none; font-weight: 700; padding: 14px 22px; border-radius: 10px; min-height: 44px; box-sizing: border-box">Vorführung vereinbaren</a>
-<a href="#preise" style="border: 1.5px solid #ffffff; color: #ffffff; text-decoration: none; font-weight: 600; padding: 14px 22px; border-radius: 10px; min-height: 44px; box-sizing: border-box">Preise ansehen</a>
+
+<header class="kopf">
+<div class="wrap">
+<a class="marke" href="#start"><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b324" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></span>MG Betriebsmanager</a>
+<nav class="nav" aria-label="Hauptmenü">
+<a href="#so-gehts">So geht's</a>
+<a href="#beispiel">Beispiel</a>
+<a href="#preise">Preise</a>
+<a href="#fragen">Fragen</a>
+<a class="knopf gelb klein" href="#kontakt">Vorführung anfragen</a>
+</nav>
 </div>
-<div style="font-size: 0.95rem; color: #c3cfe6">28 Tage kostenlos testen · kein Abo · Daten bleiben in Ihrem Betrieb</div>
+</header>
+
+<main id="start">
+
+<section class="held">
+<div class="wrap">
+<div>
+<span class="eyebrow">Für Maler · Dach &amp; Wand · Hausmeister · Entrümpelung</span>
+<h1>Weniger Büro.<br>Mehr Baustelle.</h1>
+<p class="lead">Vom Anruf bis zur bezahlten Rechnung in einem Programm – einfach genug, dass es auch Ihre Leute auf der Baustelle gern benutzen.</p>
+<div class="knoepfe">
+<a class="knopf gelb" href="#kontakt">Kostenlose Vorführung</a>
+<a class="knopf rand" href="#beispiel">Beispiel ansehen</a>
 </div>
-<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; color: #0a1f44; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
-<div style="font-weight: 700; font-size: 1.05rem">So läuft ein Auftrag</div>
-<div style="display: flex; gap: 12px; align-items: center"><div style="flex: 0 0 30px; height: 30px; border-radius: 15px; background: #e8eef9; color: #0b3a8c; font-weight: 700; display: flex; align-items: center; justify-content: center">1</div><div>Anfrage → Projekt in 30 Sekunden</div></div>
-<div style="display: flex; gap: 12px; align-items: center"><div style="flex: 0 0 30px; height: 30px; border-radius: 15px; background: #e8eef9; color: #0b3a8c; font-weight: 700; display: flex; align-items: center; justify-content: center">2</div><div>Aufmaß → Angebot mit Ihren Preisen</div></div>
-<div style="display: flex; gap: 12px; align-items: center"><div style="flex: 0 0 30px; height: 30px; border-radius: 15px; background: #e8eef9; color: #0b3a8c; font-weight: 700; display: flex; align-items: center; justify-content: center">3</div><div>Plantafel, Stempeln, Material per QR</div></div>
-<div style="display: flex; gap: 12px; align-items: center"><div style="flex: 0 0 30px; height: 30px; border-radius: 15px; background: #f5b324; color: #0a1f44; font-weight: 700; display: flex; align-items: center; justify-content: center">4</div><div><b>E-Rechnung mit einem Klick</b></div></div>
+<div class="vertrauen">
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>28 Tage kostenlos testen</span>
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Kein Abo</span>
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Daten bleiben bei Ihnen</span>
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Persönlich aus der Region</span>
+</div>
+</div>
+<div class="bild">
+<img src="bilder/beispiel-angebot-1.jpg" alt="Beispiel-Angebot aus dem MG Betriebsmanager, Namen geschwärzt">
+<small>Ein echtes Angebot aus dem Programm – Namen geschwärzt</small>
 </div>
 </div>
 </section>
 
-<section style="padding: 72px 24px">
-<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
-<h2 style="margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 2.2rem; text-wrap: balance">Abends noch Rechnungen tippen? Muss nicht sein.</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
-<div style="border: 1.5px solid #d6deee; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-weight: 700; font-size: 1.15rem">Angebote &amp; Rechnungen</div><div style="color: #3b4658; line-height: 1.5">Aus dem Aufmaß wird das Angebot, aus dem Angebot die Rechnung. E-Rechnung (ZUGFeRD), Abschläge, Schlussrechnung, Mahnwesen und der Arbeitslohn nach § 35a für Ihre Privatkunden.</div></div>
-<div style="border: 1.5px solid #d6deee; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-weight: 700; font-size: 1.15rem">Ihre Leute am Handy</div><div style="color: #3b4658; line-height: 1.5">Ein- und Ausstempeln mit automatischen Pausen, Tagesrapport mit Fotos, Urlaubsantrag. Keine App-Installation – das Handy öffnet das Programm im Browser.</div></div>
-<div style="border: 1.5px solid #d6deee; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-weight: 700; font-size: 1.15rem">Material &amp; Lager</div><div style="color: #3b4658; line-height: 1.5">Bestände je Lager und Fahrzeug. QR-Etikett am Regal scannen, Baustelle wählen, fertig – das Material landet in der Nachkalkulation und auf Wunsch in der Rechnung.</div></div>
-<div style="border: 1.5px solid #d6deee; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-weight: 700; font-size: 1.15rem">Planen &amp; nachrechnen</div><div style="color: #3b4658; line-height: 1.5">Plantafel für die Woche, Soll-/Ist-Stunden je Baustelle, Einnahmen, Ausgaben und Personalkosten pro Monat auf einen Blick.</div></div>
-<div style="border: 1.5px solid #d6deee; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-weight: 700; font-size: 1.15rem">Für den Steuerberater</div><div style="color: #3b4658; line-height: 1.5">Ausgaben mit Beleg erfassen, DATEV-Buchungsstapel und alle Belege als ZIP. Gespeicherte Rechnungen sind festgeschrieben, Korrektur per Storno.</div></div>
-<div style="border: 1.5px solid #d6deee; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px"><div style="font-weight: 700; font-size: 1.15rem">Ihre Daten bleiben bei Ihnen</div><div style="color: #3b4658; line-height: 1.5">Keine Cloud, kein Abo. Das Programm läuft auf Ihrem PC im Büro, sichert täglich auf USB-Stick oder NAS und vor jedem Update automatisch.</div></div>
+<section id="so-gehts" class="weiss">
+<div class="wrap">
+<div class="titel">
+<h2>So einfach läuft ein Auftrag</h2>
+<p>Keine doppelte Tipperei: Was einmal erfasst ist, wandert von selbst weiter.</p>
+</div>
+<div class="raster r3">
+<div class="karte schritt"><div class="nr">1</div><div><h3>Anfrage aufnehmen</h3><p>Kunde, Baustelle und Wunsch – in 30 Sekunden angelegt.</p></div></div>
+<div class="karte schritt"><div class="nr">2</div><div><h3>Aufmessen &amp; anbieten</h3><p>Maße eingeben, ankreuzen was gemacht wird – das Angebot mit Ihren Preisen ist fertig.</p></div></div>
+<div class="karte schritt"><div class="nr">3</div><div><h3>Ausführen &amp; abrechnen</h3><p>Ihre Leute stempeln am Handy, Material wird gebucht – die Rechnung entsteht mit einem Klick.</p></div></div>
 </div>
 </div>
 </section>
 
-<section style="background: #f3f6fc; padding: 72px 24px">
-<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
-<h2 style="margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 2.2rem">Für Ihr Gewerk gemacht</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
-<div style="background: #ffffff; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 1.4rem">Maler</div><ul style="margin: 0; padding-left: 20px; line-height: 1.7; color: #3b4658"><li>Raum-Aufmaß: Länge, Breite, Höhe – Flächen automatisch</li><li>Eigene Preisliste mit Minuten und Material</li><li>Materialbedarf und Restfarben mit Farbton</li></ul></div>
-<div style="background: #ffffff; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 1.4rem">Dach &amp; Wand</div><ul style="margin: 0; padding-left: 20px; line-height: 1.7; color: #3b4658"><li>Dachflächen mit Neigung und Abzügen</li><li>Rinnen, Fallrohre, Bleche nach Metall und Zuschnitt</li><li>Fassade, Gerüst, Container – Angebot mit einem Klick</li></ul></div>
-<div style="background: #ffffff; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 1.4rem">Hausmeister &amp; Entrümpelung</div><ul style="margin: 0; padding-left: 20px; line-height: 1.7; color: #3b4658"><li>Objekte mit Aufgabenplan und Vertretung</li><li>Monatsabrechnung je Objekt auf Knopfdruck</li><li>Besichtigung mit m³-Kalkulation und Entsorgungsnachweisen</li></ul></div>
+<section id="funktionen">
+<div class="wrap">
+<div class="titel">
+<h2>Alles, was Ihr Büro braucht</h2>
+<p>Und nichts, was Sie nicht brauchen. Jede Kachel erklärt sich beim ersten Öffnen selbst.</p>
+</div>
+<div class="raster r3">
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></div><h3>Angebote &amp; Rechnungen</h3><p>E-Rechnung, Abschläge, Mahnungen – und der Steuerabzug für Ihre Privatkunden steht automatisch drauf.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Ihre Leute am Handy</h3><p>Stempeln, Tagesrapport mit Fotos, Urlaub beantragen. Ohne App-Installation.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div><h3>Material &amp; Lager</h3><p>QR-Etikett am Regal scannen – das Material ist auf der richtigen Baustelle gebucht.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>Plantafel</h3><p>Wer ist wann wo? Urlaub und Krankheit sind schon berücksichtigt.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Hat es sich gelohnt?</h3><p>Nachkalkulation je Baustelle, Einnahmen und Ausgaben pro Monat auf einen Blick.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Sicher bei Ihnen</h3><p>Keine Cloud. Tägliche Sicherung, DATEV-Export für den Steuerberater.</p></div>
 </div>
 </div>
 </section>
 
-<section id="beispiel" style="padding: 72px 24px">
-<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 2.2rem">So sieht's aus: von der Anfrage zum Angebot</h2><p style="margin: 0; color: #3b4658; font-size: 1.1rem; line-height: 1.55">Ein Beispielauftrag „Wohnzimmer und Flur streichen“ – echt mit dem MG Betriebsmanager erstellt, Namen und Adressen geschwärzt. Vom Anruf bis zum fertigen Angebot vergehen keine 15 Minuten.</p></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
-<div style="background: #f3f6fc; border-radius: 14px; padding: 20px"><div style="font-weight: 700; color: #0b3a8c">1 · Anfrage</div><div style="color: #3b4658; line-height: 1.5; margin-top: 6px">Kunde ruft an: Projekt mit Kunde, Baustelle und Wunsch in 30 Sekunden angelegt.</div></div>
-<div style="background: #f3f6fc; border-radius: 14px; padding: 20px"><div style="font-weight: 700; color: #0b3a8c">2 · Aufmaß vor Ort</div><div style="color: #3b4658; line-height: 1.5; margin-top: 6px">Je Raum Länge, Breite, Höhe – ankreuzen, was gemacht wird. Flächen und Materialbedarf rechnet das Programm.</div></div>
-<div style="background: #f3f6fc; border-radius: 14px; padding: 20px"><div style="font-weight: 700; color: #0b3a8c">3 · Angebot</div><div style="color: #3b4658; line-height: 1.5; margin-top: 6px">Ein Klick: Positionen mit Ihren Preisen, Lohn und Material getrennt, § 35a-Hinweis für den Privatkunden.</div></div>
+<section id="gewerke" class="weiss">
+<div class="wrap">
+<div class="titel"><h2>Gemacht für Ihr Gewerk</h2><p>Sie zahlen nur, was Sie brauchen – jedes weitere Gewerk lässt sich vorher kostenlos testen.</p></div>
+<div class="raster r3">
+<div class="karte"><h3>Maler</h3><ul class="liste"><li>Raum-Aufmaß mit Flächen und Abzügen</li><li>Ihre Preisliste, Lohn und Material getrennt</li><li>Materialbedarf und Restfarben</li></ul></div>
+<div class="karte"><h3>Dach &amp; Wand</h3><ul class="liste"><li>Dachflächen mit Neigung</li><li>Rinnen, Fallrohre, Bleche nach Metall</li><li>Gerüst und Container im Angebot</li></ul></div>
+<div class="karte"><h3>Hausmeister &amp; Entrümpelung</h3><ul class="liste"><li>Objekte mit Aufgabenplan</li><li>Monatsrechnung auf Knopfdruck</li><li>Besichtigung mit m³-Kalkulation</li></ul></div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><figcaption style="font-weight: 600">Aufmaß mit Materialbedarf</figcaption><a href="bilder/beispiel-aufmass.jpg"><img src="bilder/beispiel-aufmass.jpg" alt="Beispiel-Aufmaß: Wohnzimmer und Flur mit Flächen und Materialbedarf, Namen geschwärzt" loading="lazy" style="width: 100%; height: auto; border: 1px solid #d6deee; border-radius: 10px; box-shadow: 0 2px 10px rgba(10,31,68,.08)"></a></figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><figcaption style="font-weight: 600">Angebot – Seite 1</figcaption><a href="bilder/beispiel-angebot-1.jpg"><img src="bilder/beispiel-angebot-1.jpg" alt="Beispiel-Angebot Seite 1 mit Positionen, Namen geschwärzt" loading="lazy" style="width: 100%; height: auto; border: 1px solid #d6deee; border-radius: 10px; box-shadow: 0 2px 10px rgba(10,31,68,.08)"></a></figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><figcaption style="font-weight: 600">Angebot – Summe und § 35a</figcaption><a href="bilder/beispiel-angebot-2.jpg"><img src="bilder/beispiel-angebot-2.jpg" alt="Beispiel-Angebot Seite 2 mit Summe 2.789,55 Euro und Lohnanteil nach Paragraf 35a, Namen geschwärzt" loading="lazy" style="width: 100%; height: auto; border: 1px solid #d6deee; border-radius: 10px; box-shadow: 0 2px 10px rgba(10,31,68,.08)"></a></figure>
-</div>
-<p style="margin: 0; font-size: 0.9rem; color: #4b5563">Beispielpreise eines Testbetriebs – Ihre eigenen Preise, Ihr Logo und Ihr Briefkopf stellen Sie selbst ein. Bild anklicken zum Vergrößern.</p>
 </div>
 </section>
 
-<section id="preise" style="padding: 72px 24px">
-<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 2.2rem">Einmal kaufen. Dauerhaft nutzen.</h2><p style="margin: 0; color: #3b4658; font-size: 1.1rem">Keine Kosten pro Mitarbeiter. Alle Updates der Version 1.x inklusive.</p></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
-<div style="border: 1.5px solid #d6deee; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><div style="font-weight: 700; font-size: 1.2rem">Grundpaket + 1 Gewerk</div><div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 2.4rem">790 €</div><div style="color: #4b5563">Einführungspreis · regulär 1.190 €</div><div style="color: #3b4658; line-height: 1.5">Alles für Büro, Team und Lager plus Ihr Gewerk. Jedes weitere Gewerk + 250 € (regulär + 390 €).</div></div>
-<div style="border: 2px solid #0a1f44; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #0a1f44; color: #ffffff"><div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><div style="font-weight: 700; font-size: 1.2rem">Komplett</div><div style="background: #f5b324; color: #0a1f44; font-size: 0.85rem; font-weight: 700; padding: 4px 10px; border-radius: 999px">Alles drin</div></div><div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 2.4rem">1.090 €</div><div style="color: #c3cfe6">Einführungspreis · regulär 1.690 €</div><div style="color: #dbe4f5; line-height: 1.5">Alle Gewerke plus Finanzen &amp; Personalkosten. 12 Monate Software-Pflege &amp; Support gratis dazu.</div></div>
-<div style="border: 1.5px solid #d6deee; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><div style="font-weight: 700; font-size: 1.2rem">Lieber in Raten?</div><div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 2.4rem">ab 69 €</div><div style="color: #4b5563">pro Monat, 12 Raten</div><div style="color: #3b4658; line-height: 1.5">Nach der letzten Rate gehört die Software Ihnen. Komplett für 12 × 95 €.</div></div>
+<section id="beispiel">
+<div class="wrap">
+<div class="titel"><h2>Ein Beispiel: Wohnzimmer und Flur streichen</h2><p>Echt mit dem Programm erstellt, Namen und Adressen geschwärzt. Vom Anruf bis zum fertigen Angebot vergehen keine 15 Minuten.</p></div>
+<div class="raster r3 galerie">
+<figure><figcaption>1 · Aufmaß mit Materialbedarf</figcaption><a href="bilder/beispiel-aufmass.jpg"><img src="bilder/beispiel-aufmass.jpg" alt="Beispiel-Aufmaß für Wohnzimmer und Flur mit Flächen und Materialbedarf" loading="lazy"></a></figure>
+<figure><figcaption>2 · Angebot mit Ihren Preisen</figcaption><a href="bilder/beispiel-angebot-1.jpg"><img src="bilder/beispiel-angebot-1.jpg" alt="Beispiel-Angebot Seite 1 mit Positionen" loading="lazy"></a></figure>
+<figure><figcaption>3 · Summe und Steuerhinweis</figcaption><a href="bilder/beispiel-angebot-2.jpg"><img src="bilder/beispiel-angebot-2.jpg" alt="Beispiel-Angebot Seite 2 mit Summe und Lohnanteil" loading="lazy"></a></figure>
 </div>
-<div style="font-size: 0.9rem; color: #4b5563; line-height: 1.5">Einführungspreise für die ersten 20 Betriebe bzw. bis 30.06.2027. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Preise für Unternehmer. Optional: Einrichtung vor Ort 249 €, per Fernwartung 149 €, Software-Pflege &amp; Support 19 € pro Monat.</div>
-</div>
-</section>
-
-<section style="background: #f3f6fc; padding: 72px 24px">
-<div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0 0 8px 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 2.2rem">Häufige Fragen</h2>
-<div style="background: #ffffff; border-radius: 12px; padding: 20px 24px"><div style="font-weight: 700; margin-bottom: 6px">Brauche ich einen Server oder eine Cloud?</div><div style="color: #3b4658; line-height: 1.55">Nein. Ein Windows-PC im Büro reicht. Wer rund um die Uhr erreichbar sein will, nimmt einen kleinen Mini-PC – wir richten ihn auf Wunsch ein.</div></div>
-<div style="background: #ffffff; border-radius: 12px; padding: 20px 24px"><div style="font-weight: 700; margin-bottom: 6px">Wie kommen meine Mitarbeiter von der Baustelle rein?</div><div style="color: #3b4658; line-height: 1.55">Im Firmen-WLAN direkt, unterwegs verschlüsselt über das VPN Ihrer FRITZ!Box oder NetBird. Keine Portfreigabe ins Internet.</div></div>
-<div style="background: #ffffff; border-radius: 12px; padding: 20px 24px"><div style="font-weight: 700; margin-bottom: 6px">Was passiert nach der Testphase?</div><div style="color: #3b4658; line-height: 1.55">Mit dem Freischalt-Code arbeiten Sie einfach weiter – alle Daten bleiben. Ohne Kauf bleiben die Daten lesbar und exportierbar.</div></div>
-<div style="background: #ffffff; border-radius: 12px; padding: 20px 24px"><div style="font-weight: 700; margin-bottom: 6px">Kann ich später ein Gewerk dazunehmen?</div><div style="color: #3b4658; line-height: 1.55">Ja. Jedes Gewerk lässt sich vorher 14 Tage testen und dann mit einem neuen Code freischalten.</div></div>
+<p class="fussnote">Beispielpreise eines Testbetriebs. Ihr Logo, Ihr Briefkopf und Ihre Preise stellen Sie selbst ein. Bild antippen zum Vergrößern.</p>
 </div>
 </section>
 
-<section id="kontakt" style="background: #0a1f44; color: #ffffff; padding: 72px 24px">
-<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
-<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 700; font-size: 2.2rem">20 Minuten, die sich lohnen.</h2>
-<p style="margin: 0; color: #dbe4f5; font-size: 1.1rem; line-height: 1.55">Wir zeigen Ihnen den MG Betriebsmanager in Ihrem Betrieb – mit Ihrem Gewerk und Ihren Aufträgen. Persönlich, aus dem Raum Rems-Murr / Stuttgart.</p>
-</div>
-<div style="flex: 1 1 320px; min-width: 0; background: #ffffff; color: #0a1f44; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px; line-height: 1.5">
-<div style="font-weight: 700; font-size: 1.15rem">Dirk Sachse</div>
-<a href="tel:+491795498071" style="font-weight: 600">0179 5498071</a>
-<a href="mailto:dirk0711@icloud.com?subject=Vorf%C3%BChrung%20MG%20Betriebsmanager" style="font-weight: 600">dirk0711@icloud.com</a>
-<div style="color: #4b5563; font-size: 0.9rem">MG Commerce · Inh. Manuela Geisler · Im Flieder 4 · 71554 Weissach im Tal</div>
+<section id="persoenlich" class="weiss">
+<div class="wrap person">
+<div class="avatar" aria-hidden="true">DS</div>
+<div>
+<h2>Persönlich statt Hotline</h2>
+<p style="color:var(--leise);margin-top:12px;font-size:1.1rem;max-width:680px">Ich bin Dirk Sachse aus Weissach im Tal. Ich zeige Ihnen das Programm bei Ihnen im Betrieb, richte es mit Ihnen ein und bin danach erreichbar, wenn etwas klemmt – per Telefon oder, wenn Sie es freigeben, per Fernwartung.</p>
+<ul class="liste"><li>Vorführung vor Ort im Raum Rems-Murr und Stuttgart</li><li>Einrichtung mit Ihren Preisen, Mitarbeitern und Handys</li><li>Updates inklusive – vor jedem Update werden Ihre Daten gesichert</li></ul>
 </div>
 </div>
 </section>
+
+<section id="preise" class="preise">
+<div class="wrap">
+<div class="titel"><h2>Einmal kaufen. Dauerhaft nutzen.</h2><p>Keine Kosten pro Mitarbeiter, keine monatliche Gebühr. Einführungspreise für die ersten 20 Betriebe.</p></div>
+<div class="raster r3">
+<div class="karte"><h3>Grundpaket + 1 Gewerk</h3><div class="preis">790 €</div><div class="alt">statt 1.190 €</div><p>Büro, Team, Lager und Ihr Gewerk. Jedes weitere Gewerk + 250 €.</p></div>
+<div class="karte hervor"><span class="band">Beliebt</span><h3>Komplett</h3><div class="preis">1.090 €</div><div class="alt">statt 1.690 €</div><p>Alle Gewerke und Finanzen – plus 12 Monate Support gratis.</p></div>
+<div class="karte"><h3>In Raten</h3><div class="preis">ab 69 €</div><div style="color:var(--leise);font-size:.95rem">pro Monat, 12 Raten</div><p>Nach der letzten Rate gehört die Software Ihnen.</p></div>
 </div>
-<footer style="padding:24px;text-align:center;font-size:.85rem;color:#4b5563">MG Commerce · Inh. Manuela Geisler · Im Flieder 4 · 71554 Weissach im Tal · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
+<p class="fussnote">Einführungspreise gültig für die ersten 20 Betriebe bzw. bis 30.06.2027. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Angebot für Unternehmer. Optional: Einrichtung vor Ort 249 €, per Fernwartung 149 €, Software-Pflege &amp; Support 19 € pro Monat.</p>
+</div>
+</section>
+
+<section id="fragen" class="weiss">
+<div class="wrap" style="max-width:820px">
+<div class="titel"><h2>Häufige Fragen</h2></div>
+<details><summary>Brauche ich einen Server oder eine Cloud?</summary><p>Nein. Ein Windows-PC im Büro reicht. Wer rund um die Uhr erreichbar sein will, nimmt einen kleinen Mini-PC – den richte ich Ihnen auf Wunsch ein.</p></details>
+<details><summary>Ist das kompliziert für meine Mitarbeiter?</summary><p>Auf dem Handy sehen Ihre Leute nur das, was sie brauchen: Stempeln, Tagesrapport, Urlaub, Material. Beim ersten Öffnen erklärt jede Kachel kurz, wie sie funktioniert.</p></details>
+<details><summary>Wie kommen meine Leute von der Baustelle ins Programm?</summary><p>Im Firmen-WLAN direkt, unterwegs verschlüsselt über das VPN Ihrer FRITZ!Box oder über NetBird. Das Programm steht dabei nicht offen im Internet.</p></details>
+<details><summary>Was passiert nach den 28 Testtagen?</summary><p>Mit dem Freischalt-Code arbeiten Sie einfach weiter, alle Daten bleiben. Ohne Kauf bleiben die Daten lesbar und exportierbar – es entstehen keine Kosten.</p></details>
+<details><summary>Was ist mit E-Rechnung und Steuerberater?</summary><p>Jede Rechnung ist automatisch eine E-Rechnung (ZUGFeRD). Für den Steuerberater gibt es den DATEV-Export mit allen Belegen.</p></details>
+<details><summary>Kann ich später ein Gewerk dazunehmen?</summary><p>Ja. Jedes Gewerk lässt sich vorher 14 Tage testen und dann mit einem neuen Code freischalten.</p></details>
+</div>
+</section>
+
+<section id="kontakt" class="kontakt">
+<div class="wrap">
+<div>
+<h2>Lassen Sie es sich zeigen – 20 Minuten, unverbindlich.</h2>
+<p style="margin-top:14px;font-size:1.1rem">Ich komme zu Ihnen, zeige das Programm mit Ihrem Gewerk und Ihren Aufträgen und Sie entscheiden in Ruhe. Danach testen Sie 28 Tage kostenlos.</p>
+</div>
+<div class="kontaktkarte">
+<div style="font-weight:700;font-size:1.2rem;color:var(--navy)">Dirk Sachse</div>
+<a class="zeile" href="tel:+491795498071"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0179 5498071</a>
+<a class="zeile" href="mailto:dirk0711@icloud.com?subject=Vorf%C3%BChrung%20MG%20Betriebsmanager"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>dirk0711@icloud.com</a>
+<a class="knopf gelb" href="mailto:dirk0711@icloud.com?subject=Vorf%C3%BChrung%20MG%20Betriebsmanager&amp;body=Hallo%20Herr%20Sachse%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Vorf%C3%BChrung.%0A%0ABetrieb%3A%20%0AGewerk%3A%20%0ATelefon%3A%20%0A">Vorführung per E-Mail anfragen</a>
+<div style="color:var(--leise);font-size:.88rem">MG Commerce · Inh. Manuela Geisler · Im Flieder 4 · 71554 Weissach im Tal</div>
+</div>
+</div>
+</section>
+
+</main>
+<footer>MG Commerce · Weissach im Tal · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
 </body>
 </html>
