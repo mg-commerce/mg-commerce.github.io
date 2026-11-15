@@ -117,6 +117,7 @@ footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 .etikett b{font-size:13px;color:var(--navy)}
 @media (max-width:860px){.buehne{height:560px}}
 @media (prefers-reduced-motion:reduce){.bs,.toast{animation:none}.bs:first-child,.toast.t1{opacity:1}}
+.videos{display:grid;grid-template-columns:1fr 1fr;gap:24px}.videos figure{margin:0}.videos figcaption{margin-top:10px;font-size:15px;color:var(--leise)}.videos figcaption b{display:block;color:var(--navy);font-size:17px;margin-bottom:2px}@media (max-width:860px){.videos{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MG Betriebsmanager","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","description":"Handwerkersoftware für Maler, Dach & Wand, Hausmeister und Entrümpelung: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy, Lager mit QR-Etiketten.","offers":{"@type":"Offer","price":"790","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"MG Commerce","address":{"@type":"PostalAddress","streetAddress":"Im Flieder 4","postalCode":"71554","addressLocality":"Weissach im Tal","addressCountry":"DE"},"telephone":"+49 179 5498071"}}</script>
 </head>
@@ -182,12 +183,12 @@ footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 </section>
 
 <section id="video" style="padding:56px 0 24px">
-<div class="wrap" style="max-width:900px">
-<div class="titel" style="margin-bottom:20px"><h2>In 40 Sekunden: von der Anfrage zum Angebot</h2><p>So sieht es im Programm aus.</p></div>
-<video controls preload="metadata" playsinline poster="bilder/video-vorschau.jpg" style="width:100%;height:auto;border-radius:16px;border:1px solid var(--linie);box-shadow:0 12px 40px rgba(10,31,68,.10);background:#0a1f44">
-<source src="bilder/video-anfrage-angebot.mp4" type="video/mp4">
-Ihr Browser kann das Video nicht abspielen – <a href="bilder/video-anfrage-angebot.mp4">hier herunterladen</a>.
-</video>
+<div class="wrap">
+<div class="titel" style="margin-bottom:20px"><h2>Zwei Videos, je 40 Sekunden</h2><p>So sieht die Arbeit mit dem Programm aus – im Büro und auf der Baustelle.</p></div>
+<div class="videos">
+<figure><video controls preload="metadata" playsinline poster="bilder/video-vorschau.jpg?v=2" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--linie);box-shadow:0 12px 40px rgba(10,31,68,.10);background:#0a1f44"><source src="bilder/video-anfrage-angebot.mp4?v=2" type="video/mp4"><a href="bilder/video-anfrage-angebot.mp4">Video herunterladen</a></video><figcaption><b>Von der Anfrage zum Angebot</b>Kunde anlegen, aufmessen, fertiges Angebot mit Ihren Preisen.</figcaption></figure>
+<figure><video controls preload="metadata" playsinline poster="bilder/video2-vorschau.jpg" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--linie);box-shadow:0 12px 40px rgba(10,31,68,.10);background:#0a1f44"><source src="bilder/video-baustelle-rechnung.mp4" type="video/mp4"><a href="bilder/video-baustelle-rechnung.mp4">Video herunterladen</a></video><figcaption><b>Von der Baustelle zur Rechnung</b>Stempeln, Material scannen, Rapport – und die Rechnung ist fertig.</figcaption></figure>
+</div>
 </div>
 </section>
 
