@@ -119,6 +119,23 @@ footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 @media (prefers-reduced-motion:reduce){.bs,.toast{animation:none}.bs:first-child,.toast.t1{opacity:1}}
 .videos{display:grid;grid-template-columns:1fr 1fr;gap:24px}.videos figure{margin:0}.videos figcaption{margin-top:10px;font-size:15px;color:var(--leise)}.videos figcaption b{display:block;color:var(--navy);font-size:17px;margin-bottom:2px}@media (max-width:860px){.videos{grid-template-columns:1fr}}
 .handys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:40px}.handys figure{margin:0;text-align:center}.handys .rahmen{background:#0b1220;border-radius:30px;padding:9px;box-shadow:0 18px 40px rgba(10,31,68,.18)}.handys img{width:100%;display:block;border-radius:22px}.handys figcaption{margin-top:12px;font-weight:600;color:var(--navy);font-size:15px}.handys figcaption span{display:block;font-weight:400;color:var(--leise);font-size:14px}@media (max-width:860px){.handys{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#buerozeit{background:var(--navy);color:#fff;padding:72px 0}
+#buerozeit h2{color:#fff}#buerozeit .titel p{color:#c9d4ea}
+.zahlen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.zahl{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:24px}
+.zahl b{display:block;font-size:2.6rem;line-height:1.05;color:var(--gelb);font-weight:800}
+.zahl p{margin:8px 0 0;color:#dbe3f3;font-size:.98rem}.zahl small{display:block;margin-top:8px;color:#9fb3d9;font-size:.8rem}
+.rechner{margin-top:40px;background:#fff;color:var(--text,#1f2a3d);border-radius:20px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.rechner h3{margin:0 0 6px;color:var(--navy);font-size:1.3rem}.rechner label{display:block;margin-top:18px;font-weight:600;color:var(--navy)}
+.rechner input[type=range]{width:100%;accent-color:#0b3a8c;margin-top:8px}.rechner output{font-weight:800;color:var(--blau)}
+.ergebnis{background:#fbfaf7;border:1px solid var(--linie);border-radius:16px;padding:22px}
+.ergebnis div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--linie);font-size:1.02rem}.ergebnis div:last-of-type{border:0}
+.ergebnis strong{color:var(--navy);font-size:1.2rem;white-space:nowrap}.ergebnis .gross strong{color:#22a05a;font-size:1.5rem}
+.spart{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 32px}
+.spart div{display:flex;gap:12px;color:#dbe3f3}.spart div:before{content:"✓";color:var(--gelb);font-weight:800}
+.spart b{color:#fff}
+#buerozeit .quelle{color:#9fb3d9}#buerozeit .ergebnis .quelle{color:var(--leise)}#buerozeit .quelle a{color:#c9d4ea}
+@media (max-width:860px){.zahlen,.rechner,.spart{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MG Betriebsmanager","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","description":"Handwerkersoftware für Maler, Dach & Wand, Hausmeister und Entrümpelung: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy, Lager mit QR-Etiketten.","offers":{"@type":"Offer","price":"790","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"MG Commerce","address":{"@type":"PostalAddress","streetAddress":"Im Flieder 4","postalCode":"71554","addressLocality":"Weissach im Tal","addressCountry":"DE"},"telephone":"+49 179 5498071"}}</script>
 </head>
@@ -128,7 +145,7 @@ footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 <div class="wrap">
 <a class="marke" href="#start"><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b324" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></span>MG Betriebsmanager</a>
 <nav class="nav" aria-label="Hauptmenü">
-<a href="#video">Video</a>
+<a href="#buerozeit">Bürozeit</a><a href="#video">Video</a>
 <a href="#so-gehts">So geht's</a>
 <a href="#programm">Programm</a><a href="#beispiel">Beispiel</a>
 <a href="#e-rechnung">E-Rechnung</a>
@@ -180,6 +197,43 @@ footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 <div class="bs"><div class="kl">Tagesrapport</div><div class="gr">7,5 Stunden</div><div class="feld">Decke gestrichen, Raufaser im Wohnzimmer fertig</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div class="foto"></div><div class="foto" style="background:linear-gradient(135deg,#f3e5c0,#d9b867)"></div></div><div class="btn gruen">An das Büro senden</div></div>
 </div></div>
 </div>
+</div>
+</section>
+
+<section id="buerozeit">
+<div class="wrap">
+<div class="titel"><h2>Wie viel Zeit sitzen Sie heute im Büro?</h2><p>Angebote tippen, Stundenzettel abschreiben, Rechnungen, Mahnungen, Ablage – das meiste davon erledigt der Chef selbst. Oft abends oder am Wochenende.</p></div>
+<div class="zahlen">
+<div class="zahl"><b>12,8 Std.</b><p>pro Woche wenden Handwerksbetriebe im Schnitt für Bürokratie und Dokumentation auf.</p><small>Umfrage der Handwerkskammer Dortmund</small></div>
+<div class="zahl"><b>30 %</b><p>ihrer Arbeitszeit verbringen Führungskräfte mit Berichts- und Dokumentationspflichten.</p><small>IW Köln, Beschäftigtenbefragung 2025</small></div>
+<div class="zahl"><b>1 Tag</b><p>pro Woche und mehr – so viel geht bei jedem Zweiten für Dokumentation drauf.</p><small>IW Köln, Beschäftigtenbefragung 2025</small></div>
+</div>
+<div class="rechner" id="zeitrechner">
+<div>
+<h3>Was ist Ihnen eine gesparte Stunde wert?</h3>
+<p style="margin:0;color:var(--leise)">Rechnen Sie mit Ihren eigenen Zahlen.</p>
+<label for="r-std">Gesparte Bürozeit pro Woche: <output id="o-std">4</output> Std.</label>
+<input type="range" id="r-std" min="1" max="12" step="1" value="4">
+<label for="r-satz">Ihr Stundenverrechnungssatz: <output id="o-satz">55</output> €</label>
+<input type="range" id="r-satz" min="35" max="95" step="5" value="55">
+</div>
+<div class="ergebnis" aria-live="polite">
+<div><span>Gesparte Zeit im Jahr</span><strong id="e-std">184 Std.</strong></div>
+<div><span>Das sind Arbeitstage</span><strong id="e-tage">23 Tage</strong></div>
+<div class="gross"><span>Wert Ihrer Zeit pro Jahr</span><strong id="e-wert">10.120 €</strong></div>
+<div><span>Komplettpaket (1.090 €) ist bezahlt nach</span><strong id="e-amort">5 Wochen</strong></div>
+<p class="quelle" style="margin:6px 0 0">Rechenbeispiel mit 46 Arbeitswochen im Jahr und 8 Stunden pro Tag. Wie viel Sie wirklich sparen, hängt von Ihrem Betrieb ab – bei der Vorführung schauen wir uns das gemeinsam an.</p>
+</div>
+</div>
+<div class="spart">
+<div><span><b>Kein Stundenzettel-Abtippen:</b> Ihre Leute stempeln am Handy, die Zeiten sind sofort im Büro.</span></div>
+<div><span><b>Angebot aus dem Aufmaß:</b> Flächen rein, Ihre Preise sind hinterlegt, Angebot fertig.</span></div>
+<div><span><b>Rechnung mit einem Klick:</b> aus dem Angebot, mit Nachträgen und § 35a-Hinweis.</span></div>
+<div><span><b>Kein vergessenes Material:</b> Was gebucht ist, landet auf der richtigen Baustelle.</span></div>
+<div><span><b>Mahnungen und offene Posten</b> auf einen Blick statt Zettelwirtschaft.</span></div>
+<div><span><b>Steuerberater:</b> DATEV-Export statt Belege-Schuhkarton.</span></div>
+</div>
+<p class="quelle">Quellen: <a href="https://www.hwk-do.de/wp-content/uploads/2023/02/Sonderumfrage-zum-Buerokratieabbau-Fruehjahr-2020.pdf">Handwerkskammer Dortmund, Sonderumfrage Bürokratieabbau</a> · <a href="https://www.iwkoeln.de/studien/andrea-hammermann-klaus-heiner-roehl-ein-tag-pro-woche-fuer-buerokratie.html">IW Köln, „Ein Tag pro Woche für Bürokratie“, Kurzbericht 94/2025</a>.</p>
 </div>
 </section>
 
@@ -340,5 +394,14 @@ footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 
 </main>
 <footer>MG Commerce · Weissach im Tal · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
+<script>
+(function(){var a=document.getElementById('r-std'),b=document.getElementById('r-satz');if(!a)return;
+function f(n){return n.toLocaleString('de-DE')}
+function r(){var h=+a.value,z=+b.value,j=h*46,w=j*z,wo=Math.ceil(1090/(h*z));
+document.getElementById('o-std').textContent=h;document.getElementById('o-satz').textContent=z;
+document.getElementById('e-std').textContent=f(j)+' Std.';document.getElementById('e-tage').textContent=f(Math.round(j/8))+' Tage';
+document.getElementById('e-wert').textContent=f(w)+' €';document.getElementById('e-amort').textContent=wo+(wo==1?' Woche':' Wochen');}
+a.addEventListener('input',r);b.addEventListener('input',r);r();})();
+</script>
 </body>
 </html>
