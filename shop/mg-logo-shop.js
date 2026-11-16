@@ -37,10 +37,9 @@
     function farbe() {
       if (!def) return null;
       if (def.farben['*']) return def.farben['*'];
-      var idEl = form.querySelector('[name="id"]');
-      var id = idEl ? String(idEl.value) : '';
-      var url = new URLSearchParams(location.search).get('variant');
-      if (url) id = url;
+      var id = '';
+      try { id = String(new FormData(form).get('id') || ''); } catch (e) {}
+      if (!id) id = new URLSearchParams(location.search).get('variant') || '';
       var v = (varianten || []).filter(function (x) { return String(x.id) === id; })[0];
       var name = v ? v.option1 : Object.keys(def.farben)[0];
       return def.farben[name] || def.farben[Object.keys(def.farben)[0]];
