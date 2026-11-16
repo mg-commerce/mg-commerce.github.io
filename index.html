@@ -139,6 +139,11 @@ footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
 .rechner{margin-top:40px;background:#fff;color:var(--text,#1f2a3d);border-radius:20px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
 .rechner h3{margin:0 0 6px;color:var(--navy);font-size:1.3rem}.rechner label{display:block;margin-top:18px;font-weight:600;color:var(--navy)}
 .rechner input[type=range]{width:100%;accent-color:#0b3a8c;margin-top:8px}.rechner output{font-weight:800;color:var(--blau)}
+.m-bar{height:12px;background:#eef0f4;border-radius:99px;overflow:hidden;padding:0!important;border:0!important;margin:-4px 0 6px}
+.m-bar i{display:block;height:100%;background:#c0392b;border-radius:99px;transition:width .3s}.m-bar.mg i{background:#22a05a}
+.m-balken{border:0!important;padding-bottom:4px!important}
+.rechner label.m-check{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:.95rem;color:var(--text)}
+.m-check input{width:20px;height:20px;accent-color:#0b3a8c;flex:none;margin-top:2px}
 .ergebnis{background:#fbfaf7;border:1px solid var(--linie);border-radius:16px;padding:22px}
 .ergebnis div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--linie);font-size:1.02rem}.ergebnis div:last-of-type{border:0}
 .ergebnis strong{color:var(--navy);font-size:1.2rem;white-space:nowrap}.ergebnis .gross strong{color:#22a05a;font-size:1.5rem}
@@ -391,6 +396,33 @@ body{padding-bottom:70px}
 </div>
 </section>
 
+<section id="mietvergleich" class="weiss">
+<div class="wrap">
+<div class="titel"><h2>Kaufen statt mieten – rechnen Sie selbst.</h2><p>Die meisten Handwerker-Programme kosten jeden Monat – und für jeden Mitarbeiter mit Handy-Zugang noch einmal extra. Beim MG Betriebsmanager zahlen Sie einmal.</p></div>
+<div class="rechner" id="mietrechner">
+<div>
+<h3>Ihr Betrieb</h3>
+<label for="m-ma">Mitarbeiter mit Handy-Zugang: <output id="mo-ma">4</output></label>
+<input type="range" id="m-ma" min="0" max="15" step="1" value="4">
+<label for="m-buero">Büro-Arbeitsplätze: <output id="mo-buero">1</output></label>
+<input type="range" id="m-buero" min="1" max="3" step="1" value="1">
+<label for="m-jahre">Zeitraum: <output id="mo-jahre">3</output> Jahre</label>
+<input type="range" id="m-jahre" min="1" max="5" step="1" value="3">
+<label class="m-check"><input type="checkbox" id="m-pflege" checked> mit Software-Pflege &amp; Support (19 € pro Monat ab dem 2. Jahr)</label>
+</div>
+<div class="ergebnis" aria-live="polite">
+<div class="m-balken"><span>Typische Mietsoftware</span><strong id="me-miete">6.478 €</strong></div>
+<div class="m-bar"><i id="mb-miete" style="width:100%"></i></div>
+<div class="m-balken"><span>MG Betriebsmanager Komplett</span><strong id="me-mg">1.546 €</strong></div>
+<div class="m-bar mg"><i id="mb-mg" style="width:24%"></i></div>
+<div class="gross"><span>Sie sparen</span><strong id="me-spar">4.932 €</strong></div>
+<div><span>Der Kauf hat sich gegenüber Miete bezahlt nach</span><strong id="me-amort">7 Monaten</strong></div>
+<p class="quelle" style="margin:6px 0 0">Mietsoftware: Beispielrechnung mit 60 € je Büro-Arbeitsplatz und 30 € je Mitarbeiter-Zugang pro Monat – so liegen typische Listenpreise bekannter Handwerker-Programme (Stand 11/2026), oft zuzüglich Einrichtung. MG Betriebsmanager: Komplettpaket 1.090 € (Einführungspreis), 12 Monate Support inklusive. Gemäß § 19 UStG ohne Umsatzsteuer.</p>
+</div>
+</div>
+</div>
+</section>
+
 <section id="voraussetzungen">
 <div class="wrap">
 <div class="hinweisbox">
@@ -492,6 +524,19 @@ var t='Guten Tag,\n\nich möchte den MG Betriebsmanager kennenlernen.\n\n'+
 if(weg==='whatsapp'){window.location.href='https://wa.me/491795498071?text='+encodeURIComponent('Demo-Anfrage MG Betriebsmanager\n\n'+t);}
 else{window.location.href='mailto:dirk0711@icloud.com?subject='+encodeURIComponent('Demo-Anfrage MG Betriebsmanager – '+v('betrieb'))+'&body='+encodeURIComponent(t);}
 });})();
+</script>
+<script>
+(function(){var ma=document.getElementById('m-ma'),bu=document.getElementById('m-buero'),ja=document.getElementById('m-jahre'),pf=document.getElementById('m-pflege');if(!ma)return;
+function f(n){return Math.round(n).toLocaleString('de-DE')+' €'}
+function r(){var m=+ma.value,b=+bu.value,j=+ja.value,mon=j*12,proMon=b*60+m*30,miete=proMon*mon,
+pfl=pf.checked?Math.max(0,mon-12)*19:0,mg=1090+pfl,sp=miete-mg;
+document.getElementById('mo-ma').textContent=m;document.getElementById('mo-buero').textContent=b;document.getElementById('mo-jahre').textContent=j;
+document.getElementById('me-miete').textContent=f(miete);document.getElementById('me-mg').textContent=f(mg);
+document.getElementById('me-spar').textContent=sp>0?f(sp):'–';
+var mx=Math.max(miete,mg);document.getElementById('mb-miete').style.width=(miete/mx*100)+'%';document.getElementById('mb-mg').style.width=(mg/mx*100)+'%';
+var k=0,a=0,c=1090;while(k<120){k++;a+=proMon;if(pf.checked&&k>12)c+=19;if(a>=c)break;}
+document.getElementById('me-amort').textContent=k>=120?'–':k+(k==1?' Monat':' Monaten');}
+[ma,bu,ja].forEach(function(e){e.addEventListener('input',r)});pf.addEventListener('change',r);r();})();
 </script>
 </body>
 </html>
