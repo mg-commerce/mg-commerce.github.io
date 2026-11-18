@@ -202,6 +202,9 @@ body{padding-bottom:70px}
 .stromtab td{display:block;border:0;padding:2px 0}.stromtab td:first-child{font-weight:600;margin-bottom:4px}
 .stromtab td:nth-child(2)::before{content:"Verbrauch: ";color:var(--leise)}.stromtab td:nth-child(3)::before{content:"Strom im Jahr: ";color:var(--leise)}
 .stromtab td:nth-child(4)::before{content:"Kosten im Jahr: ";color:var(--leise)}}
+details.aufklapp{margin-top:28px;background:#fff;border:1px solid var(--linie);border-radius:14px;padding:4px 20px}
+details.aufklapp>summary{cursor:pointer;font-weight:700;font-size:1.1rem;padding:14px 0;color:var(--blau,#0b3a8c)}
+details.aufklapp[open]{padding-bottom:20px}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MG Betriebsmanager","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","description":"Handwerkersoftware für Maler, Dach & Wand, Hausmeister und Entrümpelung: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy, Lager mit QR-Etiketten.","offers":{"@type":"Offer","price":"790","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"MG Commerce","address":{"@type":"PostalAddress","streetAddress":"Im Flieder 4","postalCode":"71554","addressLocality":"Weissach im Tal","addressCountry":"DE"},"telephone":"+49 179 5498071"}}</script>
 </head>
@@ -211,10 +214,8 @@ body{padding-bottom:70px}
 <div class="wrap">
 <a class="marke" href="#start"><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b324" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></span>MG Betriebsmanager</a>
 <nav class="nav" id="hauptmenue" aria-label="Hauptmenü">
-<a href="#buerozeit">Bürozeit</a><a href="#video">Video</a>
-<a href="#so-gehts">So geht's</a>
-<a href="#programm">Programm</a><a href="#beispiel">Beispiel</a>
-<a href="#e-rechnung">E-Rechnung</a>
+<a href="#buerozeit">Bürozeit</a><a href="#video">Videos</a>
+<a href="#programm">Programm</a><a href="#funktionen">Funktionen</a>
 <a href="#preise">Preise</a>
 <a href="#fragen">Fragen</a>
 <a class="knopf gelb klein" href="#kontakt">Vorführung anfragen</a>
@@ -292,32 +293,20 @@ body{padding-bottom:70px}
 <p class="quelle" style="margin:6px 0 0">Rechenbeispiel mit 46 Arbeitswochen im Jahr und 8 Stunden pro Tag. Wie viel Sie wirklich sparen, hängt von Ihrem Betrieb ab – bei der Vorführung schauen wir uns das gemeinsam an.</p>
 </div>
 </div>
-<div class="spart">
-<div><span><b>Kein Stundenzettel-Abtippen:</b> Ihre Leute stempeln am Handy, die Zeiten sind sofort im Büro.</span></div>
-<div><span><b>Angebot aus dem Aufmaß:</b> Flächen rein, Ihre Preise sind hinterlegt, Angebot fertig.</span></div>
-<div><span><b>Rechnung mit einem Klick:</b> aus dem Angebot, mit Nachträgen und § 35a-Hinweis.</span></div>
-<div><span><b>Kein vergessenes Material:</b> Was gebucht ist, landet auf der richtigen Baustelle.</span></div>
-<div><span><b>Mahnungen und offene Posten</b> auf einen Blick statt Zettelwirtschaft.</span></div>
-<div><span><b>Steuerberater:</b> DATEV-Export statt Belege-Schuhkarton.</span></div>
-</div>
 <p class="quelle">Quellen: <a href="https://www.hwk-do.de/wp-content/uploads/2023/02/Sonderumfrage-zum-Buerokratieabbau-Fruehjahr-2020.pdf">Handwerkskammer Dortmund, Sonderumfrage Bürokratieabbau</a> · <a href="https://www.iwkoeln.de/studien/andrea-hammermann-klaus-heiner-roehl-ein-tag-pro-woche-fuer-buerokratie.html">IW Köln, „Ein Tag pro Woche für Bürokratie“, Kurzbericht 94/2025</a>.</p>
 </div>
 </section>
 
-<section id="video" style="padding:56px 0 24px">
+<section id="video" class="weiss">
 <div class="wrap">
 <div class="titel" style="margin-bottom:20px"><h2>Zwei Videos, je 40 Sekunden</h2><p>So sieht die Arbeit mit dem Programm aus – im Büro und auf der Baustelle.</p></div>
 <div class="videos">
 <figure><video controls preload="metadata" playsinline poster="bilder/video-vorschau.jpg?v=2" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--linie);box-shadow:0 12px 40px rgba(10,31,68,.10);background:#0a1f44"><source src="bilder/video-anfrage-angebot.mp4?v=2" type="video/mp4"><a href="bilder/video-anfrage-angebot.mp4">Video herunterladen</a></video><figcaption><b>Von der Anfrage zum Angebot</b>Kunde anlegen, aufmessen, fertiges Angebot mit Ihren Preisen.</figcaption></figure>
 <figure><video controls preload="metadata" playsinline poster="bilder/video2-vorschau.jpg" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--linie);box-shadow:0 12px 40px rgba(10,31,68,.10);background:#0a1f44"><source src="bilder/video-baustelle-rechnung.mp4" type="video/mp4"><a href="bilder/video-baustelle-rechnung.mp4">Video herunterladen</a></video><figcaption><b>Von der Baustelle zur Rechnung</b>Stempeln, Material scannen, Rapport – und die Rechnung ist fertig.</figcaption></figure>
 </div>
-</div>
-</section>
 
-<section id="so-gehts" class="weiss">
-<div class="wrap">
-<div class="titel">
-<h2>So einfach läuft ein Auftrag</h2>
+<div class="titel" id="so-gehts" style="margin-top:44px">
+<h2 style="font-size:1.6rem">So einfach läuft ein Auftrag</h2>
 <p>Keine doppelte Tipperei: Was einmal erfasst ist, wandert von selbst weiter.</p>
 </div>
 <div class="raster r3">
@@ -328,37 +317,18 @@ body{padding-bottom:70px}
 </div>
 </section>
 
-<section id="funktionen">
+<section id="programm">
 <div class="wrap">
-<div class="titel">
-<h2>Alles, was Ihr Büro braucht</h2>
-<p>Und nichts, was Sie nicht brauchen. Jede Kachel erklärt sich beim ersten Öffnen selbst.</p>
+<div class="titel"><h2>So sieht das Programm wirklich aus</h2><p>Echte Bildschirmfotos – keine Grafiken. Alles auf einen Blick, große Kacheln, keine verschachtelten Menüs.</p></div>
+<div class="raster r2 galerie">
+<figure><figcaption>Startseite: offene Angebote, Baustellen, Rechnungen und Umsatz</figcaption><a href="bilder/programm-start.jpg"><img src="bilder/programm-start.jpg" alt="Startseite des MG Betriebsmanagers mit Übersicht und Schnellzugriff" loading="lazy" style="background:#141e30"></a></figure><figure><figcaption>Alle Bereiche als Kacheln – Gewerke, Team, Betrieb</figcaption><a href="bilder/programm-kacheln.jpg"><img src="bilder/programm-kacheln.jpg" alt="Kacheln für Dach &amp; Wand, Hausmeister, Entrümpelung, Team und Betrieb" loading="lazy" style="background:#141e30"></a></figure><figure><figcaption>Heute: Baustellen, Abwesenheiten und Ihre Aufgaben</figcaption><a href="bilder/programm-heute.jpg"><img src="bilder/programm-heute.jpg" alt="Tagesübersicht mit Baustellen, Abwesenheiten und To-do-Liste" loading="lazy" style="background:#141e30"></a></figure><figure><figcaption>Einstellungen: einmal einrichten, fertig</figcaption><a href="bilder/programm-einstellungen.jpg"><img src="bilder/programm-einstellungen.jpg" alt="Firmen-Einstellungen mit Firmendaten, Bank, Steuer, Datensicherung und Briefkopf" loading="lazy" style="background:#141e30"></a></figure>
 </div>
-<div class="raster r3">
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></div><h3>Angebote &amp; Rechnungen</h3><p>E-Rechnung, Abschläge, Mahnungen – und der Steuerabzug für Ihre Privatkunden steht automatisch drauf.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Ihre Leute am Handy</h3><p>Stempeln, Tagesrapport mit Fotos, Urlaub beantragen. Ohne App-Installation – und ohne WhatsApp-Gruppen.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div><h3>Material &amp; Lager</h3><p>QR-Etikett am Regal scannen – das Material ist auf der richtigen Baustelle gebucht. Einkaufspreis + Ihr Aufschlag, mit Bild direkt ins Angebot.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>Plantafel</h3><p>Wer ist wann wo? Urlaub und Krankheit sind schon berücksichtigt.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Hat es sich gelohnt?</h3><p>Nachkalkulation je Baustelle, Einnahmen und Ausgaben pro Monat auf einen Blick.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Sicher bei Ihnen</h3><p>Keine Cloud. Tägliche Sicherung, DATEV-Export für den Steuerberater.</p></div>
-</div>
-</div>
-</section>
+<h3 style="margin-top:48px;font-size:1.4rem;color:var(--navy)">Und so sieht es auf dem Handy Ihrer Leute aus</h3>
+<div class="handys"><figure><a href="bilder/handy-start.jpg" class="rahmen" style="display:block"><img src="bilder/handy-start.jpg" alt="Handy-Startseite eines Mitarbeiters" loading="lazy"></a><figcaption>Startseite<span>Nur die eigenen Bereiche</span></figcaption></figure><figure><a href="bilder/handy-stempeln.jpg" class="rahmen" style="display:block"><img src="bilder/handy-stempeln.jpg" alt="Zeiterfassung mit Hinweis beim ersten Öffnen" loading="lazy"></a><figcaption>Stempeln<span>Mit kurzer Erklärung beim ersten Mal</span></figcaption></figure><figure><a href="bilder/handy-rapport.jpg" class="rahmen" style="display:block"><img src="bilder/handy-rapport.jpg" alt="Tagesrapport mit Arbeitszeiten" loading="lazy"></a><figcaption>Tagesrapport<span>Fahrzeit, Arbeitszeit, Pause</span></figcaption></figure><figure><a href="bilder/handy-material.jpg" class="rahmen" style="display:block"><img src="bilder/handy-material.jpg" alt="Materialentnahme für eine Baustelle" loading="lazy"></a><figcaption>Material buchen<span>Artikel, Menge, Baustelle – fertig</span></figcaption></figure></div>
+<div class="appzeile"><img src="bilder/app-symbol.png" alt="App-Symbol „MG Betrieb“ auf dem Handy-Startbildschirm" width="84" height="84" loading="lazy"><div><b>Fühlt sich an wie eine App.</b> Einmal „Zum Startbildschirm hinzufügen“ – schon liegt <b>MG Betrieb</b> mit eigenem Symbol neben WhatsApp und Co. Kein App-Store, kein Konto, keine Updates auf jedem Handy.</div></div>
+<p class="fussnote">Bildschirmfotos aus Version 1.6 mit Testdaten. Auf dem Handy läuft alles im normalen Browser – keine App-Installation nötig. Bild antippen zum Vergrößern, nochmal antippen zum Schließen.</p>
 
-<section id="gewerke" class="weiss">
-<div class="wrap">
-<div class="titel"><h2>Gemacht für Ihr Gewerk – Malersoftware, Dachdeckersoftware, Hausmeistersoftware</h2><p>Sie zahlen nur, was Sie brauchen – jedes weitere Gewerk lässt sich vorher kostenlos testen.</p></div>
-<div class="raster r3">
-<div class="karte"><h3>Maler</h3><ul class="liste"><li>Raum-Aufmaß mit Flächen und Abzügen</li><li>Ihre Preisliste, Lohn und Material getrennt</li><li>Materialbedarf und Restfarben</li><li>Tapete, Boden, Farbton mit Bild im Angebot</li></ul></div>
-<div class="karte"><h3>Dach &amp; Wand</h3><ul class="liste"><li>Dachflächen mit Neigung</li><li>Rinnen, Fallrohre, Bleche nach Metall</li><li>Gerüst und Container im Angebot</li></ul></div>
-<div class="karte"><h3>Hausmeister &amp; Entrümpelung</h3><ul class="liste"><li>Objekte mit Aufgabenplan</li><li>Monatsrechnung auf Knopfdruck</li><li>Besichtigung mit m³-Kalkulation</li></ul></div>
-</div>
-</div>
-</section>
-
-<section id="beispiel">
-<div class="wrap">
-<div class="titel"><h2>Ein Beispiel: Wohnzimmer und Flur streichen</h2><p>Echt mit dem Programm erstellt – für einen erfundenen Beispielbetrieb. Vom Anruf bis zum fertigen Angebot vergehen keine 15 Minuten.</p></div>
+<div class="titel" id="beispiel" style="margin-top:56px"><h2>Ein Beispiel: Wohnzimmer und Flur streichen</h2><p>Echt mit dem Programm erstellt – für einen erfundenen Beispielbetrieb. Vom Anruf bis zum fertigen Angebot vergehen keine 15 Minuten.</p></div>
 <div class="raster r3 galerie">
 <figure><figcaption>1 · Aufmaß mit Materialbedarf</figcaption><a href="bilder/beispiel-aufmass.jpg?v=2"><img src="bilder/beispiel-aufmass.jpg?v=2" alt="Beispiel-Aufmaß für Wohnzimmer und Flur mit Flächen und Materialbedarf" loading="lazy"></a></figure>
 <figure><figcaption>2 · Angebot mit Ihren Preisen</figcaption><a href="bilder/beispiel-angebot-1.jpg?v=2"><img src="bilder/beispiel-angebot-1.jpg?v=2" alt="Beispiel-Angebot Seite 1 mit Positionen" loading="lazy"></a></figure>
@@ -381,38 +351,31 @@ body{padding-bottom:70px}
 </div>
 </section>
 
-<section id="programm" class="weiss">
+<section id="funktionen" class="weiss">
 <div class="wrap">
-<div class="titel"><h2>So sieht das Programm wirklich aus</h2><p>Echte Bildschirmfotos – keine Grafiken. Alles auf einen Blick, große Kacheln, keine verschachtelten Menüs.</p></div>
-<div class="raster r2 galerie">
-<figure><figcaption>Startseite: offene Angebote, Baustellen, Rechnungen und Umsatz</figcaption><a href="bilder/programm-start.jpg"><img src="bilder/programm-start.jpg" alt="Startseite des MG Betriebsmanagers mit Übersicht und Schnellzugriff" loading="lazy" style="background:#141e30"></a></figure><figure><figcaption>Alle Bereiche als Kacheln – Gewerke, Team, Betrieb</figcaption><a href="bilder/programm-kacheln.jpg"><img src="bilder/programm-kacheln.jpg" alt="Kacheln für Dach &amp; Wand, Hausmeister, Entrümpelung, Team und Betrieb" loading="lazy" style="background:#141e30"></a></figure><figure><figcaption>Heute: Baustellen, Abwesenheiten und Ihre Aufgaben</figcaption><a href="bilder/programm-heute.jpg"><img src="bilder/programm-heute.jpg" alt="Tagesübersicht mit Baustellen, Abwesenheiten und To-do-Liste" loading="lazy" style="background:#141e30"></a></figure><figure><figcaption>Einstellungen: einmal einrichten, fertig</figcaption><a href="bilder/programm-einstellungen.jpg"><img src="bilder/programm-einstellungen.jpg" alt="Firmen-Einstellungen mit Firmendaten, Bank, Steuer, Datensicherung und Briefkopf" loading="lazy" style="background:#141e30"></a></figure>
+<div class="titel">
+<h2>Alles, was Ihr Büro braucht</h2>
+<p>Und nichts, was Sie nicht brauchen. Jede Kachel erklärt sich beim ersten Öffnen selbst.</p>
 </div>
-<h3 style="margin-top:48px;font-size:1.4rem;color:var(--navy)">Und so sieht es auf dem Handy Ihrer Leute aus</h3>
-<div class="handys"><figure><a href="bilder/handy-start.jpg" class="rahmen" style="display:block"><img src="bilder/handy-start.jpg" alt="Handy-Startseite eines Mitarbeiters" loading="lazy"></a><figcaption>Startseite<span>Nur die eigenen Bereiche</span></figcaption></figure><figure><a href="bilder/handy-stempeln.jpg" class="rahmen" style="display:block"><img src="bilder/handy-stempeln.jpg" alt="Zeiterfassung mit Hinweis beim ersten Öffnen" loading="lazy"></a><figcaption>Stempeln<span>Mit kurzer Erklärung beim ersten Mal</span></figcaption></figure><figure><a href="bilder/handy-rapport.jpg" class="rahmen" style="display:block"><img src="bilder/handy-rapport.jpg" alt="Tagesrapport mit Arbeitszeiten" loading="lazy"></a><figcaption>Tagesrapport<span>Fahrzeit, Arbeitszeit, Pause</span></figcaption></figure><figure><a href="bilder/handy-material.jpg" class="rahmen" style="display:block"><img src="bilder/handy-material.jpg" alt="Materialentnahme für eine Baustelle" loading="lazy"></a><figcaption>Material buchen<span>Artikel, Menge, Baustelle – fertig</span></figcaption></figure></div>
-<div class="appzeile"><img src="bilder/app-symbol.png" alt="App-Symbol „MG Betrieb“ auf dem Handy-Startbildschirm" width="84" height="84" loading="lazy"><div><b>Fühlt sich an wie eine App.</b> Einmal „Zum Startbildschirm hinzufügen“ – schon liegt <b>MG Betrieb</b> mit eigenem Symbol neben WhatsApp und Co. Kein App-Store, kein Konto, keine Updates auf jedem Handy.</div></div>
-<p class="fussnote">Bildschirmfotos aus Version 1.6 mit Testdaten. Auf dem Handy läuft alles im normalen Browser – keine App-Installation nötig. Bild antippen zum Vergrößern, nochmal antippen zum Schließen.</p>
+<div class="raster r3">
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></div><h3>Angebote &amp; Rechnungen</h3><p>E-Rechnung, Abschläge, Mahnungen – § 35a automatisch.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Ihre Leute am Handy</h3><p>Stempeln, Rapport, Urlaub – ohne App-Installation.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div><h3>Material &amp; Lager</h3><p>QR scannen, Material gebucht – mit Preis und Bild ins Angebot.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>Plantafel</h3><p>Wer ist wann wo – Urlaub schon berücksichtigt.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Hat es sich gelohnt?</h3><p>Nachkalkulation je Baustelle, Zahlen pro Monat.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Sicher bei Ihnen</h3><p>Keine Cloud, tägliche Sicherung, DATEV-Export.</p></div>
+</div>
+
+<div class="titel" id="gewerke" style="margin-top:56px"><h2 style="font-size:1.6rem">Für Ihr Gewerk gemacht</h2><p>Malersoftware, Dachdeckersoftware, Hausmeistersoftware – Sie zahlen nur, was Sie brauchen – jedes weitere Gewerk lässt sich vorher kostenlos testen.</p></div>
+<div class="raster r3">
+<div class="karte"><h3>Maler</h3><ul class="liste"><li>Raum-Aufmaß mit Flächen und Abzügen</li><li>Ihre Preisliste, Lohn und Material getrennt</li><li>Materialbedarf und Restfarben</li><li>Tapete, Boden, Farbton mit Bild im Angebot</li></ul></div>
+<div class="karte"><h3>Dach &amp; Wand</h3><ul class="liste"><li>Dachflächen mit Neigung</li><li>Rinnen, Fallrohre, Bleche nach Metall</li><li>Gerüst und Container im Angebot</li></ul></div>
+<div class="karte"><h3>Hausmeister &amp; Entrümpelung</h3><ul class="liste"><li>Objekte mit Aufgabenplan</li><li>Monatsrechnung auf Knopfdruck</li><li>Besichtigung mit m³-Kalkulation</li></ul></div>
+</div>
 </div>
 </section>
 
-<section id="persoenlich">
-<div class="wrap person">
-<div class="avatar" aria-hidden="true">MG</div>
-<div>
-<h2>Persönlich statt Hotline</h2>
-<p style="color:var(--leise);margin-top:12px;font-size:1.1rem;max-width:680px">Wir sind MG Commerce aus Weissach im Tal. Wir zeigen Ihnen das Programm bei Ihnen im Betrieb, richten es mit Ihnen ein und sind danach erreichbar, wenn etwas klemmt – per Telefon oder, wenn Sie es freigeben, per Fernwartung.</p>
-<ul class="liste"><li>Vorführung vor Ort im Raum Rems-Murr und Stuttgart</li><li>Einrichtung mit Ihren Preisen, Mitarbeitern und Handys</li><li>Updates inklusive – vor jedem Update werden Ihre Daten gesichert</li><li>PC kaputt? Neuer Freischalt-Code einmal pro Jahr kostenlos</li></ul>
-</div>
-</div>
-</section>
-
-<section id="vertrauen" class="weiss">
-<div class="wrap">
-<div class="titel"><h2>Ihr Programm. Ihre Daten. Auch in zehn Jahren.</h2><p>Bei Mietsoftware hängt Ihr Büro am Abo und am Server des Anbieters. Beim MG Betriebsmanager nicht.</p></div>
-<div class="raster r2"><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Ihre Daten gehören Ihnen</h3><p>Alles liegt als normale Tabellen auf Ihrem PC – mit Excel lesbar. Kein Konto bei uns, keine Sperre, kein Datenumzug zu einem Anbieter.</p></div><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Läuft auch ohne uns</h3><p>Der Freischalt-Code wird auf Ihrem PC geprüft, ohne Verbindung zu unserem Server. Selbst wenn es uns eines Tages nicht mehr gäbe: Ihr Programm arbeitet weiter.</p></div><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M12 7v5l3 2"/></svg></div><h3>Jeden Tag gesichert</h3><p>Automatische Sicherung jeden Tag, die letzten 14 Tage bleiben liegen. Auf Wunsch zusätzlich auf USB-Stick, NAS oder OneDrive – und vor jedem Update noch einmal extra.</p></div><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><h3>Ein Mensch, der abhebt</h3><p>Einrichtung bei Ihnen im Betrieb, danach Telefon statt Ticket-System. Fernwartung nur, wenn Sie sie selbst freigeben – sonst sieht niemand Ihre Daten.</p></div></div>
-</div>
-</section>
-
-<section id="e-rechnung" class="weiss">
+<section id="e-rechnung">
 <div class="wrap">
 <div class="titel"><h2>Die E-Rechnung wird Pflicht – sind Sie bereit?</h2><p>Rechnungen an Firmenkunden müssen bald als E-Rechnung verschickt werden. Ein einfaches PDF per E-Mail reicht dann nicht mehr. Mit dem MG Betriebsmanager ist jede Rechnung automatisch eine E-Rechnung (ZUGFeRD).</p></div>
 <div class="zeitleiste">
@@ -433,12 +396,9 @@ body{padding-bottom:70px}
 <div class="karte"><h3>In Raten</h3><div class="preis">ab 69 €</div><div style="color:var(--leise);font-size:.95rem">pro Monat, 12 Raten</div><p>Nach der letzten Rate gehört die Software Ihnen.</p></div>
 </div>
 <p class="fussnote">Einführungspreise gültig für die ersten 20 Betriebe bzw. bis 30.06.2027. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Angebot für Unternehmer. Optional: Einrichtung vor Ort 249 €, per Fernwartung 149 €, Software-Pflege &amp; Support 19 € pro Monat.</p>
-</div>
-</section>
+<details id="mietvergleich" class="aufklapp"><summary>🧮 Kaufen statt mieten – rechnen Sie selbst</summary>
 
-<section id="mietvergleich" class="weiss">
-<div class="wrap">
-<div class="titel"><h2>Kaufen statt mieten – rechnen Sie selbst.</h2><p>Die meisten Handwerker-Programme kosten jeden Monat – und für jeden Mitarbeiter mit Handy-Zugang noch einmal extra. Beim MG Betriebsmanager zahlen Sie einmal.</p></div>
+<div class="titel"><p>Die meisten Handwerker-Programme kosten jeden Monat – und für jeden Mitarbeiter mit Handy-Zugang noch einmal extra. Beim MG Betriebsmanager zahlen Sie einmal.</p></div>
 <div class="rechner" id="mietrechner">
 <div>
 <h3>Ihr Betrieb</h3>
@@ -460,24 +420,34 @@ body{padding-bottom:70px}
 <p class="quelle" style="margin:6px 0 0">Mietsoftware: Beispielrechnung mit 60 € je Büro-Arbeitsplatz und 30 € je Mitarbeiter-Zugang pro Monat – so liegen typische Listenpreise bekannter Handwerker-Programme (Stand 11/2026), oft zuzüglich Einrichtung. MG Betriebsmanager: Komplettpaket 1.090 € (Einführungspreis), 12 Monate Support inklusive. Gemäß § 19 UStG ohne Umsatzsteuer.</p>
 </div>
 </div>
+</details>
 </div>
 </section>
 
-<section id="voraussetzungen">
+<section id="vertrauen" class="weiss">
 <div class="wrap">
-<div class="hinweisbox">
-<div class="symbol" style="margin:0;background:#fff"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+<div class="titel"><h2>Ihr Programm. Ihre Daten. Auch in zehn Jahren.</h2><p>Bei Mietsoftware hängt Ihr Büro am Abo und am Server des Anbieters. Beim MG Betriebsmanager nicht.</p></div>
+<div class="raster r3"><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Ihre Daten gehören Ihnen</h3><p>Alles liegt als normale Tabellen auf Ihrem PC – mit Excel lesbar. Kein Konto bei uns, keine Sperre, kein Datenumzug zu einem Anbieter.</p></div><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Läuft auch ohne uns</h3><p>Der Freischalt-Code wird auf Ihrem PC geprüft, ohne Verbindung zu unserem Server. Selbst wenn es uns eines Tages nicht mehr gäbe: Ihr Programm arbeitet weiter.</p></div><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M12 7v5l3 2"/></svg></div><h3>Jeden Tag gesichert</h3><p>Automatische Sicherung jeden Tag, die letzten 14 Tage bleiben liegen. Auf Wunsch zusätzlich auf USB-Stick, NAS oder OneDrive – und vor jedem Update noch einmal extra.</p></div></div>
+<div class="person" id="persoenlich" style="margin-top:36px"><div class="avatar" aria-hidden="true">MG</div>
 <div>
-<h2 style="font-size:1.6rem">Das brauchen Sie</h2>
-<div class="raster r2" style="margin-top:14px;gap:8px 32px">
+<h3 style="font-size:1.3rem;margin:0">Persönlich statt Hotline</h3>
+<p style="color:var(--leise);margin:6px 0 0">MG Commerce aus Weissach im Tal – Vorführung, Einrichtung und Hilfe von Menschen, die das Programm kennen. Telefon statt Ticket-System.</p>
+<ul class="liste"><li>Vorführung vor Ort im Raum Rems-Murr und Stuttgart</li><li>Einrichtung mit Ihren Preisen, Mitarbeitern und Handys</li><li>Updates inklusive – vor jedem Update werden Ihre Daten gesichert</li><li>PC kaputt? Neuer Freischalt-Code einmal pro Jahr kostenlos</li></ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="fragen">
+<div class="wrap" style="max-width:820px">
+<div class="titel"><h2>Häufige Fragen</h2></div>
+<details id="voraussetzungen"><summary>Was brauche ich dafür?</summary><div class="raster r2" style="margin-top:14px;gap:8px 32px">
 <ul class="liste" style="margin:0"><li>Einen Windows-PC im Büro (Windows 10 oder 11)</li><li>Internet nur für Updates – Ihre Daten bleiben auf dem PC</li><li>Einen Drucker für Angebote und Etiketten (optional)</li></ul>
 <ul class="liste" style="margin:0"><li>Handys Ihrer Mitarbeiter mit normalem Browser – keine App nötig</li><li>Für unterwegs: FRITZ!Box mit VPN oder das kostenlose NetBird</li><li><span>Rund um die Uhr erreichbar: kleiner Mini-PC (ca. 150–300 €, <a href="#minipc">nur ca. 2 € Strom im Monat</a>)</span></li></ul>
 </div>
-<p style="color:var(--leise);margin-top:14px">Unsicher, ob es bei Ihnen passt? Ein kurzer Anruf klärt das – und die Einrichtung übernehmen wir gern.</p>
-</div>
-</div>
-<div id="minipc" style="margin-top:40px">
-<div class="titel"><h2 style="font-size:1.6rem">Rund um die Uhr erreichbar – für rund 2 € Strom im Monat</h2><p>Damit Mitarbeiter auch früh um sechs, abends und am Wochenende stempeln und Rapporte schreiben können, muss das Programm durchlaufen. Dafür reicht ein lautloser Mini-PC so groß wie ein Buch, zum Beispiel mit Intel N100 oder dem Nachfolger N150.</p></div>
+</details>
+<details id="minipc"><summary>Kann das Programm rund um die Uhr laufen – und was kostet der Strom?</summary>
+<p>Damit Mitarbeiter auch früh um sechs, abends und am Wochenende stempeln und Rapporte schreiben können, muss das Programm durchlaufen. Dafür reicht ein lautloser Mini-PC so groß wie ein Buch, zum Beispiel mit Intel N100 oder dem Nachfolger N150.</p>
 <div style="overflow-x:auto"><table class="stromtab">
 <thead><tr><th>Lösung</th><th>Verbrauch</th><th>Strom im Jahr</th><th>Kosten im Jahr*</th><th>Handys erreichen das Programm</th></tr></thead>
 <tbody>
@@ -491,13 +461,7 @@ body{padding-bottom:70px}
 <li>Mit kleiner Notstromversorgung (USV, ca. 80 €) übersteht er auch kurze Stromausfälle, und die tägliche Sicherung läuft auf einen USB-Stick.</li>
 </ul>
 <p class="fussnote">* Beispielrechnung mit 0,35 € je kWh; der tatsächliche Verbrauch hängt vom Gerät ab. Einrichtung des Mini-PCs auf Wunsch durch uns – eine Anleitung liegt jedem Programm bei.</p>
-</div>
-</div>
-</section>
-
-<section id="fragen" class="weiss">
-<div class="wrap" style="max-width:820px">
-<div class="titel"><h2>Häufige Fragen</h2></div>
+</details>
 <details><summary>Brauche ich einen Server oder eine Cloud?</summary><p>Nein. Ein Windows-PC im Büro reicht. Wer rund um die Uhr erreichbar sein will, nimmt einen kleinen Mini-PC mit nur ca. 8 Watt (rund 25 € Strom im Jahr) – den richten wir Ihnen auf Wunsch ein.</p></details>
 <details><summary>Ist das kompliziert für meine Mitarbeiter?</summary><p>Auf dem Handy sehen Ihre Leute nur das, was sie brauchen: Stempeln, Tagesrapport, Urlaub, Material. Beim ersten Öffnen erklärt jede Kachel kurz, wie sie funktioniert.</p></details>
 <details><summary>Wir schicken heute alles per WhatsApp – warum wechseln?</summary><p>In WhatsApp-Gruppen gehen Fotos und Notizen schnell unter, und jemand muss sie im Büro heraussuchen und zum richtigen Auftrag legen. Im MG Betriebsmanager landen Fotos, Stunden und Material direkt beim richtigen Auftrag. Und Ihre Kundendaten und Baustellenfotos bleiben in Ihrem Betrieb statt bei einem US-Messenger.</p></details>
