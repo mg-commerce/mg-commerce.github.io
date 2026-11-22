@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<title>MG Händlermanager – Büro-Software für Online-Händler (eBay, Shopify, Etsy) | MG Commerce</title>
+<meta name="description" content="Das Büro für Ihren Online-Handel: Verkäufe aus eBay, Shopify und PayPal übernehmen, Lager und Einkauf führen, sehen was nach Gebühren und Steuern übrig bleibt. Einmal kaufen, Daten bleiben auf Ihrem PC. 28 Tage kostenlos testen.">
+<style>
+:root{--navy:#0a1f44;--blau:#0b3a8c;--gelb:#f5b324;--grund:#fbfaf7;--karte:#ffffff;--linie:#e6e2d8;--text:#1f2a3d;--leise:#5a6474;--hell:#eef3fb;--gruen:#1f7a3d;--gruenhell:#e3f2e6;--rot:#b42318}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);background:var(--grund);font-size:17px;line-height:1.6}
+a{color:var(--blau)}a:hover{color:#082a66}
+h1,h2,h3{color:var(--navy);line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.3rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.01em}
+h3{font-size:1.12rem}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:76px 0;scroll-margin-top:70px}
+.kopf{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linie)}
+.kopf .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.marke{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);text-decoration:none;font-size:1.05rem}
+.marke .icon{width:34px;height:34px;border-radius:9px;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{color:var(--text);text-decoration:none;font-size:.95rem}
+.nav a:hover{color:var(--blau)}
+.knopf{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:12px;font-weight:700;text-decoration:none;font-size:1rem}
+.knopf.gelb{background:var(--gelb);color:var(--navy)}
+.knopf.gelb:hover{background:#e9a514;color:var(--navy)}
+.knopf.rand{border:1.5px solid var(--navy);color:var(--navy);background:transparent}
+.knopf.klein{min-height:40px;padding:8px 16px;font-size:.92rem}
+@media (max-width:860px){.nav a:not(.knopf){display:none}}
+.marke,.knopf{white-space:nowrap}
+@media (max-width:420px){.marke{font-size:.95rem}.kopf .knopf.klein{padding:8px 12px;font-size:.85rem}}
+.held{padding:64px 0 60px}
+.held .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+@media (max-width:900px){.held .wrap{grid-template-columns:1fr}}
+.eyebrow{display:inline-block;background:var(--hell);color:var(--blau);font-weight:600;font-size:.9rem;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.held p.lead{font-size:1.18rem;color:var(--leise);margin:18px 0 28px;max-width:560px}
+.knoepfe{display:flex;flex-wrap:wrap;gap:12px}
+.vertrauen{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:24px;color:var(--leise);font-size:.95rem}
+.vertrauen span{display:flex;align-items:center;gap:8px}
+.haken{width:20px;height:20px;border-radius:50%;background:var(--gruenhell);display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px}
+.klein-hinweis{font-size:.85rem;color:var(--leise);margin-top:10px}
+/* Programm-Skizze (keine echte Bildschirmaufnahme) */
+.skizze{background:#f3f5f9;border:1px solid var(--linie);border-radius:18px;padding:16px;box-shadow:0 12px 40px rgba(10,31,68,.10)}
+.skizze .leiste{display:flex;gap:6px;margin-bottom:12px}.skizze .leiste i{width:10px;height:10px;border-radius:50%;background:#d5d9e1;display:block}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.kpi{background:#fff;border-radius:12px;padding:10px 12px;border:1px solid #e8ebf1}
+.kpi small{display:block;color:var(--leise);font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi b{display:block;font-size:1.15rem;color:var(--navy)}
+.kpi em{font-style:normal;font-size:.7rem;color:var(--gruen);white-space:nowrap}
+.fin{background:#fff;border-radius:12px;padding:12px 14px;border:1px solid #e8ebf1;margin-top:8px}
+.fin .k{font-weight:700;font-size:.85rem;color:var(--navy);margin-bottom:6px}
+.fin .reihe{display:grid;grid-template-columns:auto auto auto auto auto 1fr;align-items:center;gap:8px}
+.fin .z small{display:block;color:var(--leise);font-size:.7rem}.fin .z b{font-size:.98rem;color:var(--navy);white-space:nowrap}
+.fin .op{color:#9aa3b2;font-size:1.2rem}
+.fin .gewinn b{background:var(--gruenhell);color:var(--gruen);padding:1px 8px;border-radius:8px}
+.fin .steuer{justify-self:end;border-left:1px solid #e8ebf1;padding-left:12px;font-size:.72rem;color:var(--leise);min-width:128px}
+.fin .steuer div{display:flex;justify-content:space-between;gap:10px}.fin .steuer b{color:var(--navy)}
+.zeilen{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.zeile{background:#fff;border-radius:12px;padding:10px 12px;border:1px solid #e8ebf1;font-size:.75rem}
+.zeile .t{font-weight:700;color:var(--navy);font-size:.8rem;margin-bottom:4px}
+.zeile div{display:flex;justify-content:space-between;gap:8px;color:var(--leise);padding:2px 0}
+.punkt{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.skizze-hinweis{text-align:center;color:var(--leise);font-size:.8rem;margin-top:8px}
+@media (max-width:620px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.zeilen{grid-template-columns:1fr}.fin .reihe{grid-template-columns:auto auto auto auto auto}.fin .steuer{grid-column:1/-1;justify-self:stretch;border-left:0;padding-left:0;border-top:1px solid #e8ebf1;padding-top:6px}}
+.titel{max-width:700px;margin-bottom:38px}
+.titel p{color:var(--leise);margin-top:12px;font-size:1.08rem}
+.raster{display:grid;gap:20px}
+.r3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.r2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.r4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){.r3,.r2,.r4{grid-template-columns:1fr}}
+.karte{background:var(--karte);border:1px solid var(--linie);border-radius:16px;padding:24px}
+.karte p{color:var(--leise);margin-top:8px}
+.karte ul{margin:10px 0 0;padding-left:18px;color:var(--leise)}
+.symbol{width:44px;height:44px;border-radius:12px;background:var(--hell);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.hell{background:#fff;border-top:1px solid var(--linie);border-bottom:1px solid var(--linie)}
+.band{background:var(--navy);color:#fff}
+.band h2{color:#fff}.band p{color:#cdd6e6}
+.band .karte{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.band .karte h3{color:#fff}.band .karte p{color:#cdd6e6}
+.schritt{display:flex;gap:16px;align-items:flex-start}
+.nr{flex:0 0 40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.preis{display:flex;flex-direction:column}
+.preis .betrag{font-size:2.3rem;font-weight:800;color:var(--navy);margin:8px 0 2px}
+.preis .betrag small{font-size:1rem;font-weight:600;color:var(--leise)}
+.preis ul{flex:1}
+.preis.beliebt{border:2px solid var(--gelb);position:relative}
+.preis.beliebt:before{content:"Beliebt";position:absolute;top:-13px;left:20px;background:var(--gelb);color:var(--navy);font-weight:700;font-size:.8rem;padding:3px 10px;border-radius:999px}
+.zusatz{margin-top:22px;color:var(--leise);font-size:.95rem}
+.zusatz b{color:var(--text)}
+details{background:#fff;border:1px solid var(--linie);border-radius:14px;padding:16px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;color:var(--navy)}
+details p{color:var(--leise);margin-top:10px}
+.kontakt .karte{display:flex;flex-direction:column;gap:6px}
+footer{padding:34px 0 90px;text-align:center;color:var(--leise);font-size:.92rem;border-top:1px solid var(--linie)}
+.leiste-mobil{display:none}
+@media (max-width:860px){.leiste-mobil{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--linie);padding:10px 12px;gap:10px}
+.leiste-mobil a{flex:1;text-align:center;padding:12px;border-radius:12px;font-weight:700;text-decoration:none}
+.leiste-mobil .anruf{border:1.5px solid var(--navy);color:var(--navy)}.leiste-mobil .laden{background:var(--gelb);color:var(--navy)}}
+</style>
+</head>
+<body>
+
+<header class="kopf">
+<div class="wrap">
+<a class="marke" href="#start"><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b324" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg></span>MG Händlermanager</a>
+<nav class="nav" aria-label="Hauptmenü">
+<a href="#funktionen">Funktionen</a>
+<a href="#steuer">Steuer &amp; Pflichten</a>
+<a href="#preise">Preise</a>
+<a href="#fragen">Fragen</a>
+<a class="knopf gelb klein" href="#testen">Kostenlos testen</a>
+</nav>
+</div>
+</header>
+
+<main id="start">
+
+<section class="held">
+<div class="wrap">
+<div>
+<span class="eyebrow">Für Online-Händler auf eBay, Shopify, Etsy, Amazon &amp; Co.</span>
+<h1>Das Büro für Ihren Online-Handel.</h1>
+<p class="lead">Verkäufe aus eBay, Shopify und PayPal übernehmen, Lager und Einkauf führen – und endlich sehen, was nach Gebühren, Porto und Steuern wirklich übrig bleibt.</p>
+<div class="knoepfe">
+<a class="knopf gelb" href="#testen">28 Tage kostenlos testen</a>
+<a class="knopf rand" href="#funktionen">Was kann das Programm?</a>
+</div>
+<div class="vertrauen">
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Einmal kaufen, kein Pflicht-Abo</span>
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Daten bleiben auf Ihrem PC</span>
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Persönliche Hilfe aus dem Rems-Murr-Kreis</span>
+</div>
+</div>
+
+<div>
+<div class="skizze" role="img" aria-label="Skizze der Übersicht im MG Händlermanager mit Kennzahlen, Gewinn und Steuern">
+<div class="leiste"><i></i><i></i><i></i></div>
+<div class="kpis">
+<div class="kpi"><small>Umsatz Nov.</small><b>2.480 €</b><em>+13 % ggü. Okt.</em></div>
+<div class="kpi"><small>Rohertrag</small><b>1.120 €</b><em style="color:var(--leise)">45 %</em></div>
+<div class="kpi"><small>Gebühren</small><b>396 €</b><em style="color:var(--leise)">16 %</em></div>
+<div class="kpi"><small>Lagerwert</small><b>3.150 €</b><em style="color:var(--rot)">2 bestellen</em></div>
+</div>
+<div class="fin">
+<div class="k">Was bleibt übrig?</div>
+<div class="reihe">
+<div class="z"><small>Einnahmen</small><b>14.230 €</b></div><span class="op">−</span>
+<div class="z"><small>Ausgaben</small><b>9.870 €</b></div><span class="op">=</span>
+<div class="z gewinn"><small>Gewinn</small><b>4.360 €</b></div>
+<div class="steuer"><div><span>USt § 13b</span><b>68 €</b></div><div><span>Rücklage ESt</span><b>1.073 €</b></div><div><span>Bleibt</span><b style="color:var(--gruen)">3.219 €</b></div></div>
+</div>
+</div>
+<div class="zeilen">
+<div class="zeile"><div class="t">Umsatz je Plattform</div>
+<div><span><span class="punkt" style="background:#0b3a8c"></span>eBay</span><span>39 %</span></div>
+<div><span><span class="punkt" style="background:#2e7d32"></span>Shopify</span><span>34 %</span></div>
+<div><span><span class="punkt" style="background:#e0822a"></span>Etsy</span><span>27 %</span></div></div>
+<div class="zeile"><div class="t">Zu erledigen</div>
+<div><span>USt-Voranmeldung § 13b</span><span>10.01.</span></div>
+<div><span>Lenkerband nachbestellen</span><span>8 Stk.</span></div>
+<div><span>Verpackung: Planmengen</span><span>15.12.</span></div></div>
+</div>
+</div>
+<p class="skizze-hinweis">Vereinfachte Darstellung mit Beispielzahlen</p>
+</div>
+</div>
+</section>
+
+<section class="hell" id="funktionen">
+<div class="wrap">
+<div class="titel">
+<h2>Alles, was neben dem Verkaufen anfällt – an einem Ort.</h2>
+<p>Statt Excel-Listen, Ordnern und fünf Browser-Tabs: ein Programm, das Ihre Zahlen zusammenführt und Sie an das Wichtige erinnert.</p>
+</div>
+<div class="raster r3">
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></div>
+<h3>Verkäufe importieren statt abtippen</h3>
+<p>Berichte von eBay, Shopify, PayPal und Shopify Payments hochladen – Verkäufe, Provisionen, Werbung, Porto und Erstattungen landen automatisch an der richtigen Stelle. Doppelte Buchungen sind ausgeschlossen.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+<h3>Sehen, was wirklich übrig bleibt</h3>
+<p>Einnahmen minus Ausgaben, dazu Gebühren &amp; Porto je Plattform, Rohertrag, Marge je Kanal und eine Schätzung der Steuern. Der Preisrechner sagt, welchen Preis Sie für Ihre Wunschmarge brauchen.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg></div>
+<h3>Lager &amp; Einkauf mit Produktfotos</h3>
+<p>Bestand mit Ampel und Foto, Einkäufe mit Versand, Zoll und Einfuhr-USt – daraus der echte Stückpreis. Verkäufe buchen den Bestand automatisch ab.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
+<h3>Rechnungen aus dem Verkauf</h3>
+<p>Verkauf auswählen – Kunde, Bestellnummer und Betrag sind schon eingetragen. Mit Ihrem Logo, als Kleinunternehmer oder mit Umsatzsteuer. Retouren und Gutschriften gleich mit.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+<h3>Monatsabschluss für den Steuerberater</h3>
+<p>Ein Klick: Monatsbericht, Buchungslisten, Belege und – wenn Ihr Steuerberater DATEV nutzt – der Buchungsstapel als fertiges Paket. Mit GoBD-Protokoll und Verfahrensdokumentation.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg></div>
+<h3>Erinnert an Fristen und Aufgaben</h3>
+<p>Nachbestellen, Umsatzsteuer-Voranmeldung, Meldungen ans Verpackungsregister – und Ihre eigene To-do-Liste. Alles auf der Startseite unter „Zu erledigen“.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band" id="steuer">
+<div class="wrap">
+<div class="titel">
+<h2>Die Stolperfallen, die kaum jemand erklärt.</h2>
+<p>Viele kleine Händler erfahren erst vom Steuerberater oder vom Abmahnanwalt, was sie hätten tun müssen. Der Händlermanager erkennt die typischen Fälle und erklärt sie in einfachen Worten.</p>
+</div>
+<div class="raster r3">
+<div class="karte"><h3>Rechnungen aus dem Ausland</h3>
+<p>Meta, Google, Shopify, Etsy, eBay: Diese Rechnungen kommen ohne deutsche Umsatzsteuer – die 19 % müssen Sie selbst ans Finanzamt melden, auch als Kleinunternehmer. Das Programm liest Ihre Rechnungs-PDFs, erkennt den Fall, erinnert an die Voranmeldung und zeigt, welche Zahl in welches ELSTER-Feld gehört.</p></div>
+<div class="karte"><h3>Verpackung, Elektro, Batterien</h3>
+<p>Der Pflichten-Check fragt ein paar einfache Dinge und zeigt nur, was für Sie gilt: Verpackungsregister LUCID und duales System, Stiftung EAR für Elektrogeräte und Batterien – mit Ampel, Fristen und den Mengen aus Ihren Verkäufen.</p></div>
+<div class="karte"><h3>Produktsicherheit (GPSR)</h3>
+<p>Herstellerangaben, Warnhinweise und Etiketten je Artikel an einem Ort – und auf einen Blick, welche Artikel auf welchem Marktplatz noch nicht vollständig sind.</p></div>
+</div>
+<p style="margin-top:22px;font-size:.9rem">Die Hinweise im Programm sind Orientierungshilfen und ersetzen keine Steuer- oder Rechtsberatung.</p>
+</div>
+</section>
+
+<section id="daten">
+<div class="wrap">
+<div class="raster r2" style="align-items:center">
+<div>
+<h2>Ihre Daten bleiben bei Ihnen.</h2>
+<p style="color:var(--leise);margin-top:14px;font-size:1.08rem">Der Händlermanager läuft auf Ihrem Windows-PC. Ihre Verkäufe, Kunden und Belege liegen in Ihrem eigenen Ordner – als Excel-Tabellen und PDFs, die Sie jederzeit selbst öffnen können. Keine Cloud, kein Konto bei uns.</p>
+</div>
+<div class="raster" style="gap:12px">
+<div class="karte"><h3>Tägliche Sicherung</h3><p>Automatisch als ZIP – auf Wunsch zusätzlich auf USB-Stick, NAS oder OneDrive.</p></div>
+<div class="karte"><h3>Nichts geht verloren</h3><p>Auch beim Deinstallieren werden Ihre Daten nie gelöscht, sondern gesichert.</p></div>
+<div class="karte"><h3>Hilfe mit Datenschutz-Vertrag</h3><p>Wenn wir per Fernwartung helfen, gibt es vorher einen Vertrag zur Auftragsverarbeitung (AVV) – direkt im Programm.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hell" id="preise">
+<div class="wrap">
+<div class="titel">
+<h2>Einmal kaufen. Dauerhaft nutzen.</h2>
+<p>Kein Pflicht-Abo, keine Kosten pro Verkauf. 12 Monate alle Neuerungen und persönliche Hilfe inklusive.</p>
+</div>
+<div class="raster r2">
+<div class="karte preis">
+<h3>Grundpaket</h3>
+<div class="betrag">349 € <small>einmalig</small></div>
+<p>Alles für den täglichen Handel:</p>
+<ul>
+<li>Import von eBay, Shopify, PayPal, Shopify Payments</li>
+<li>Vertrieb, Preisrechner, Retouren</li>
+<li>Einkauf, Lager mit Fotos, Rechnungen</li>
+<li>Finanzen, Buchhaltung, Auslandsrechnungen (§ 13b)</li>
+<li>Projekte und Aufgaben</li>
+</ul>
+<a class="knopf rand" style="margin-top:18px" href="#testen">Kostenlos testen</a>
+</div>
+<div class="karte preis beliebt">
+<h3>Komplett</h3>
+<div class="betrag">449 € <small>einmalig</small></div>
+<p>Grundpaket plus beide Zusatzbausteine:</p>
+<ul>
+<li><b>Compliance:</b> Pflichten-Check (Verpackung, Elektro, Batterien), GPSR, Etiketten</li>
+<li><b>Steuer &amp; Abschluss:</b> Monatspaket, DATEV-Export, GoBD-Protokoll, Verfahrensdokumentation</li>
+</ul>
+<a class="knopf gelb" style="margin-top:18px" href="#testen">Kostenlos testen</a>
+</div>
+</div>
+<div class="zusatz">
+<p><b>Einzelne Bausteine</b> zum Grundpaket: Compliance oder Steuer &amp; Abschluss je 79 € · <b>Zweiter Arbeitsplatz</b> 99 € · <b>Software-Pflege</b> ab dem 2. Jahr 99 € im Jahr oder 9 € im Monat (alle neuen Funktionen und persönliche Hilfe). Ohne Pflege läuft das Programm unbegrenzt weiter; Sicherheits- und Gesetzes-Updates gibt es weiterhin.</p>
+<p style="margin-top:8px">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Angebot für Unternehmer.</p>
+</div>
+</div>
+</section>
+
+<section id="testen">
+<div class="wrap">
+<div class="titel">
+<h2>In drei Schritten startklar.</h2>
+<p>Die Testversion ist 28 Tage lang voll freigeschaltet – mit einem Beispielshop zum Ausprobieren, ohne Ihre echten Daten anzufassen.</p>
+</div>
+<div class="raster r3">
+<div class="schritt"><span class="nr">1</span><div><h3>Herunterladen &amp; installieren</h3><p style="color:var(--leise);margin-top:6px">Setup starten, ohne Administratorrechte. Beim ersten Mal lädt es einige Programmbausteine (wenige Minuten).</p></div></div>
+<div class="schritt"><span class="nr">2</span><div><h3>Einrichten</h3><p style="color:var(--leise);margin-top:6px">Ein Assistent fragt Firma, Umsatzsteuer-Status und Verkaufskanäle ab. Dann ersten Bericht importieren – fertig.</p></div></div>
+<div class="schritt"><span class="nr">3</span><div><h3>Freischalten</h3><p style="color:var(--leise);margin-top:6px">Gefällt es Ihnen, schicken Sie uns die Hardware-ID aus dem Programm und erhalten Ihren Freischalt-Code.</p></div></div>
+</div>
+<div class="karte" style="margin-top:30px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
+<div>
+<h3>MG Händlermanager – Testversion</h3>
+<p>Für Windows 10 und 11 · Internetverbindung bei der Installation nötig</p>
+</div>
+<a class="knopf gelb" href="https://github.com/mg-commerce/mg-haendler-updates/releases/latest/download/MG_Haendlermanager_Setup.exe">Setup herunterladen</a>
+</div>
+<p class="klein-hinweis">Windows zeigt beim ersten Start eventuell „Der Computer wurde durch Windows geschützt“. Das ist bei neuen Programmen kleiner Anbieter normal: auf „Weitere Informationen“ und dann „Trotzdem ausführen“ klicken. Im Zweifel einfach anrufen.</p>
+</div>
+</section>
+
+<section class="hell" id="fragen">
+<div class="wrap">
+<div class="titel"><h2>Häufige Fragen</h2></div>
+<details><summary>Für wen ist der Händlermanager gedacht?</summary><p>Für kleine Online-Händler und Nebengewerbe, die über eBay, Shopify, Etsy, Amazon, Kaufland oder den eigenen Shop verkaufen – als Kleinunternehmer oder mit Umsatzsteuer. Das Programm ersetzt Excel-Listen und Zettelwirtschaft, nicht den Steuerberater.</p></details>
+<details><summary>Brauche ich einen Mac oder läuft es im Browser?</summary><p>Der Händlermanager ist ein Windows-Programm (Windows 10 oder 11). Die Bedienung sieht aus wie eine Webseite, läuft aber vollständig auf Ihrem PC.</p></details>
+<details><summary>Was passiert nach den 28 Tagen Test?</summary><p>Ihre Daten bleiben vollständig erhalten: Sie liegen als Excel-Tabellen und PDFs in Ihrem Ordner, und die Datensicherung im Programm bleibt erreichbar. Mit dem Freischalt-Code geht es nahtlos weiter – alles, was Sie im Test eingetragen haben, ist sofort wieder da.</p></details>
+<details><summary>Muss ich jedes Jahr zahlen?</summary><p>Nein. Sie kaufen einmal. Die ersten 12 Monate sind alle Neuerungen und persönliche Hilfe inklusive. Danach können Sie die Software-Pflege verlängern – müssen aber nicht. Das Programm läuft unbegrenzt weiter.</p></details>
+<details><summary>Kann ich meine bisherigen Daten übernehmen?</summary><p>Ja. Verkäufe übernehmen Sie über die Berichte von eBay, Shopify und PayPal. Bestehende Excel-Tabellen für Einnahmen und Ausgaben lassen sich hochladen. Bei Fragen helfen wir gern.</p></details>
+<details><summary>Ist das eine Steuerberatung?</summary><p>Nein. Das Programm bereitet Ihre Zahlen auf und erklärt typische Pflichten verständlich. Verbindliche Auskünfte gibt Ihr Steuerberater bzw. Ihr Finanzamt.</p></details>
+</div>
+</section>
+
+<section id="kontakt" class="kontakt">
+<div class="wrap">
+<div class="titel"><h2>Fragen? Einfach anrufen.</h2><p>Persönliche Hilfe statt Hotline-Warteschleife.</p></div>
+<div class="raster r3">
+<div class="karte"><h3>Telefon &amp; WhatsApp</h3><a href="tel:+491795498071">0179 5498071</a></div>
+<div class="karte"><h3>E-Mail</h3><a href="mailto:info@helmfuchs.de">info@helmfuchs.de</a></div>
+<div class="karte"><h3>Auch für Handwerker</h3><p style="margin-top:0">Von MG Commerce gibt es außerdem den <a href="../">MG Betriebsmanager</a> für Handwerksbetriebe.</p></div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>MG Commerce · Inh. Manuela Geisler · Weissach im Tal · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></footer>
+<nav class="leiste-mobil" aria-label="Schnellkontakt"><a class="anruf" href="tel:+491795498071">Anrufen</a><a class="laden" href="#testen">Testen</a></nav>
+</body>
+</html>
