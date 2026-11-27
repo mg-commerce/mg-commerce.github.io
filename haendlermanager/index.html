@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../bilder/marke/mg-symbol.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<title>MG Händlermanager – Buchhaltung, Lager und Gewinn für Online-Händler · demnächst | MG Commerce</title>
+<meta name="description" content="Demnächst: der MG Händlermanager – Verkäufe aus eBay, Shopify und PayPal übernehmen, Lager und Einkauf führen, Gewinn nach Gebühren und Steuern sehen. Einmal kaufen, Daten auf Ihrem PC. MG Commerce: der MG Betriebsmanager für Handwerk und Service und der MG Händlermanager für den Online-Handel. Einmal kaufen, kein Pflicht-Abo, Ihre Daten bleiben bei Ihnen. Persönliche Hilfe aus der Region.">
+<meta name="theme-color" content="#FF6C00">
+<style>
+:root{--orange:#FF6C00;--knopf:#EA5F00;--knopf-hover:#D95400;--orange-text:#C2410C;--zart:#FFF1E6;--anthrazit:#202124;--text:#202124;--leise:#5f6368;--linie:#e7e7ea;--grau:#f5f5f7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);background:#fff;font-size:17px;line-height:1.6}
+a{color:var(--orange-text)}
+h1,h2,h3{color:var(--anthrazit);line-height:1.12;margin:0;letter-spacing:-.015em}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{scroll-margin-top:72px}
+/* Kopf */
+.kopf{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--linie)}
+.kopf .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.kopf .marke img{display:block;height:30px;width:auto}
+.nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+.nav>a,.nav summary{color:var(--text);text-decoration:none;font-size:.97rem;font-weight:500;cursor:pointer}
+.nav>a:hover,.nav summary:hover{color:var(--orange-text)}
+.loesungen{position:relative}
+.loesungen summary{list-style:none;display:flex;align-items:center;gap:4px}
+.loesungen summary::-webkit-details-marker{display:none}
+.loesungen summary::after{content:"";width:7px;height:7px;border-right:1.8px solid currentColor;border-bottom:1.8px solid currentColor;transform:rotate(45deg) translateY(-3px);margin-left:4px}
+.loesungen .menue{position:absolute;top:36px;left:-16px;background:#fff;border:1px solid var(--linie);border-radius:14px;box-shadow:0 18px 40px rgba(32,33,36,.12);padding:8px;min-width:300px}
+.loesungen .menue a{display:block;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text)}
+.loesungen .menue a:hover{background:var(--grau)}
+.loesungen .menue b{display:block}.loesungen .menue small{color:var(--leise)}
+.knopf{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 24px;border-radius:10px;font-weight:700;font-size:1.1rem;text-decoration:none;border:0;cursor:pointer}
+.knopf.voll{background:var(--knopf);color:#fff}.knopf.voll:hover{background:var(--knopf-hover);color:#fff}
+.knopf.rand{border:1.5px solid var(--anthrazit);color:var(--anthrazit);background:#fff}.knopf.rand:hover{background:var(--grau)}
+.knopf.klein{min-height:44px;padding:9px 18px}
+.menuknopf{display:none;margin-left:auto;background:none;border:1px solid var(--linie);border-radius:10px;width:44px;height:42px;align-items:center;justify-content:center;cursor:pointer;color:var(--anthrazit)}
+/* Held */
+.held{position:relative;overflow:hidden;padding:64px 0 72px;background:linear-gradient(180deg,#fff 0%,#fff8f2 100%)}
+.held::before{content:"";position:absolute;right:-180px;top:-120px;width:760px;height:760px;background:linear-gradient(135deg,rgba(255,108,0,.16),rgba(255,108,0,0) 60%);transform:rotate(18deg);border-radius:80px}
+.held .wrap{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.held h1{font-size:clamp(2.3rem,4.6vw,3.6rem);font-weight:800}
+.held h1 em{font-style:normal;color:var(--orange)}
+.held .lead{font-size:1.2rem;color:#3c4043;margin:22px 0 30px;max-width:540px}
+.knoepfe{display:flex;flex-wrap:wrap;gap:14px}
+/* Geräte */
+.geraete{position:relative;padding:0 70px 40px 0}
+.monitor{background:#1b1c1f;border-radius:16px;padding:12px 12px 16px;box-shadow:0 30px 60px rgba(32,33,36,.22)}
+.monitor img{display:block;width:100%;height:auto;border-radius:6px}
+.monitor::after{content:"";display:block;margin:12px auto -40px;width:30%;height:40px;background:linear-gradient(#2a2b2f,#1b1c1f);clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)}
+.telefon{position:absolute;right:0;bottom:0;width:28%;min-width:120px;background:#1b1c1f;border-radius:26px;padding:7px;box-shadow:0 24px 50px rgba(32,33,36,.30)}
+.telefon img{display:block;width:100%;height:auto;border-radius:20px}
+.geraete small{position:absolute;left:0;bottom:-6px;font-size:.8rem;color:var(--leise)}
+/* Produkte */
+.produkte{padding:56px 0 24px}
+.produkte .wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.produkt{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center;background:#fff;border:1px solid var(--linie);border-radius:22px;padding:30px;box-shadow:0 10px 30px rgba(32,33,36,.06);text-decoration:none;color:var(--text);transition:box-shadow .2s,transform .2s}
+.produkt:hover{box-shadow:0 18px 40px rgba(32,33,36,.12);transform:translateY(-2px)}
+.etikett{display:inline-block;background:var(--orange);color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:6px}
+.produkt h2{font-size:1.65rem;white-space:nowrap;margin:14px 0 10px}
+.produkt p{color:#3c4043;font-size:1rem}
+.mehr{white-space:nowrap;display:inline-flex;gap:8px;align-items:center;margin-top:20px;font-weight:700;color:var(--orange-text);border-bottom:2px solid var(--orange);padding-bottom:3px}
+.bald{position:absolute;top:18px;right:18px;background:var(--anthrazit);color:#fff;font-size:.78rem;font-weight:700;padding:5px 11px;border-radius:999px}
+.laptop{background:#1b1c1f;border-radius:12px 12px 4px 4px;padding:8px 8px 10px;position:relative}
+.laptop img,.laptop svg{display:block;width:100%;height:auto;border-radius:4px}
+.laptop::after{content:"";position:absolute;left:-9%;right:-9%;bottom:-12px;height:12px;background:linear-gradient(#cfd0d4,#a9abb0);border-radius:0 0 12px 12px}
+/* Vorteile */
+.vorteile{padding:22px 0 10px}
+.vorteile .leiste{display:grid;grid-template-columns:repeat(4,1fr);background:var(--grau);border-radius:16px;padding:20px 10px}
+.vorteile .leiste div{display:flex;align-items:center;justify-content:center;gap:14px;font-weight:500;padding:4px 14px}
+.vorteile .leiste div+div{border-left:1.5px solid rgba(255,108,0,.45)}
+.ic{flex:none;width:34px;height:34px;color:var(--orange)}
+/* Anspruch */
+.anspruch{padding:64px 0}
+.zierlinie{display:flex;align-items:center;gap:28px;margin-bottom:40px}
+.zierlinie::before,.zierlinie::after{content:"";flex:1;height:1.5px;background:var(--orange);opacity:.6}
+.zierlinie h2{font-size:clamp(1.8rem,3.4vw,2.4rem);text-align:center}
+.drei{display:grid;grid-template-columns:repeat(3,1fr)}
+.drei>div{display:flex;gap:20px;padding:6px 30px}
+.drei>div+div{border-left:1px solid var(--linie)}
+.drei .ic{width:58px;height:58px}
+.drei h3{font-size:1.15rem;margin-bottom:6px}.drei p{color:var(--leise);font-size:.98rem}
+/* Über uns */
+.ueber{background:var(--grau);padding:72px 0}
+.ueber .wrap{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.siegel{width:150px;height:150px;border-radius:36px;background:var(--orange);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(255,108,0,.25)}
+.siegel img{width:100%;height:100%}
+.ueber h2{font-size:clamp(1.7rem,3vw,2.2rem)}
+.ueber p{color:#3c4043;margin-top:14px;max-width:720px}
+.haken{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px 28px}
+.haken li{display:flex;gap:10px}.haken li::before{content:"✓";color:var(--orange);font-weight:800}
+/* Kontakt */
+.kontakt{background:var(--anthrazit);color:#fff;padding:72px 0}
+.kontakt .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.kontakt h2{color:#fff;font-size:clamp(1.7rem,3vw,2.3rem)}
+.kontakt p{color:#d6d6db;margin-top:14px;font-size:1.08rem}
+.karte{background:#fff;color:var(--text);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:6px}
+.karte a.zeile{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--anthrazit);font-weight:600;padding:10px 0;border-bottom:1px solid var(--linie)}
+.karte a.zeile:last-of-type{border:0}
+.karte a.zeile small{display:block;font-weight:400;color:var(--leise);font-size:.85rem}
+.karte .ic{width:26px;height:26px}
+footer{padding:30px 0;font-size:.9rem;color:var(--leise)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;justify-content:space-between}
+footer img{height:22px;display:block}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}footer a{color:var(--leise)}
+/* Handy */
+@media (max-width:1100px){.produkte .wrap{grid-template-columns:1fr}}
+@media (max-width:960px){
+.held .wrap,.produkte .wrap,.kontakt .wrap{grid-template-columns:1fr}
+.geraete{padding-right:50px;margin-top:10px}
+.produkt{grid-template-columns:1fr}
+.vorteile .leiste{grid-template-columns:1fr 1fr;gap:14px 0}
+.vorteile .leiste div:nth-child(3){border-left:0}
+.drei{grid-template-columns:1fr;gap:26px}.drei>div+div{border-left:0}
+.ueber .wrap{grid-template-columns:1fr}.siegel{width:110px;height:110px;border-radius:26px}
+.haken{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+.menuknopf{display:inline-flex}
+.nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--linie);box-shadow:0 18px 30px rgba(32,33,36,.12);padding:6px 0;margin:0}
+.kopf.offen .nav{display:flex}
+.nav>a,.nav summary{padding:14px 22px;border-top:1px solid var(--linie);font-size:1.05rem}
+.loesungen .menue{position:static;box-shadow:none;border:0;padding:0 12px 8px}
+.nav .knopf{margin:12px 22px}
+.kopf .wrap{position:relative}
+.held{padding:36px 0 48px}
+.vorteile .leiste{grid-template-columns:1fr;padding:12px}
+.vorteile .leiste div{justify-content:flex-start;border-left:0!important}
+.zierlinie{gap:14px}
+}
+.liste{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.liste .k{background:#fff;border:1px solid var(--linie);border-radius:18px;padding:24px}
+.liste .k h3{font-size:1.1rem;margin:12px 0 6px}.liste .k p{color:var(--leise);font-size:.98rem}
+.liste .ic{width:40px;height:40px}
+.vormerk{background:var(--zart);border-radius:22px;padding:34px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.vormerk form{display:flex;flex-direction:column;gap:10px}
+.vormerk label{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:.92rem}
+.vormerk input,.vormerk select{font:inherit;font-weight:400;padding:11px 12px;border:1.5px solid #e2d6cc;border-radius:10px;background:#fff}
+.vormerk input:focus,.vormerk select:focus{outline:none;border-color:var(--knopf)}
+.vormerk small{color:var(--leise)}
+@media (max-width:960px){.liste,.vormerk{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="kopf">
+<div class="wrap">
+<a class="marke" href="../" aria-label="MG Commerce – Startseite"><img src="../bilder/marke/mg-commerce-logo.svg" alt="MG Commerce" width="203" height="30"></a>
+<nav class="nav" id="hauptmenue" aria-label="Hauptmenü">
+<details class="loesungen"><summary>Lösungen</summary>
+<div class="menue">
+<a href="../betriebsmanager/"><b>MG Betriebsmanager</b><small>Für Handwerk &amp; Service</small></a>
+<a href="../haendlermanager/"><b>MG Händlermanager</b><small>Für Online-Händler · demnächst</small></a>
+</div></details>
+<a href="../#ueber-uns">Über uns</a>
+<a href="#vormerken">Kontakt</a>
+<a class="knopf voll klein" href="#vormerken"><svg class="ic" style="width:20px;height:20px;color:#fff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Vormerken</a>
+</nav>
+<button class="menuknopf" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptmenue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div>
+</header>
+
+<main>
+<section class="held" id="start">
+<div class="wrap">
+<div>
+<span class="etikett">Für Online-Händler · demnächst</span>
+<h1 style="margin-top:16px">MG Händlermanager</h1>
+<p class="lead">Das Büro für Ihren Online-Handel: Verkäufe aus eBay, Shopify und PayPal übernehmen, Einkauf und Lager führen, sehen, was nach Gebühren und Steuern wirklich übrig bleibt – und den Monat für den Steuerberater abschließen. Alle Daten bleiben auf Ihrem PC.</p>
+<div class="knoepfe"><a class="knopf voll" href="#vormerken">Jetzt vormerken</a><a class="knopf rand" href="#funktionen">Was er kann</a></div>
+</div>
+<div class="laptop" aria-hidden="true" style="margin:0 40px 20px"><svg viewBox="0 0 320 200"><rect width="320" height="200" fill="#fff"/><rect x="0" y="0" width="320" height="22" fill="#f5f5f7"/><circle cx="12" cy="11" r="4" fill="#FF6C00"/><rect x="22" y="8" width="60" height="6" rx="3" fill="#d6d6db"/>
+<rect x="14" y="34" width="80" height="44" rx="6" fill="#f5f5f7"/><rect x="22" y="44" width="40" height="5" rx="2.5" fill="#b8b8be"/><rect x="22" y="56" width="54" height="10" rx="3" fill="#202124"/>
+<rect x="14" y="88" width="80" height="44" rx="6" fill="#f5f5f7"/><rect x="22" y="98" width="40" height="5" rx="2.5" fill="#b8b8be"/><rect x="22" y="110" width="48" height="10" rx="3" fill="#202124"/>
+<rect x="14" y="142" width="80" height="44" rx="6" fill="#f5f5f7"/><rect x="22" y="152" width="40" height="5" rx="2.5" fill="#b8b8be"/><rect x="22" y="164" width="58" height="10" rx="3" fill="#202124"/>
+<g fill="#FF6C00"><rect x="116" y="140" width="22" height="46" rx="3" opacity=".55"/><rect x="146" y="120" width="22" height="66" rx="3" opacity=".65"/><rect x="176" y="128" width="22" height="58" rx="3" opacity=".75"/><rect x="206" y="96" width="22" height="90" rx="3" opacity=".85"/><rect x="236" y="78" width="22" height="108" rx="3"/><rect x="266" y="56" width="22" height="130" rx="3"/></g>
+<rect x="116" y="34" width="190" height="8" rx="4" fill="#d6d6db"/><rect x="116" y="48" width="120" height="6" rx="3" fill="#e7e7ea"/></svg></div>
+</div>
+</section>
+<section id="funktionen" style="padding:64px 0">
+<div class="wrap">
+<div class="zierlinie"><h2>Was der Händlermanager kann</h2></div>
+<div class="liste"><div class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></svg><h3>Verkäufe übernehmen</h3><p>Berichte aus eBay, Shopify und PayPal hochladen – Verkäufe, Gebühren, Porto und Erstattungen werden übernommen, doppelte Buchungen ausgeschlossen.</p></div><div class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg><h3>Einkauf &amp; Lager</h3><p>Lieferanten, Bestellungen, Bestand mit Produktfotos und Hinweis zum Nachbestellen.</p></div><div class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><rect x="5" y="13" width="3" height="5"/><rect x="10.5" y="10" width="3" height="8"/><rect x="16" y="7" width="3" height="11"/></svg><h3>Was bleibt übrig?</h3><p>Einnahmen minus Ausgaben wie in der EÜR, dazu Umsatzsteuer und Rücklage für die Einkommensteuer – nach allen Gebühren.</p></div><div class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg><h3>Rechnungen, Versand, Retouren</h3><p>Rechnungen schreiben, Versand und Rücksendungen sauber festhalten.</p></div><div class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg><h3>Auslandsrechnungen</h3><p>Rechnungen von Meta, Google &amp; Co. ohne deutsche Umsatzsteuer werden erkannt – Reverse-Charge richtig gebucht.</p></div><div class="k"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6z"/></svg><h3>Monatsabschluss</h3><p>Pflichten-Check, Fristen und der Export für den Steuerberater (DATEV) – alles bleibt auf Ihrem PC.</p></div></div>
+</div>
+</section>
+<section id="vormerken" style="padding:0 0 72px">
+<div class="wrap"><div class="vormerk">
+<div>
+<h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Als Erste(r) Bescheid bekommen</h2>
+<p style="margin-top:12px;color:#3c4043">Der MG Händlermanager ist in der Testphase. Tragen Sie sich ein – wir melden uns, sobald Sie ihn testen können, und auf Wunsch zeigen wir ihn Ihnen vorab. Einmal kaufen, kein Pflicht-Abo, wie beim MG Betriebsmanager.</p>
+</div>
+<form id="vormerkform" novalidate>
+<label>Name<input name="name" autocomplete="name"></label>
+<label>Shop oder Firma<input name="shop" autocomplete="organization"></label>
+<label>Wo verkaufen Sie?<select name="kanal"><option>eBay</option><option>Shopify</option><option>eBay und Shopify</option><option>Anderer Shop / Marktplatz</option></select></label>
+<button class="knopf voll" type="submit">Vormerken per E-Mail</button>
+<small>Ihr E-Mail-Programm öffnet sich mit der fertigen Nachricht an info@mgcommerce-online.de – Sie müssen nur noch auf „Senden“ tippen. <a href="../datenschutz.html">Datenschutz</a></small>
+</form>
+</div></div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<img src="../bilder/marke/mg-commerce-logo.svg" alt="MG Commerce" width="150" height="22">
+<nav aria-label="Fußzeile"><a href="../betriebsmanager/">MG Betriebsmanager</a><a href="../haendlermanager/">MG Händlermanager</a><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a></nav>
+</div>
+</footer>
+
+<script>
+(function(){var k=document.querySelector('.kopf'),b=document.querySelector('.menuknopf');
+b.addEventListener('click',function(){var o=k.classList.toggle('offen');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});
+document.querySelectorAll('#hauptmenue a').forEach(function(a){a.addEventListener('click',function(){k.classList.remove('offen');});});
+var d=document.querySelector('.loesungen');document.addEventListener('click',function(e){if(d.open&&!d.contains(e.target))d.open=false;});
+})();
+</script>
+<script>
+(function(){var f=document.getElementById('vormerkform');f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
+function v(n){return String(d.get(n)||'').trim()||'–'}
+var t='Guten Tag,\n\nbitte merken Sie mich für den MG Händlermanager vor.\n\nName: '+v('name')+'\nShop/Firma: '+v('shop')+'\nVerkauf über: '+v('kanal')+'\n';
+location.href='mailto:info@mgcommerce-online.de?subject='+encodeURIComponent('Vormerken MG Händlermanager – '+v('shop'))+'&body='+encodeURIComponent(t);});})();
+</script>
+</body>
+</html>
