@@ -207,6 +207,18 @@ body{padding-bottom:70px}
 details.aufklapp{margin-top:28px;background:#fff;border:1px solid var(--linie);border-radius:14px;padding:4px 20px}
 details.aufklapp>summary{cursor:pointer;font-weight:700;font-size:1.1rem;padding:14px 0;color:var(--blau,#EA5F00)}
 details.aufklapp[open]{padding-bottom:20px}
+/* Rückmeldung beim Antippen (Apple-Stil): sofort beim Drücken, nicht erst beim Loslassen */
+.knopf,.produkt,a.zeile,.leiste a,.nav a,.menue a,summary{-webkit-tap-highlight-color:transparent}
+.knopf{transition:transform 100ms ease-out,background-color 120ms ease-out,box-shadow 120ms ease-out}
+.knopf:active{transform:scale(.97)}
+a.zeile,.leiste a,.menue a{transition:opacity 100ms ease-out}
+a.zeile:active,.leiste a:active,.menue a:active{opacity:.65}
+.galerie a:active img,.bild a:active img{transform:scale(.99)}
+:focus-visible{outline:3px solid rgba(255,108,0,.55);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+.knopf,.produkt,a.zeile,.leiste a,.menue a{transition:none!important}
+.knopf:active,.produkt:active,.produkt:hover{transform:none!important}}
+h1{letter-spacing:-.02em}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MG Betriebsmanager","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","description":"Handwerkersoftware für Maler, Dach & Wand, Hausmeister und Entrümpelung: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy, Lager mit QR-Etiketten.","offers":{"@type":"Offer","price":"790","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"MG Commerce","address":{"@type":"PostalAddress","streetAddress":"Im Flieder 4","postalCode":"71554","addressLocality":"Weissach im Tal","addressCountry":"DE"},"telephone":"+49 179 5498071"}}</script>
 </head>

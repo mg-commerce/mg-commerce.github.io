@@ -106,6 +106,18 @@ footer{padding:34px 0 90px;text-align:center;color:var(--leise);font-size:.92rem
 @media (max-width:860px){.leiste-mobil{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--linie);padding:10px 12px;gap:10px}
 .leiste-mobil a{flex:1;text-align:center;padding:12px;border-radius:12px;font-weight:700;text-decoration:none}
 .leiste-mobil .anruf{border:1.5px solid var(--navy);color:var(--navy)}.leiste-mobil .laden{background:var(--gelb);color:var(--navy)}}
+/* Rückmeldung beim Antippen (Apple-Stil): sofort beim Drücken, nicht erst beim Loslassen */
+.knopf,.produkt,a.zeile,.leiste a,.nav a,.menue a,summary{-webkit-tap-highlight-color:transparent}
+.knopf{transition:transform 100ms ease-out,background-color 120ms ease-out,box-shadow 120ms ease-out}
+.knopf:active{transform:scale(.97)}
+a.zeile,.leiste a,.menue a{transition:opacity 100ms ease-out}
+a.zeile:active,.leiste a:active,.menue a:active{opacity:.65}
+.galerie a:active img,.bild a:active img{transform:scale(.99)}
+:focus-visible{outline:3px solid rgba(255,108,0,.55);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+.knopf,.produkt,a.zeile,.leiste a,.menue a{transition:none!important}
+.knopf:active,.produkt:active,.produkt:hover{transform:none!important}}
+h1{letter-spacing:-.02em}
 </style>
 </head>
 <body>
