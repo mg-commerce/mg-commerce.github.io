@@ -349,7 +349,7 @@ h1{letter-spacing:-.02em}
 <div class="titel"><h2>Fragen? Einfach anrufen.</h2><p>Persönliche Hilfe statt Hotline-Warteschleife.</p></div>
 <div class="raster r3">
 <div class="karte"><h3>Telefon &amp; WhatsApp</h3><a href="tel:+491795498071">0179 5498071</a></div>
-<div class="karte"><h3>E-Mail</h3><a href="mailto:info@mgcommerce-online.de">info@mgcommerce-online.de</a></div>
+<div class="karte"><h3>E-Mail</h3><a href="#kontakt" data-mail="info"><span data-adr="info">info [at] mgcommerce-online.de</span></a></div>
 <div class="karte"><h3>Auch für Handwerker</h3><p style="margin-top:0">Von MG Commerce gibt es außerdem den <a href="../betriebsmanager/">MG Betriebsmanager</a> für Handwerksbetriebe.</p></div>
 </div>
 </div>
@@ -359,5 +359,6 @@ h1{letter-spacing:-.02em}
 
 <footer><a href="../">MG Commerce</a> · Inh. Manuela Geisler · Weissach im Tal · <a href="../agb.html">AGB &amp; Lizenzbedingungen</a> · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></footer>
 <nav class="leiste-mobil" aria-label="Schnellkontakt"><a class="anruf" href="tel:+491795498071">Anrufen</a><a class="laden" href="#testen">Testen</a></nav>
+<script>/* E-Mail-Adressen erst im Browser zusammensetzen (Schutz vor Adress-Sammlern) */document.querySelectorAll("[data-mail]").forEach(function(a){a.href="mailto:"+a.dataset.mail+"\x40mgcommerce-online.de"+(a.dataset.q||"")});document.querySelectorAll("[data-adr]").forEach(function(e){e.textContent=e.dataset.adr+"\x40mgcommerce-online.de"});</script>
 </body>
 </html>

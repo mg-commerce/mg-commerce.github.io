@@ -141,7 +141,7 @@ footer{border-top:1px solid var(--linie);background:#fff;padding:22px;text-align
 <button type="submit" class="knopf rand" data-weg="whatsapp">Per WhatsApp senden</button>
 <button type="submit" class="knopf rand" data-weg="kopieren">Bestelltext kopieren</button>
 <div class="ok" id="ok"></div>
-<p class="klein">Ihr E-Mail-Programm bzw. WhatsApp öffnet sich mit der fertigen Bestellung – Sie tippen nur noch auf „Senden“. Ohne E-Mail-Programm? „Bestelltext kopieren“ und an <a href="mailto:bestellung@mgcommerce-online.de">bestellung@mgcommerce-online.de</a> schicken. (<a href="../datenschutz.html">Datenschutz</a>)</p>
+<p class="klein">Ihr E-Mail-Programm bzw. WhatsApp öffnet sich mit der fertigen Bestellung – Sie tippen nur noch auf „Senden“. Ohne E-Mail-Programm? „Bestelltext kopieren“ und an <a href="#kontakt" data-mail="bestellung"><span data-adr="bestellung">bestellung [at] mgcommerce-online.de</span></a> schicken. (<a href="../datenschutz.html">Datenschutz</a>)</p>
 <h2 style="margin-top:18px">So geht es weiter</h2>
 <ol class="schritte klein">
 <li>Wir bestätigen den Eingang per E-Mail.</li>
@@ -209,13 +209,14 @@ f.addEventListener('submit',function(ev){ev.preventDefault();
   var okbox=document.getElementById('ok');
   if(weg==='whatsapp'){window.location.href='https://wa.me/491795498071?text='+encodeURIComponent(titel+'\n\n'+t);}
   else if(weg==='kopieren'){
-    var fertig=function(){okbox.innerHTML='<b>Bestelltext kopiert.</b> Bitte in eine E-Mail an <a href="mailto:bestellung@mgcommerce-online.de">bestellung@mgcommerce-online.de</a> einfügen und senden.';okbox.classList.add('zeigen');};
+    var fertig=function(){okbox.innerHTML='<b>Bestelltext kopiert.</b> Bitte in eine E-Mail an <a href="mailto:bestellung\x40mgcommerce-online.de">bestellung\x40mgcommerce-online.de</a> einfügen und senden.';okbox.classList.add('zeigen');};
     if(navigator.clipboard){navigator.clipboard.writeText(titel+'\n\n'+t).then(fertig,function(){prompt('Bitte kopieren:',titel+'\n\n'+t)});}else{prompt('Bitte kopieren:',titel+'\n\n'+t);}
     return;
   }
-  else{window.location.href='mailto:bestellung@mgcommerce-online.de?subject='+encodeURIComponent(titel)+'&body='+encodeURIComponent('Guten Tag,\n\nhiermit bestelle ich:\n\n'+t);}
+  else{window.location.href='mailto:bestellung\x40mgcommerce-online.de?subject='+encodeURIComponent(titel)+'&body='+encodeURIComponent('Guten Tag,\n\nhiermit bestelle ich:\n\n'+t);}
   okbox.innerHTML='<b>Fast geschafft:</b> Bitte die Nachricht in Ihrem E-Mail-Programm bzw. in WhatsApp noch absenden. Hat sich nichts geöffnet? Dann „Bestelltext kopieren“.';okbox.classList.add('zeigen');
 });
 })();
 </script>
+<script>/* E-Mail-Adressen erst im Browser zusammensetzen (Schutz vor Adress-Sammlern) */document.querySelectorAll("[data-mail]").forEach(function(a){a.href="mailto:"+a.dataset.mail+"\x40mgcommerce-online.de"+(a.dataset.q||"")});document.querySelectorAll("[data-adr]").forEach(function(e){e.textContent=e.dataset.adr+"\x40mgcommerce-online.de"});</script>
 </body></html>
