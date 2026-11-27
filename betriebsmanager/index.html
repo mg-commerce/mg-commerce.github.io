@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://mgcommerce-online.de/betriebsmanager/">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<title>MG Betriebsmanager – Handwerkersoftware für Maler, Dachdecker &amp; Hausmeister | Rems-Murr</title>
+<meta name="description" content="Handwerkersoftware aus dem Rems-Murr-Kreis – weniger Büro, mehr Baustelle: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy und Lager mit QR-Etiketten. Einmal kaufen, kein Abo, Daten bleiben im Betrieb. Persönlich aus dem Rems-Murr-Kreis.">
+<style>
+:root{--navy:#202124;--blau:#C2410C;--gelb:#EA5F00;--orange:#FF6C00;--grund:#ffffff;--karte:#ffffff;--linie:#e7e7ea;--text:#202124;--leise:#5f6368;--hell:#FFF1E6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);background:var(--grund);font-size:17px;line-height:1.6}
+a{color:var(--blau)}a:hover{color:#9A3412}
+h1,h2,h3{color:var(--navy);line-height:1.15;margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.01em}
+h3{font-size:1.15rem}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:80px 0;scroll-margin-top:70px}
+.kopf{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linie)}
+.kopf .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.produktname{font-weight:700;color:var(--navy);text-decoration:none;border-left:1px solid var(--linie);padding-left:14px;margin-right:auto;white-space:nowrap}.marke img{display:block;height:26px;width:auto}
+.marke{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);text-decoration:none;font-size:1.05rem}
+.marke span.icon{width:34px;height:34px;border-radius:9px;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{color:var(--text);text-decoration:none;font-size:.95rem}
+.nav a:hover{color:var(--blau)}
+.knopf{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:12px;font-weight:700;text-decoration:none;font-size:1rem}
+.knopf.gelb{background:var(--gelb);color:#fff;font-size:1.1rem}
+.knopf.gelb:hover{background:#D95400;color:#fff}
+.knopf.rand{border:1.5px solid var(--navy);color:var(--navy);background:transparent}
+.knopf.klein{min-height:40px;padding:8px 16px;font-size:.92rem}
+@media (max-width:860px){.nav a:not(.knopf){display:none}}
+.held{padding:72px 0 64px}
+.held .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media (max-width:860px){.held .wrap{grid-template-columns:1fr}}
+.eyebrow{display:inline-block;background:var(--hell);color:var(--blau);font-weight:600;font-size:.9rem;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+.held p.lead{font-size:1.2rem;color:var(--leise);margin:18px 0 28px;max-width:560px}
+.knoepfe{display:flex;flex-wrap:wrap;gap:12px}
+.vertrauen{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;color:var(--leise);font-size:.95rem}
+.vertrauen span{display:flex;align-items:center;gap:8px}
+.haken{width:20px;height:20px;border-radius:50%;background:#e3f2e6;display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px}
+.bild{background:var(--karte);border:1px solid var(--linie);border-radius:18px;padding:14px;box-shadow:0 12px 40px rgba(32,33,36,.10)}
+.bild img{width:100%;height:auto;display:block;border-radius:10px}
+.bild small{display:block;text-align:center;color:var(--leise);margin-top:8px;font-size:.85rem}
+.titel{max-width:680px;margin-bottom:40px}
+.titel p{color:var(--leise);margin-top:12px;font-size:1.1rem}
+.raster{display:grid;gap:20px}
+.r3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.r2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.r3,.r2{grid-template-columns:1fr}}
+.karte{background:var(--karte);border:1px solid var(--linie);border-radius:16px;padding:26px}
+.karte p{color:var(--leise);margin-top:8px}
+.symbol{width:44px;height:44px;border-radius:12px;background:var(--hell);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.schritt{display:flex;gap:16px;align-items:flex-start}
+.nr{flex:0 0 40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.weiss{background:#ffffff;border-top:1px solid var(--linie);border-bottom:1px solid var(--linie)}
+.liste{list-style:none;padding:0;margin:14px 0 0}
+.liste li{display:flex;gap:10px;padding:5px 0;color:var(--text)}
+.liste li::before{content:"";flex:0 0 8px;height:8px;border-radius:50%;background:var(--gelb);margin-top:10px}
+.galerie figure{margin:0}
+.galerie img{width:100%;height:auto;border:1px solid var(--linie);border-radius:12px;display:block;box-shadow:0 6px 20px rgba(32,33,36,.07)}
+.galerie figcaption{font-weight:600;margin-bottom:10px;color:var(--navy)}
+.person{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+@media (max-width:640px){.person{grid-template-columns:1fr}}
+.avatar{width:120px;height:120px;border-radius:50%;background:var(--navy);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:2.4rem;font-weight:700}
+.preise .karte{display:flex;flex-direction:column;gap:6px}
+.preis{font-size:2.4rem;font-weight:800;color:var(--navy);line-height:1.1}
+.alt{color:var(--leise);text-decoration:line-through;font-size:.95rem}
+.hervor{border:2px solid var(--navy);position:relative}
+.band{position:absolute;top:-13px;left:24px;background:var(--gelb);color:#fff;font-weight:700;font-size:.82rem;padding:4px 12px;border-radius:999px}
+.fussnote{color:var(--leise);font-size:.9rem;margin-top:22px}
+details{background:var(--karte);border:1px solid var(--linie);border-radius:14px;padding:4px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600;color:var(--navy);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--blau)}
+details[open] summary::after{content:"–"}
+details p{color:var(--leise);padding:0 0 18px}
+.kontakt{background:var(--navy);color:#fff}
+.kontakt h2{color:#fff}
+.kontakt .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media (max-width:860px){.kontakt .wrap{grid-template-columns:1fr}}
+.kontakt p{color:#d6d6db}
+.kontaktkarte{background:#fff;color:var(--text);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.demoform{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--linie);padding-top:14px}
+.df-titel{font-weight:800;color:var(--navy);font-size:1.1rem}
+.demoform label{display:flex;flex-direction:column;gap:4px;font-size:.9rem;font-weight:600;color:var(--navy)}
+.demoform input,.demoform select,.demoform textarea{font:inherit;font-weight:400;font-size:1rem;padding:10px 12px;border:1.5px solid var(--linie);border-radius:10px;background:#fff;color:var(--text);width:100%;box-sizing:border-box}
+.demoform input:focus,.demoform select:focus,.demoform textarea:focus{outline:none;border-color:var(--blau)}
+.demoform .falsch{border-color:#c0392b}
+.df-zwei{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:340px){.df-zwei{grid-template-columns:1fr}}
+.df-knoepfe{display:flex;flex-wrap:wrap;gap:10px}.df-knoepfe .knopf{flex:1 1 180px;cursor:pointer;border:0}.df-knoepfe .knopf.rand{border:1.5px solid var(--navy)}
+.kontakt .df-fehler{color:#c0392b;font-weight:600;margin:0}
+.kontakt .df-hinweis{font-size:.82rem;color:var(--leise);margin:0}
+.kontaktkarte a.zeile{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--navy);font-weight:600;font-size:1.1rem}
+footer{padding:28px 0;text-align:center;font-size:.88rem;color:var(--leise)}
+.hinweisbox{background:var(--hell);border-radius:16px;padding:26px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+@media (max-width:640px){.hinweisbox{grid-template-columns:1fr}}
+.zeitleiste{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+@media (max-width:860px){.zeitleiste{grid-template-columns:1fr}}
+.zeitleiste .karte{border-top:4px solid var(--gelb)}
+.jahr{font-size:1.6rem;font-weight:800;color:var(--navy)}
+.quelle{font-size:.85rem;color:var(--leise);margin-top:14px}
+
+/* ---- Bühne mit Handy ---- */
+.buehne{position:relative;height:560px;border-radius:24px;background:linear-gradient(180deg,#fff3ea 0%,#fff8f2 55%,#efeeec 55%,#e8e6e3 100%);overflow:hidden;border:1px solid var(--linie)}
+.buehne svg.szene{position:absolute;inset:0;width:100%;height:100%}
+.handy{position:absolute;left:50%;top:72px;transform:translateX(-50%) rotate(-4deg);width:206px;height:400px;background:#16171a;border-radius:38px;padding:12px;box-shadow:0 30px 60px rgba(32,33,36,.35),inset 0 0 0 2px #3a3b40}
+.handy::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:70px;height:18px;border-radius:10px;background:#16171a;z-index:3}
+.bildschirm{position:relative;width:100%;height:100%;border-radius:28px;background:#202124;overflow:hidden;color:#fff;font-size:13px}
+.bs{position:absolute;inset:0;padding:44px 16px 16px;display:flex;flex-direction:column;gap:10px;opacity:0;animation:wechsel 12s infinite}
+.bs:nth-child(2){animation-delay:4s}.bs:nth-child(3){animation-delay:8s}
+@keyframes wechsel{0%{opacity:0;transform:translateY(8px)}4%{opacity:1;transform:none}30%{opacity:1}34%{opacity:0}100%{opacity:0}}
+.bs .kl{font-size:11px;color:#b8b8be}
+.bs .gr{font-size:17px;font-weight:700}
+.bs .feld{background:#fff;color:#1f2a3d;border-radius:10px;padding:9px 11px;font-size:12.5px}
+.bs .btn{margin-top:auto;border-radius:12px;padding:13px;text-align:center;font-weight:700;font-size:14px}
+.bs .gruen{background:#22a05a}.bs .gelb2{background:var(--gelb);color:#fff}
+.bs .chip{display:inline-block;background:#3a3b40;border-radius:999px;padding:5px 10px;font-size:11.5px}
+.bs .foto{height:54px;border-radius:8px;background:linear-gradient(135deg,#ffd2b0,#ff9a4d)}
+.toast{position:absolute;z-index:5;max-width:80%;white-space:nowrap;background:#fff;border-radius:14px;padding:10px 14px;box-shadow:0 10px 30px rgba(32,33,36,.18);font-size:14px;font-weight:600;color:var(--navy);display:flex;gap:10px;align-items:center;opacity:0;animation:popp 12s infinite}
+.toast .ic{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex:0 0 28px}
+.t1{left:12px;top:24px}.t2{right:12px;top:24px;animation-delay:4s}.t3{left:12px;top:24px;animation-delay:8s}
+@keyframes popp{0%{opacity:0;transform:scale(.9) translateY(6px)}3%{opacity:1;transform:none}28%{opacity:1}33%{opacity:0}100%{opacity:0}}
+.etikett{position:absolute;z-index:5;right:12px;bottom:12px;background:#fff;border-radius:10px;padding:10px;box-shadow:0 8px 24px rgba(32,33,36,.15);display:flex;gap:10px;align-items:center;transform:rotate(3deg)}
+.etikett small{display:block;font-size:11px;color:var(--leise)}
+.etikett b{font-size:13px;color:var(--navy)}
+@media (max-width:860px){.buehne{height:560px}}
+@media (prefers-reduced-motion:reduce){.bs,.toast{animation:none}.bs:first-child,.toast.t1{opacity:1}}
+.videos{display:grid;grid-template-columns:1fr 1fr;gap:24px}.videos figure{margin:0}.videos figcaption{margin-top:10px;font-size:15px;color:var(--leise)}.videos figcaption b{display:block;color:var(--navy);font-size:17px;margin-bottom:2px}@media (max-width:860px){.videos{grid-template-columns:1fr}}
+.appzeile{display:flex;gap:18px;align-items:center;margin:30px auto 0;max-width:720px;background:#fff;border:1px solid var(--linie);border-radius:18px;padding:16px 20px;color:var(--text)}.appzeile img{width:84px;height:84px;flex:none;border-radius:20px;box-shadow:0 8px 20px rgba(32,33,36,.18)}.appzeile b{color:var(--navy)}@media (max-width:520px){.appzeile{gap:14px;padding:14px;font-size:.93rem}.appzeile img{width:64px;height:64px;border-radius:15px}}
+.handys{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:40px}.handys figure{margin:0;text-align:center}.handys .rahmen{background:#16171a;border-radius:30px;padding:9px;box-shadow:0 18px 40px rgba(32,33,36,.18)}.handys img{width:100%;display:block;border-radius:22px}.handys figcaption{margin-top:12px;font-weight:600;color:var(--navy);font-size:15px}.handys figcaption span{display:block;font-weight:400;color:var(--leise);font-size:14px}@media (max-width:860px){.handys{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#buerozeit{background:var(--navy);color:#fff;padding:72px 0}
+#buerozeit h2{color:#fff}#buerozeit .titel p{color:#d0d0d6}
+.zahlen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.zahl{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:24px}
+.zahl b{display:block;font-size:2.6rem;line-height:1.05;color:var(--gelb);font-weight:800}
+.zahl p{margin:8px 0 0;color:#e2e2e6;font-size:.98rem}.zahl small{display:block;margin-top:8px;color:#b8b8be;font-size:.8rem}
+.rechner{margin-top:40px;background:#fff;color:var(--text,#1f2a3d);border-radius:20px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.rechner h3{margin:0 0 6px;color:var(--navy);font-size:1.3rem}.rechner label{display:block;margin-top:18px;font-weight:600;color:var(--navy)}
+.rechner input[type=range]{width:100%;accent-color:#EA5F00;margin-top:8px}.rechner output{font-weight:800;color:var(--blau)}
+.m-bar{height:12px;background:#eef0f4;border-radius:99px;overflow:hidden;padding:0!important;border:0!important;margin:-4px 0 6px}
+.m-bar i{display:block;height:100%;background:#c0392b;border-radius:99px;transition:width .3s}.m-bar.mg i{background:#22a05a}
+.m-balken{border:0!important;padding-bottom:4px!important}
+.rechner label.m-check{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:.95rem;color:var(--text)}
+.m-check input{width:20px;height:20px;accent-color:#EA5F00;flex:none;margin-top:2px}
+.ergebnis{background:#f7f7f8;border:1px solid var(--linie);border-radius:16px;padding:22px}
+.ergebnis div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--linie);font-size:1.02rem}.ergebnis div:last-of-type{border:0}
+.ergebnis strong{color:var(--navy);font-size:1.2rem;white-space:nowrap}.ergebnis .gross strong{color:#22a05a;font-size:1.5rem}
+.spart{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 32px}
+.spart div{display:flex;gap:12px;color:#e2e2e6}.spart div:before{content:"✓";color:var(--gelb);font-weight:800}
+.spart b{color:#fff}
+#buerozeit .quelle{color:#b8b8be}#buerozeit .ergebnis .quelle{color:var(--leise)}#buerozeit .quelle a{color:#d0d0d6}
+@media (max-width:860px){.zahlen,.rechner,.spart{grid-template-columns:1fr}}
+.menuknopf{display:none;background:none;border:1px solid var(--linie);border-radius:10px;width:44px;height:40px;align-items:center;justify-content:center;cursor:pointer;color:var(--navy)}
+.leiste{display:none}
+.wischhinweis{display:none}
+@media (max-width:860px){
+section{padding:48px 0}.held{padding:28px 0 36px}.titel{margin-bottom:22px}
+#buerozeit{padding:48px 0}
+.menuknopf{display:inline-flex}
+.kopf .nav .knopf{display:none}.marke{white-space:nowrap}
+.kopf.offen .nav{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--linie);box-shadow:0 18px 30px rgba(32,33,36,.12);padding:6px 0}
+.kopf.offen .nav a:not(.knopf){display:block;padding:14px 22px;font-size:1.05rem;border-top:1px solid var(--linie)}
+.kopf.offen .nav .knopf{display:none}
+.kopf .wrap{position:relative}
+.raster,.zahlen,.zeitleiste,.handys,.videos{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:6px;margin-right:-20px;padding-right:20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.raster::-webkit-scrollbar,.zahlen::-webkit-scrollbar,.zeitleiste::-webkit-scrollbar,.handys::-webkit-scrollbar,.videos::-webkit-scrollbar{display:none}
+.raster>*,.zahlen>*,.zeitleiste>*,.videos>*{flex:0 0 84%;scroll-snap-align:start}
+.handys>*{flex:0 0 62%;scroll-snap-align:start}
+.handys{margin-top:20px}
+.wischhinweis{display:block;font-size:.82rem;color:var(--leise);margin-top:8px}
+#buerozeit .wischhinweis{color:#b8b8be}
+.zahl b{font-size:2.1rem}
+.rechner{padding:20px;gap:18px;margin-top:24px}
+.spart{display:none}
+.buehne{height:470px}
+.handy{transform:translateX(-50%) rotate(-4deg) scale(.84);transform-origin:top center;top:62px}
+.leiste{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--linie);box-shadow:0 -6px 20px rgba(32,33,36,.08)}
+.leiste a{flex:1;text-align:center;padding:11px 8px;font-size:.98rem;white-space:nowrap;border-radius:12px;font-weight:700;text-decoration:none}
+.leiste .anruf{border:1.5px solid var(--navy);color:var(--navy)}
+.leiste .vorf{background:var(--gelb);color:#fff}
+body{padding-bottom:70px}
+#preise .raster{padding-top:16px}
+}
+#bildbox{position:fixed;inset:0;z-index:9999;background:rgba(20,20,22,.94);display:none;align-items:center;justify-content:center;padding:56px 12px 24px;flex-direction:column}
+#bildbox.offen{display:flex}
+#bildbox img{max-width:100%;max-height:calc(100% - 40px);object-fit:contain;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.5);background:#fff}
+#bildbox p{color:#e6e6ea;font-size:.95rem;margin:12px 0 0;text-align:center}
+#bildbox button{position:absolute;top:12px;right:12px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:#202124;font-size:26px;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.stromtab{width:100%;border-collapse:collapse;margin-top:18px;font-size:.95rem;background:#fff;border-radius:10px;overflow:hidden}
+.stromtab th{background:#FFF1E6;text-align:left;padding:10px 12px;font-weight:600}
+.stromtab td{padding:10px 12px;border-top:1px solid #e3e8f0;vertical-align:top}
+.stromtab .empf td{background:#ecfdf3}
+.stromtab .leise{color:var(--leise);font-size:.85rem}
+@media (max-width:640px){.stromtab thead{display:none}.stromtab tr{display:block;border-top:1px solid #e3e8f0;padding:10px 14px}
+.stromtab td{display:block;border:0;padding:2px 0}.stromtab td:first-child{font-weight:600;margin-bottom:4px}
+.stromtab td:nth-child(2)::before{content:"Verbrauch: ";color:var(--leise)}.stromtab td:nth-child(3)::before{content:"Strom im Jahr: ";color:var(--leise)}
+.stromtab td:nth-child(4)::before{content:"Kosten im Jahr: ";color:var(--leise)}}
+details.aufklapp{margin-top:28px;background:#fff;border:1px solid var(--linie);border-radius:14px;padding:4px 20px}
+details.aufklapp>summary{cursor:pointer;font-weight:700;font-size:1.1rem;padding:14px 0;color:var(--blau,#EA5F00)}
+details.aufklapp[open]{padding-bottom:20px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MG Betriebsmanager","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","description":"Handwerkersoftware für Maler, Dach & Wand, Hausmeister und Entrümpelung: Aufmaß, Angebot, E-Rechnung, Zeiterfassung per Handy, Lager mit QR-Etiketten.","offers":{"@type":"Offer","price":"790","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"MG Commerce","address":{"@type":"PostalAddress","streetAddress":"Im Flieder 4","postalCode":"71554","addressLocality":"Weissach im Tal","addressCountry":"DE"},"telephone":"+49 179 5498071"}}</script>
+</head>
+<body>
+
+<header class="kopf">
+<div class="wrap">
+<a class="marke" href="../" aria-label="MG Commerce – Startseite"><img src="../bilder/marke/mg-commerce-logo.svg" alt="MG Commerce" height="26"></a><a class="produktname" href="#start">Betriebsmanager</a>
+<nav class="nav" id="hauptmenue" aria-label="Hauptmenü">
+<a href="#buerozeit">Bürozeit</a><a href="#video">Videos</a>
+<a href="#programm">Programm</a><a href="#funktionen">Funktionen</a>
+<a href="#preise">Preise</a>
+<a href="#fragen">Fragen</a>
+<a href="#hilfe">Hilfe</a>
+<a class="knopf gelb klein" href="#kontakt">Vorführung anfragen</a>
+</nav>
+<button class="menuknopf" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptmenue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div>
+</header>
+
+<main id="start">
+
+<section class="held">
+<div class="wrap">
+<div>
+<span class="eyebrow">Handwerkersoftware für Maler · Dach &amp; Wand · Hausmeister · Entrümpelung</span>
+<h1>Weniger Büro.<br>Mehr Baustelle.</h1>
+<p class="lead">Vom Anruf bis zur bezahlten Rechnung in einem Programm – einfach genug, dass es auch Ihre Leute auf der Baustelle gern benutzen.</p>
+<div class="knoepfe">
+<a class="knopf gelb" href="#kontakt">Kostenlose Vorführung</a>
+<a class="knopf rand" href="#video">Video ansehen</a>
+</div>
+<div class="vertrauen">
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>28 Tage kostenlos testen</span>
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Kein Abo</span>
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Daten bleiben bei Ihnen</span>
+<span><span class="haken"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Persönlich aus der Region</span>
+</div>
+</div>
+<div class="buehne" aria-label="Handy auf der Baustelle: einstempeln, Material per QR buchen, Tagesrapport senden" role="img">
+<svg class="szene" viewBox="0 0 520 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<circle cx="440" cy="70" r="34" fill="#FF6C00" opacity=".85"/>
+<g fill="none" stroke="#9aa9c2" stroke-width="4"><path d="M40 308V120M120 308V120M40 150H120M40 200H120M40 250H120M40 150L120 200M40 200L120 250"/></g>
+<path d="M60 308V170l90-70 90 70v138z" fill="#f7f7f8" stroke="#c9c1ae" stroke-width="3"/>
+<path d="M45 178l105-88 105 88" fill="none" stroke="#b5452f" stroke-width="10" stroke-linejoin="round"/>
+<rect x="88" y="200" width="40" height="40" fill="#cfe0f5" stroke="#c9c1ae" stroke-width="3"/>
+<rect x="172" y="200" width="40" height="40" fill="#cfe0f5" stroke="#c9c1ae" stroke-width="3"/>
+<rect x="132" y="252" width="36" height="56" fill="#8a6a4a"/>
+<rect x="200" y="150" width="56" height="12" rx="6" fill="#FF6C00" transform="rotate(-30 228 156)"/><rect x="226" y="156" width="6" height="40" fill="#5a6474" transform="rotate(-30 228 156)"/>
+<rect x="330" y="250" width="150" height="60" rx="6" fill="#d7cfbd"/><rect x="342" y="226" width="34" height="28" rx="4" fill="#ffffff" stroke="#b9b0a0"/><rect x="384" y="214" width="40" height="40" rx="4" fill="#e9eef7" stroke="#b9b0a0"/><rect x="432" y="230" width="34" height="24" rx="4" fill="#ffffff" stroke="#b9b0a0"/>
+</svg>
+<div class="toast t1"><span class="ic" style="background:#e3f2e6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22a05a" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>Eingestempelt · 7:02 Uhr</div>
+<div class="toast t2"><span class="ic" style="background:#FFF1E6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2.4" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/></svg></span>3 Rollen auf Baustelle gebucht</div>
+<div class="toast t3"><span class="ic" style="background:#fff4d9"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b7860b" stroke-width="2.4" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span>Rapport ist im Büro</div>
+<div class="etikett"><svg width="46" height="46" viewBox="0 0 45 45" aria-hidden="true"><rect width="45" height="45" fill="#fff"/><g fill="#202124"><rect x="0" y="0" width="5" height="5"/><rect x="5" y="0" width="5" height="5"/><rect x="10" y="0" width="5" height="5"/><rect x="15" y="0" width="5" height="5"/><rect x="30" y="0" width="5" height="5"/><rect x="35" y="0" width="5" height="5"/><rect x="40" y="0" width="5" height="5"/><rect x="0" y="5" width="5" height="5"/><rect x="15" y="5" width="5" height="5"/><rect x="30" y="5" width="5" height="5"/><rect x="40" y="5" width="5" height="5"/><rect x="0" y="10" width="5" height="5"/><rect x="5" y="10" width="5" height="5"/><rect x="10" y="10" width="5" height="5"/><rect x="15" y="10" width="5" height="5"/><rect x="20" y="10" width="5" height="5"/><rect x="25" y="10" width="5" height="5"/><rect x="30" y="10" width="5" height="5"/><rect x="35" y="10" width="5" height="5"/><rect x="40" y="10" width="5" height="5"/><rect x="0" y="15" width="5" height="5"/><rect x="15" y="15" width="5" height="5"/><rect x="30" y="15" width="5" height="5"/><rect x="0" y="20" width="5" height="5"/><rect x="15" y="20" width="5" height="5"/><rect x="30" y="20" width="5" height="5"/><rect x="0" y="25" width="5" height="5"/><rect x="5" y="25" width="5" height="5"/><rect x="10" y="25" width="5" height="5"/><rect x="15" y="25" width="5" height="5"/><rect x="20" y="25" width="5" height="5"/><rect x="25" y="25" width="5" height="5"/><rect x="30" y="25" width="5" height="5"/><rect x="35" y="25" width="5" height="5"/><rect x="40" y="25" width="5" height="5"/><rect x="0" y="30" width="5" height="5"/><rect x="15" y="30" width="5" height="5"/><rect x="30" y="30" width="5" height="5"/><rect x="40" y="30" width="5" height="5"/><rect x="0" y="35" width="5" height="5"/><rect x="15" y="35" width="5" height="5"/><rect x="30" y="35" width="5" height="5"/><rect x="40" y="35" width="5" height="5"/><rect x="0" y="40" width="5" height="5"/><rect x="5" y="40" width="5" height="5"/><rect x="10" y="40" width="5" height="5"/><rect x="15" y="40" width="5" height="5"/><rect x="20" y="40" width="5" height="5"/><rect x="25" y="40" width="5" height="5"/><rect x="30" y="40" width="5" height="5"/><rect x="35" y="40" width="5" height="5"/><rect x="40" y="40" width="5" height="5"/></g></svg><div><small>MAT-001</small><b>Abdeckband 30 mm</b></div></div>
+<div class="handy"><div class="bildschirm">
+<div class="bs"><div class="kl">Mittwoch, 7:02</div><div class="gr">Guten Morgen, Max</div><div class="feld">Heute: Wohnzimmer &amp; Flur<br><span style="color:#5a6474">Beispielweg 5</span></div><span class="chip">Pausen werden automatisch abgezogen</span><div class="btn gruen">Jetzt einstempeln</div></div>
+<div class="bs"><div class="kl">QR-Etikett gescannt</div><div class="gr">Abdeckband 30 mm</div><div class="feld">Baustelle: Wohnzimmer &amp; Flur</div><div class="feld">Aus: Sprinter · Menge: 3 Rollen</div><div class="btn gelb2">Entnahme buchen</div></div>
+<div class="bs"><div class="kl">Tagesrapport</div><div class="gr">7,5 Stunden</div><div class="feld">Decke gestrichen, Raufaser im Wohnzimmer fertig</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div class="foto"></div><div class="foto" style="background:linear-gradient(135deg,#f3e5c0,#d9b867)"></div></div><div class="btn gruen">An das Büro senden</div></div>
+</div></div>
+</div>
+</div>
+</section>
+
+<section id="buerozeit">
+<div class="wrap">
+<div class="titel"><h2>Wie viel Zeit sitzen Sie heute im Büro?</h2><p>Angebote tippen, Stundenzettel abschreiben, Rechnungen, Mahnungen, Ablage – das meiste davon erledigt der Chef selbst. Oft abends oder am Wochenende.</p></div>
+<div class="zahlen">
+<div class="zahl"><b>12,8 Std.</b><p>pro Woche wenden Handwerksbetriebe im Schnitt für Bürokratie und Dokumentation auf.</p><small>Umfrage der Handwerkskammer Dortmund</small></div>
+<div class="zahl"><b>30 %</b><p>ihrer Arbeitszeit verbringen Führungskräfte mit Berichts- und Dokumentationspflichten.</p><small>IW Köln, Beschäftigtenbefragung 2025</small></div>
+<div class="zahl"><b>1 Tag</b><p>pro Woche und mehr – so viel geht bei jedem Zweiten für Dokumentation drauf.</p><small>IW Köln, Beschäftigtenbefragung 2025</small></div>
+</div>
+<div class="rechner" id="zeitrechner">
+<div>
+<h3>Was ist Ihnen eine gesparte Stunde wert?</h3>
+<p style="margin:0;color:var(--leise)">Rechnen Sie mit Ihren eigenen Zahlen.</p>
+<label for="r-std">Gesparte Bürozeit pro Woche: <output id="o-std">4</output> Std.</label>
+<input type="range" id="r-std" min="1" max="12" step="1" value="4">
+<label for="r-satz">Ihr Stundenverrechnungssatz: <output id="o-satz">55</output> €</label>
+<input type="range" id="r-satz" min="35" max="95" step="5" value="55">
+</div>
+<div class="ergebnis" aria-live="polite">
+<div><span>Gesparte Zeit im Jahr</span><strong id="e-std">184 Std.</strong></div>
+<div><span>Das sind Arbeitstage</span><strong id="e-tage">23 Tage</strong></div>
+<div class="gross"><span>Wert Ihrer Zeit pro Jahr</span><strong id="e-wert">10.120 €</strong></div>
+<div><span>Komplettpaket (1.090 €) ist bezahlt nach</span><strong id="e-amort">5 Wochen</strong></div>
+<p class="quelle" style="margin:6px 0 0">Rechenbeispiel mit 46 Arbeitswochen im Jahr und 8 Stunden pro Tag. Wie viel Sie wirklich sparen, hängt von Ihrem Betrieb ab – bei der Vorführung schauen wir uns das gemeinsam an.</p>
+</div>
+</div>
+<p class="quelle">Quellen: <a href="https://www.hwk-do.de/wp-content/uploads/2023/02/Sonderumfrage-zum-Buerokratieabbau-Fruehjahr-2020.pdf">Handwerkskammer Dortmund, Sonderumfrage Bürokratieabbau</a> · <a href="https://www.iwkoeln.de/studien/andrea-hammermann-klaus-heiner-roehl-ein-tag-pro-woche-fuer-buerokratie.html">IW Köln, „Ein Tag pro Woche für Bürokratie“, Kurzbericht 94/2025</a>.</p>
+</div>
+</section>
+
+<section id="video" class="weiss">
+<div class="wrap">
+<div class="titel" style="margin-bottom:20px"><h2>Zwei Videos, je gut eine halbe Minute</h2><p>So sieht die Arbeit mit dem Programm aus – im Büro und auf der Baustelle.</p></div>
+<div class="videos">
+<figure><video controls preload="metadata" playsinline poster="../bilder/video-vorschau.jpg?v=3" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--linie);box-shadow:0 12px 40px rgba(32,33,36,.10);background:#202124"><source src="../bilder/video-anfrage-angebot.mp4?v=3" type="video/mp4"><a href="../bilder/video-anfrage-angebot.mp4">Video herunterladen</a></video><figcaption><b>Von der Anfrage zum Angebot</b>Übersicht, aufmessen, fertiges Angebot mit Ihren Preisen.</figcaption></figure>
+<figure><video controls preload="metadata" playsinline poster="../bilder/video2-vorschau.jpg?v=3" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--linie);box-shadow:0 12px 40px rgba(32,33,36,.10);background:#202124"><source src="../bilder/video-baustelle-rechnung.mp4?v=3" type="video/mp4"><a href="../bilder/video-baustelle-rechnung.mp4">Video herunterladen</a></video><figcaption><b>Von der Baustelle zur Rechnung</b>Baustelle am Handy, Material per QR-Etikett – und die Rechnung ist fertig.</figcaption></figure>
+</div>
+
+<div class="titel" id="so-gehts" style="margin-top:44px">
+<h2 style="font-size:1.6rem">So einfach läuft ein Auftrag</h2>
+<p>Keine doppelte Tipperei: Was einmal erfasst ist, wandert von selbst weiter.</p>
+</div>
+<div class="raster r3">
+<div class="karte schritt"><div class="nr">1</div><div><h3>Anfrage aufnehmen</h3><p>Kunde, Baustelle und Wunsch – in 30 Sekunden angelegt.</p></div></div>
+<div class="karte schritt"><div class="nr">2</div><div><h3>Aufmessen &amp; anbieten</h3><p>Maße eingeben, ankreuzen was gemacht wird – das Angebot mit Ihren Preisen ist fertig.</p></div></div>
+<div class="karte schritt"><div class="nr">3</div><div><h3>Ausführen &amp; abrechnen</h3><p>Ihre Leute stempeln am Handy, Material wird gebucht – die Rechnung entsteht mit einem Klick.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="programm">
+<div class="wrap">
+<div class="titel"><h2>So sieht das Programm wirklich aus</h2><p>Echte Bildschirmfotos – keine Grafiken. Ruhig, hell und übersichtlich: Was heute wichtig ist, steht oben.</p></div>
+<div class="raster r2 galerie">
+<figure style="grid-column:1/-1"><figcaption>Startseite: Zahlen des Tages, Baustellen von heute und was zu erledigen ist</figcaption><a href="../bilder/programm-start.jpg?v=3"><img src="../bilder/programm-start.jpg?v=3" alt="Startseite mit offenen Angeboten, Rechnungen, Baustellen heute, Umsatz, Zu erledigen und Schnellzugriff" loading="lazy"></a></figure><figure><figcaption>Rechnung: Summe, E-Rechnung und § 35a sofort im Blick</figcaption><a href="../bilder/programm-rechnung.jpg?v=3"><img src="../bilder/programm-rechnung.jpg?v=3" alt="Neue Rechnung mit Summen-Karte, Haken für E-Rechnung und § 35a-Arbeitslohn" loading="lazy"></a></figure><figure><figcaption>Einstellungen: einmal einrichten, fertig</figcaption><a href="../bilder/programm-einstellungen.jpg?v=3"><img src="../bilder/programm-einstellungen.jpg?v=3" alt="Firmen-Einstellungen mit aufklappbaren Bereichen und Software-Pflege" loading="lazy"></a></figure>
+</div>
+<h3 style="margin-top:48px;font-size:1.4rem;color:var(--navy)">Und so sieht es auf dem Handy Ihrer Leute aus</h3>
+<div class="handys" style="grid-template-columns:repeat(3,minmax(0,1fr));max-width:820px;margin-left:auto;margin-right:auto"><figure><a href="../bilder/handy-heute.jpg" class="rahmen" style="display:block"><img src="../bilder/handy-heute.jpg" alt="Handy-Startseite „Heute“: Stempel-Stand und Baustelle mit Route und Anrufen" loading="lazy"></a><figcaption>Heute<span>Baustelle, Route, Anrufen</span></figcaption></figure><figure><a href="../bilder/handy-karten.jpg" class="rahmen" style="display:block"><img src="../bilder/handy-karten.jpg" alt="Großer Stempel-Knopf, Tagesrapport, Material und die Leiste unten" loading="lazy"></a><figcaption>Stempeln<span>Ein großer Knopf, Leiste unten</span></figcaption></figure><figure><a href="../bilder/handy-material.jpg?v=3" class="rahmen" style="display:block"><img src="../bilder/handy-material.jpg?v=3" alt="Material per QR-Etikett buchen – Anleitung in vier Schritten" loading="lazy"></a><figcaption>Material<span>QR-Etikett scannen, gebucht</span></figcaption></figure></div>
+<div class="appzeile"><img src="../bilder/app-symbol.png" alt="App-Symbol „MG Betrieb“ auf dem Handy-Startbildschirm" width="84" height="84" loading="lazy"><div><b>Fühlt sich an wie eine App.</b> Einmal „Zum Startbildschirm hinzufügen“ – schon liegt <b>MG Betrieb</b> mit eigenem Symbol neben WhatsApp und Co. Kein App-Store, kein Konto, keine Updates auf jedem Handy.</div></div>
+<p class="fussnote">Bildschirmfotos aus Version 1.8 mit dem Beispielbetrieb aus dem Vorführ-Modus. Auf dem Handy läuft alles im normalen Browser – keine App-Installation nötig. Bild antippen zum Vergrößern, nochmal antippen zum Schließen.</p>
+
+<div class="titel" id="beispiel" style="margin-top:56px"><h2>Ein Beispiel: Wohnzimmer und Flur streichen</h2><p>Echt mit dem Programm erstellt – für einen erfundenen Beispielbetrieb. Vom Anruf bis zum fertigen Angebot vergehen keine 15 Minuten.</p></div>
+<div class="raster r3 galerie">
+<figure><figcaption>1 · Aufmaß mit Materialbedarf</figcaption><a href="../bilder/beispiel-aufmass.jpg?v=2"><img src="../bilder/beispiel-aufmass.jpg?v=2" alt="Beispiel-Aufmaß für Wohnzimmer und Flur mit Flächen und Materialbedarf" loading="lazy"></a></figure>
+<figure><figcaption>2 · Angebot mit Ihren Preisen</figcaption><a href="../bilder/beispiel-angebot-1.jpg?v=2"><img src="../bilder/beispiel-angebot-1.jpg?v=2" alt="Beispiel-Angebot Seite 1 mit Positionen" loading="lazy"></a></figure>
+<figure><figcaption>3 · Summe und Steuerhinweis</figcaption><a href="../bilder/beispiel-angebot-2.jpg?v=2"><img src="../bilder/beispiel-angebot-2.jpg?v=2" alt="Beispiel-Angebot Seite 2 mit Summe und Lohnanteil" loading="lazy"></a></figure>
+</div>
+<p class="fussnote">Beispielbetrieb mit erfundenen Namen und Beispielpreisen. Ihr Logo, Ihr Briefkopf und Ihre Preise stellen Sie selbst ein. Bild antippen zum Vergrößern, nochmal antippen zum Schließen.</p>
+<div class="titel" id="material-im-angebot" style="margin-top:56px"><h2 style="font-size:1.6rem">Tapete, Boden, Farbton – mit Bild im Angebot</h2><p>Der Kunde sieht direkt, was er bekommt. Den Preis rechnet das Programm aus Ihrem Einkaufspreis und Ihrem Aufschlag – ändern können Sie ihn jederzeit.</p></div>
+<div class="raster r3 galerie">
+<figure><figcaption>1 · Material aus dem Lager wählen</figcaption><a href="../bilder/beispiel-material-auswahl.jpg?v=1"><img src="../bilder/beispiel-material-auswahl.jpg?v=1" alt="Auswahl eines Artikels aus dem Lager mit Preisvorschlag, Marge nur für den Betrieb und Artikelbild" loading="lazy"></a></figure>
+<figure><figcaption>2 · Angebot mit Bildern</figcaption><a href="../bilder/beispiel-material-angebot-1.jpg?v=1"><img src="../bilder/beispiel-material-angebot-1.jpg?v=1" alt="Beispiel-Angebot mit Bildern von Tapete und Farbton bei den Positionen" loading="lazy"></a></figure>
+<figure><figcaption>3 · Material zählt nicht als Lohn</figcaption><a href="../bilder/beispiel-material-angebot-2.jpg?v=1"><img src="../bilder/beispiel-material-angebot-2.jpg?v=1" alt="Beispiel-Angebot Seite 2 mit Bodenbelag, Summe und Steuerhinweis nur für den Arbeitslohn" loading="lazy"></a></figure>
+</div>
+<ul class="liste" style="max-width:760px;margin:24px auto 0">
+<li>Ein Preis-Ort: Einkaufspreis beim Artikel im Lager, Aufschlag je Kategorie oder je Artikel</li>
+<li>Verkaufspreis wird vorgeschlagen – für Sonderpreise einfach überschreiben</li>
+<li>Ihre Marge sehen nur Sie, mit Warnung, wenn Sie unter den Einkaufspreis rutschen</li>
+<li>Bild nur, wo es hilft: per Häkchen je Artikel</li>
+</ul>
+<p class="fussnote">Erfundener Beispielbetrieb, gezeichnete Musterbilder und Beispielpreise. Ab Version 1.7.</p>
+</div>
+</section>
+
+<section id="funktionen" class="weiss">
+<div class="wrap">
+<div class="titel">
+<h2>Alles, was Ihr Büro braucht</h2>
+<p>Und nichts, was Sie nicht brauchen. Jede Kachel erklärt sich beim ersten Öffnen selbst.</p>
+</div>
+<div class="raster r3">
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></div><h3>Angebote &amp; Rechnungen</h3><p>E-Rechnung, Abschläge, Mahnungen – § 35a automatisch.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Ihre Leute am Handy</h3><p>Stempeln, Rapport, Urlaub – ohne App-Installation.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></div><h3>Material &amp; Lager</h3><p>QR scannen, Material gebucht – mit Preis und Bild ins Angebot.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>Plantafel &amp; Wetter</h3><p>Wer ist wann wo – Urlaub berücksichtigt, Warnung bei Regen für Fassade, Dach und Rasen.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Hat es sich gelohnt?</h3><p>Nachkalkulation je Baustelle, Zahlen pro Monat.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Sicher bei Ihnen</h3><p>Keine Cloud, tägliche Sicherung, DATEV-Export.</p></div>
+</div>
+
+<div class="titel" id="gewerke" style="margin-top:56px"><h2 style="font-size:1.6rem">Für Ihr Gewerk gemacht</h2><p>Malersoftware, Dachdeckersoftware, Hausmeistersoftware – Sie zahlen nur, was Sie brauchen – jedes weitere Gewerk lässt sich vorher kostenlos testen.</p></div>
+<div class="raster r3">
+<div class="karte"><h3>Maler</h3><ul class="liste"><li>Raum-Aufmaß mit Flächen und Abzügen</li><li>Ihre Preisliste, Lohn und Material getrennt</li><li>Materialbedarf und Restfarben</li><li>Tapete, Boden, Farbton mit Bild im Angebot</li></ul></div>
+<div class="karte"><h3>Dach &amp; Wand</h3><ul class="liste"><li>Dachflächen mit Neigung</li><li>Rinnen, Fallrohre, Bleche nach Metall</li><li>Gerüst und Container im Angebot</li></ul></div>
+<div class="karte"><h3>Hausmeister &amp; Entrümpelung</h3><ul class="liste"><li>Objekte mit Aufgabenplan</li><li>Monatsrechnung auf Knopfdruck</li><li>Besichtigung mit m³-Kalkulation</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="e-rechnung">
+<div class="wrap">
+<div class="titel"><h2>Die E-Rechnung wird Pflicht – sind Sie bereit?</h2><p>Rechnungen an Firmenkunden müssen bald als E-Rechnung verschickt werden. Ein einfaches PDF per E-Mail reicht dann nicht mehr. Mit dem MG Betriebsmanager ist jede Rechnung automatisch eine E-Rechnung (ZUGFeRD).</p></div>
+<div class="zeitleiste">
+<div class="karte"><div class="jahr">seit 2025</div><p>Alle Betriebe müssen E-Rechnungen <b>empfangen</b> können.</p></div>
+<div class="karte"><div class="jahr">ab 2027</div><p>Betriebe mit mehr als 800.000 € Umsatz im Vorjahr müssen E-Rechnungen an Firmenkunden <b>ausstellen</b>.</p></div>
+<div class="karte"><div class="jahr">ab 2028</div><p>Die Pflicht gilt für <b>alle</b> Betriebe bei Rechnungen an Firmenkunden – auch Hausverwaltungen und Bauträger.</p></div>
+</div>
+<p class="quelle">Rechnungen an Privatkunden sind nicht betroffen, ebenso Kleinunternehmer und Kleinbetragsrechnungen bis 250 €. Stand 11/2026, Quellen: <a href="https://www.zdh.de/ueber-uns/fachbereich-steuern-und-finanzen/elektronische-rechnung/">ZDH</a>, <a href="https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnung-5864496">IHK Region Stuttgart</a>. Keine Steuerberatung – fragen Sie im Zweifel Ihren Steuerberater.</p>
+</div>
+</section>
+
+<section id="preise" class="preise">
+<div class="wrap">
+<div class="titel"><h2>Einmal kaufen. Dauerhaft nutzen.</h2><p>Keine Kosten pro Mitarbeiter, kein Pflicht-Abo. 12 Monate alle Neuerungen inklusive. Einführungspreise für die ersten 20 Betriebe.</p></div>
+<div class="raster r3">
+<div class="karte"><h3>Grundpaket + 1 Gewerk</h3><div class="preis">790 €</div><div class="alt">statt 1.190 €</div><p>Büro, Team, Lager und Ihr Gewerk. Jedes weitere Gewerk + 250 €. 12 Monate Neuerungen &amp; Support inklusive.</p></div>
+<div class="karte hervor"><span class="band">Beliebt</span><h3>Komplett</h3><div class="preis">1.090 €</div><div class="alt">statt 1.690 €</div><p>Alle Gewerke und Finanzen – 12 Monate Neuerungen &amp; Support inklusive.</p></div>
+<div class="karte"><h3>In Raten</h3><div class="preis">ab 69 €</div><div style="color:var(--leise);font-size:.95rem">pro Monat, 12 Raten</div><p>Nach der letzten Rate gehört die Software Ihnen.</p></div>
+</div>
+<p class="fussnote">Einführungspreise gültig für die ersten 20 Betriebe bzw. bis 30.06.2027. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. Angebot für Unternehmer. Optional: Einrichtung vor Ort 249 €, per Fernwartung 149 €, Software-Pflege &amp; Support ab dem 2. Jahr 19 € pro Monat (228 € im Jahr). Sicherheits- und Gesetzes-Updates mindestens 5 Jahre kostenlos – auch ohne Pflege.</p>
+<details id="mietvergleich" class="aufklapp"><summary>🧮 Kaufen statt mieten – rechnen Sie selbst</summary>
+
+<div class="titel"><p>Die meisten Handwerker-Programme kosten jeden Monat – und für jeden Mitarbeiter mit Handy-Zugang noch einmal extra. Beim MG Betriebsmanager zahlen Sie einmal.</p></div>
+<div class="rechner" id="mietrechner">
+<div>
+<h3>Ihr Betrieb</h3>
+<label for="m-ma">Mitarbeiter mit Handy-Zugang: <output id="mo-ma">4</output></label>
+<input type="range" id="m-ma" min="0" max="15" step="1" value="4">
+<label for="m-buero">Büro-Arbeitsplätze: <output id="mo-buero">1</output></label>
+<input type="range" id="m-buero" min="1" max="3" step="1" value="1">
+<label for="m-jahre">Zeitraum: <output id="mo-jahre">3</output> Jahre</label>
+<input type="range" id="m-jahre" min="1" max="5" step="1" value="3">
+<label class="m-check"><input type="checkbox" id="m-pflege" checked> mit Software-Pflege &amp; Support (19 € pro Monat ab dem 2. Jahr)</label>
+</div>
+<div class="ergebnis" aria-live="polite">
+<div class="m-balken"><span>Typische Mietsoftware</span><strong id="me-miete">6.478 €</strong></div>
+<div class="m-bar"><i id="mb-miete" style="width:100%"></i></div>
+<div class="m-balken"><span>MG Betriebsmanager Komplett</span><strong id="me-mg">1.546 €</strong></div>
+<div class="m-bar mg"><i id="mb-mg" style="width:24%"></i></div>
+<div class="gross"><span>Sie sparen</span><strong id="me-spar">4.932 €</strong></div>
+<div><span>Der Kauf hat sich gegenüber Miete bezahlt nach</span><strong id="me-amort">7 Monaten</strong></div>
+<p class="quelle" style="margin:6px 0 0">Mietsoftware: Beispielrechnung mit 60 € je Büro-Arbeitsplatz und 30 € je Mitarbeiter-Zugang pro Monat – so liegen typische Listenpreise bekannter Handwerker-Programme (Stand 11/2026), oft zuzüglich Einrichtung. MG Betriebsmanager: Komplettpaket 1.090 € (Einführungspreis), 12 Monate Software-Pflege &amp; Support inklusive. Gemäß § 19 UStG ohne Umsatzsteuer.</p>
+</div>
+</div>
+</details>
+</div>
+</section>
+
+<section id="vertrauen" class="weiss">
+<div class="wrap">
+<div class="titel"><h2>Ihr Programm. Ihre Daten. Auch in zehn Jahren.</h2><p>Bei Mietsoftware hängt Ihr Büro am Abo und am Server des Anbieters. Beim MG Betriebsmanager nicht.</p></div>
+<div class="raster r3"><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></div><h3>Ihre Daten gehören Ihnen</h3><p>Alles liegt als normale Tabellen auf Ihrem PC – mit Excel lesbar. Kein Konto bei uns, keine Sperre, kein Datenumzug zu einem Anbieter.</p></div><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Läuft auch ohne uns</h3><p>Der Freischalt-Code wird auf Ihrem PC geprüft, ohne Verbindung zu unserem Server. Selbst wenn es uns eines Tages nicht mehr gäbe: Ihr Programm arbeitet weiter.</p></div><div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M12 7v5l3 2"/></svg></div><h3>Jeden Tag gesichert</h3><p>Automatische Sicherung jeden Tag, die letzten 14 Tage bleiben liegen. Auf Wunsch zusätzlich auf USB-Stick, NAS oder OneDrive – und vor jedem Update noch einmal extra.</p></div></div>
+<div class="person" id="persoenlich" style="margin-top:36px"><div class="avatar" aria-hidden="true">MG</div>
+<div>
+<h3 style="font-size:1.3rem;margin:0">Persönlich statt Hotline</h3>
+<p style="color:var(--leise);margin:6px 0 0">MG Commerce aus Weissach im Tal – Vorführung, Einrichtung und Hilfe von Menschen, die das Programm kennen. Telefon statt Ticket-System.</p>
+<ul class="liste"><li>Vorführung vor Ort im Raum Rems-Murr und Stuttgart</li><li>Einrichtung mit Ihren Preisen, Mitarbeitern und Handys</li><li>Sicherheits- und Gesetzes-Updates mindestens 5 Jahre kostenlos – vor jedem Update werden Ihre Daten gesichert</li><li>PC kaputt? Neuer Freischalt-Code einmal pro Jahr kostenlos</li></ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="fragen">
+<div class="wrap" style="max-width:820px">
+<div class="titel"><h2>Häufige Fragen</h2></div>
+<details id="voraussetzungen"><summary>Was brauche ich dafür?</summary><div class="raster r2" style="margin-top:14px;gap:8px 32px">
+<ul class="liste" style="margin:0"><li>Einen Windows-PC im Büro (Windows 10 oder 11)</li><li>Internet nur für Updates und Wetter – Ihre Daten bleiben auf dem PC</li><li>Einen Drucker für Angebote und Etiketten (optional)</li></ul>
+<ul class="liste" style="margin:0"><li>Handys Ihrer Mitarbeiter mit normalem Browser – keine App nötig</li><li>Für unterwegs: FRITZ!Box mit VPN oder das kostenlose NetBird</li><li><span>Rund um die Uhr erreichbar: kleiner Mini-PC (ca. 150–300 €, <a href="#minipc">nur ca. 2 € Strom im Monat</a>)</span></li></ul>
+</div>
+</details>
+<details id="minipc"><summary>Kann das Programm rund um die Uhr laufen – und was kostet der Strom?</summary>
+<p>Damit Mitarbeiter auch früh um sechs, abends und am Wochenende stempeln und Rapporte schreiben können, muss das Programm durchlaufen. Dafür reicht ein lautloser Mini-PC so groß wie ein Buch, zum Beispiel mit Intel N100 oder dem Nachfolger N150.</p>
+<div style="overflow-x:auto"><table class="stromtab">
+<thead><tr><th>Lösung</th><th>Verbrauch</th><th>Strom im Jahr</th><th>Kosten im Jahr*</th><th>Handys erreichen das Programm</th></tr></thead>
+<tbody>
+<tr><td>Büro-PC, nur zu Bürozeiten an<br><span class="leise">10 Std. × 250 Tage</span></td><td>ca. 50 W</td><td>ca. 125 kWh</td><td>ca. 44 €</td><td>❌ nicht abends, nicht am Wochenende</td></tr>
+<tr><td>Büro-PC rund um die Uhr</td><td>ca. 50 W</td><td>ca. 440 kWh</td><td>ca. 153 €</td><td>✅ immer – aber laut, und jeder Neustart unterbricht</td></tr>
+<tr class="empf"><td><b>Mini-PC (N100/N150) rund um die Uhr</b></td><td>ca. 8 W</td><td>ca. 70 kWh</td><td><b>ca. 25 €</b></td><td>✅ immer – lautlos, Büro-PC darf aus</td></tr>
+</tbody></table></div>
+<ul class="liste" style="margin-top:14px">
+<li><span><b>Gegenüber dem Büro-PC rund um die Uhr sparen Sie rund 130 € Strom im Jahr</b> – der Mini-PC (ca. 150–300 €) hat sich nach etwa zwei Jahren bezahlt gemacht.</span></li>
+<li>Der Büro-PC bleibt frei: Er darf aus, neu starten oder Updates machen – die Handys arbeiten weiter.</li>
+<li>Mit kleiner Notstromversorgung (USV, ca. 80 €) übersteht er auch kurze Stromausfälle, und die tägliche Sicherung läuft auf einen USB-Stick.</li>
+</ul>
+<p class="fussnote">* Beispielrechnung mit 0,35 € je kWh; der tatsächliche Verbrauch hängt vom Gerät ab. Einrichtung des Mini-PCs auf Wunsch durch uns – eine Anleitung liegt jedem Programm bei.</p>
+</details>
+<details><summary>Brauche ich einen Server oder eine Cloud?</summary><p>Nein. Ein Windows-PC im Büro reicht. Wer rund um die Uhr erreichbar sein will, nimmt einen kleinen Mini-PC mit nur ca. 8 Watt (rund 25 € Strom im Jahr) – den richten wir Ihnen auf Wunsch ein.</p></details>
+<details><summary>Ist das kompliziert für meine Mitarbeiter?</summary><p>Auf dem Handy sehen Ihre Leute nur das, was sie brauchen: Stempeln, Tagesrapport, Urlaub, Material. Beim ersten Öffnen erklärt jede Kachel kurz, wie sie funktioniert.</p></details>
+<details><summary>Wir schicken heute alles per WhatsApp – warum wechseln?</summary><p>In WhatsApp-Gruppen gehen Fotos und Notizen schnell unter, und jemand muss sie im Büro heraussuchen und zum richtigen Auftrag legen. Im MG Betriebsmanager landen Fotos, Stunden und Material direkt beim richtigen Auftrag. Und Ihre Kundendaten und Baustellenfotos bleiben in Ihrem Betrieb statt bei einem US-Messenger.</p></details>
+<details><summary>Wie kommen meine Leute von der Baustelle ins Programm?</summary><p>Im Firmen-WLAN direkt, unterwegs verschlüsselt über das VPN Ihrer FRITZ!Box oder über NetBird. Das Programm steht dabei nicht offen im Internet.</p></details>
+<details><summary>Was passiert, wenn mein PC kaputtgeht?</summary><p>Ihre Daten sind nicht weg: Das Programm sichert jeden Tag automatisch, auf Wunsch zusätzlich auf USB-Stick, NAS oder OneDrive. Auf dem neuen PC installieren Sie das Programm, spielen die letzte Sicherung zurück und bekommen von uns einen Freischalt-Code für den neuen Rechner – <b>einmal pro Jahr kostenlos</b>, eine kurze E-Mail, dass der alte PC nicht mehr genutzt wird, genügt. Wir helfen Ihnen beim Umzug – am Telefon oder vor Ort.</p></details>
+<details><summary>Was ist, wenn es MG Commerce irgendwann nicht mehr gibt?</summary><p>Dann arbeiten Sie einfach weiter. Die Freischaltung wird auf Ihrem PC geprüft, nicht auf unserem Server, und Ihre Daten liegen als normale Tabellen bei Ihnen, die auch Excel öffnet. Es entfallen nur neue Updates.</p></details>
+<details><summary>Wie läuft der Support?</summary><p>Persönlich: Sie rufen an oder schreiben eine E-Mail bzw. WhatsApp, und Sie sprechen mit jemandem, der das Programm kennt. Die ersten 12 Monate sind im Kaufpreis enthalten, danach gehört der Support zur Software-Pflege (19 € im Monat) – ohne Pflege rechnen wir Hilfe nach Aufwand ab. Bei Bedarf schauen wir per Fernwartung auf Ihren Bildschirm – aber nur, wenn Sie die Verbindung selbst freigeben.</p></details>
+<details id="pflege"><summary>Was ist die Software-Pflege – muss ich sie verlängern?</summary><p>Nein, das Programm gehört Ihnen und läuft unbefristet weiter. In den ersten 12 Monaten bekommen Sie alle Neuerungen inklusive. Danach können Sie die Software-Pflege für 19 € im Monat (228 € im Jahr) verlängern: Dann kommen weiter alle neuen Funktionen und Sie haben bevorzugten Support. Ohne Pflege behalten Sie alles, was bis dahin erschienen ist, und bekommen trotzdem mindestens 5 Jahre lang kostenlos alle Sicherheits- und Gesetzes-Updates (z. B. E-Rechnung). Neue Funktionen sind dann mit „🔒 Neu – mit Software-Pflege verfügbar“ gekennzeichnet. Sie können jederzeit wieder einsteigen – die Pflege wird dann für die Zeit seit dem Ende nachgezahlt, höchstens für 12 Monate.</p></details>
+<details id="windows-warnung"><summary>Windows warnt beim Installieren – ist das gefährlich?</summary><p>Nein. Windows (SmartScreen) warnt bei Programmen, die noch nicht oft heruntergeladen wurden, und zeigt „Unbekannter Herausgeber“. Das ist bei kleinen Anbietern normal und keine Virenmeldung. In den Downloads auf „Beibehalten“ klicken, beim Start auf „Weitere Informationen“ → „Trotzdem ausführen“. Schritt für Schritt mit Bildern: <a href="../anleitungen/Windows-Warnung_beim_Setup.pdf">Anleitung (PDF)</a>. Meldet Windows dagegen „Bedrohung gefunden“, bitte nichts ausführen und uns anrufen.</p></details>
+<details><summary>Wer kann meine Daten sehen?</summary><p>Nur Sie und die Mitarbeiter, denen Sie einen Zugang geben. Die Daten liegen auf Ihrem PC, nicht bei uns. Das Programm fragt im Internet nur nach Updates und – für die Wetter-Hinweise – nach der Wettervorhersage für die Postleitzahl der Baustelle. Kunden- oder Betriebsdaten werden dabei nicht mitgeschickt.</p></details>
+<details><summary>Was passiert nach den 28 Testtagen?</summary><p>Mit dem Freischalt-Code arbeiten Sie einfach weiter, alle Daten bleiben. Ohne Kauf bleiben die Daten lesbar und exportierbar – es entstehen keine Kosten.</p></details>
+<details><summary>Was ist mit E-Rechnung und Steuerberater?</summary><p>Jede Rechnung ist automatisch eine E-Rechnung (ZUGFeRD). Für den Steuerberater gibt es den DATEV-Export mit allen Belegen.</p></details>
+<details><summary>Kann ich später ein Gewerk dazunehmen?</summary><p>Ja. Jedes Gewerk lässt sich vorher 14 Tage testen und dann mit einem neuen Code freischalten.</p></details>
+</div>
+</section>
+
+<section id="hilfe" class="weiss">
+<div class="wrap">
+<div class="titel"><h2>Schon Kunde? So bekommen Sie Hilfe.</h2><p>Persönlich, ohne Warteschleife und ohne Ticket-Nummer – Sie sprechen mit jemandem, der Ihr Programm kennt.</p></div>
+<div class="raster r3">
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></div><h3>Im Programm: „🆘 Hilfe anfragen“</h3><p>Links in der Seitenleiste (als Chef angemeldet). Kurz beschreiben, was nicht klappt – das Programm macht daraus eine fertige E-Mail oder WhatsApp-Nachricht mit Version und Lizenz-Nr. Am Büro-PC auch mit Bildschirmfoto.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></div><h3>WhatsApp oder E-Mail</h3><p><a href="https://wa.me/491795498071?text=Hilfe-Anfrage%20MG%20Betriebsmanager%0A%0ABetrieb%3A%20%0AWas%20ist%20passiert%3A%20">WhatsApp an 0179 5498071</a><br><a href="mailto:support@mgcommerce-online.de?subject=Hilfe-Anfrage%20MG%20Betriebsmanager">info@mgcommerce-online.de</a><br>Ein Bildschirmfoto hilft uns, schneller zu helfen.</p></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div><h3>Anrufen</h3><p><a href="tel:+491795498071">0179 5498071</a><br>Bei Bedarf schauen wir per Fernwartung auf Ihren Bildschirm – nur, wenn Sie die Verbindung selbst freigeben.</p></div>
+</div>
+<p style="margin-top:18px;color:var(--leise)">Windows warnt beim Installieren oder beim Update? Das ist normal – <a href="../anleitungen/Windows-Warnung_beim_Setup.pdf">Anleitung mit Bildern (PDF)</a>.</p>
+</div>
+</section>
+
+<section id="kontakt" class="kontakt">
+<div class="wrap">
+<div>
+<h2>Lassen Sie es sich zeigen – 20 Minuten, unverbindlich.</h2>
+<p style="margin-top:14px;font-size:1.1rem">Wir kommen zu Ihnen, zeigen das Programm mit Ihrem Gewerk und Ihren Aufträgen und Sie entscheiden in Ruhe. Danach testen Sie 28 Tage kostenlos.</p>
+</div>
+<div class="kontaktkarte">
+<div style="font-weight:700;font-size:1.2rem;color:var(--navy)">MG Commerce</div>
+<a class="zeile" href="tel:+491795498071"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0179 5498071</a>
+<a class="zeile" href="mailto:info@mgcommerce-online.de?subject=Vorf%C3%BChrung%20MG%20Betriebsmanager"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>info@mgcommerce-online.de</a>
+<form id="demoform" class="demoform" novalidate>
+<div class="df-titel">Demo anfragen</div>
+<div class="df-zwei">
+<label>Ihr Name*<input name="name" autocomplete="name" required></label>
+<label>Betrieb*<input name="betrieb" autocomplete="organization" required></label>
+</div>
+<div class="df-zwei">
+<label>Telefon*<input name="telefon" type="tel" autocomplete="tel" required></label>
+<label>Ort<input name="ort" autocomplete="address-level2"></label>
+</div>
+<div class="df-zwei">
+<label>Gewerk<select name="gewerk"><option>Maler</option><option>Dach &amp; Wand</option><option>Hausmeister &amp; Entrümpelung</option><option>Mehrere / anderes</option></select></label>
+<label>Mitarbeiter<select name="mitarbeiter"><option>nur ich</option><option>2–5</option><option>6–10</option><option>über 10</option></select></label>
+</div>
+<label>Wie möchten Sie die Demo?<select name="art"><option>Vorführung bei uns im Betrieb</option><option>Online per Bildschirm</option><option>Erst einmal anrufen</option><option>Nur die Testversion zuschicken</option></select></label>
+<label>Wann passt es Ihnen?<input name="termin" placeholder="z. B. Di oder Do nachmittags"></label>
+<label>Nachricht<textarea name="nachricht" rows="3" placeholder="Was ist Ihnen besonders wichtig?"></textarea></label>
+<p class="df-fehler" hidden>Bitte Name, Betrieb und Telefon ausfüllen.</p>
+<div class="df-knoepfe">
+<button type="submit" class="knopf gelb" data-weg="mail">Per E-Mail senden</button>
+<button type="submit" class="knopf rand" data-weg="whatsapp">Per WhatsApp senden</button>
+</div>
+<p class="df-hinweis">Ihr E-Mail-Programm bzw. WhatsApp öffnet sich mit der fertigen Nachricht – Sie müssen nur noch auf „Senden“ tippen. Ihre Angaben nutzen wir nur für Ihre Anfrage (<a href="../datenschutz.html">Datenschutz</a>).</p>
+</form>
+<div style="color:var(--leise);font-size:.88rem">MG Commerce · Inh. Manuela Geisler · Im Flieder 4 · 71554 Weissach im Tal</div>
+</div>
+</div>
+</section>
+
+</main>
+<footer><a href="../">MG Commerce</a> · Weissach im Tal · <a href="../haendlermanager/">MG Händlermanager</a> · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></footer>
+<nav class="leiste" aria-label="Schnellkontakt"><a class="anruf" href="tel:+491795498071">Anrufen</a><a class="vorf" href="#demoform">Demo anfragen</a></nav>
+<script>
+(function(){var k=document.querySelector('.kopf'),b=document.querySelector('.menuknopf');if(!k||!b)return;
+b.addEventListener('click',function(){var o=k.classList.toggle('offen');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});
+document.querySelectorAll('#hauptmenue a').forEach(function(a){a.addEventListener('click',function(){k.classList.remove('offen');b.setAttribute('aria-expanded','false');});});
+document.querySelectorAll('.raster,.zahlen,.zeitleiste,.handys,.videos').forEach(function(c){if(c.children.length<2)return;var p=document.createElement('p');p.className='wischhinweis';p.setAttribute('aria-hidden','true');p.textContent='Zum Weiterblättern wischen →';c.after(p);});
+})();
+</script>
+<script>
+(function(){var a=document.getElementById('r-std'),b=document.getElementById('r-satz');if(!a)return;
+function f(n){return n.toLocaleString('de-DE')}
+function r(){var h=+a.value,z=+b.value,j=h*46,w=j*z,wo=Math.ceil(1090/(h*z));
+document.getElementById('o-std').textContent=h;document.getElementById('o-satz').textContent=z;
+document.getElementById('e-std').textContent=f(j)+' Std.';document.getElementById('e-tage').textContent=f(Math.round(j/8))+' Tage';
+document.getElementById('e-wert').textContent=f(w)+' €';document.getElementById('e-amort').textContent=wo+(wo==1?' Woche':' Wochen');}
+a.addEventListener('input',r);b.addEventListener('input',r);r();})();
+</script>
+<script>
+(function(){var f=document.getElementById('demoform');if(!f)return;var weg='mail';
+f.querySelectorAll('button[data-weg]').forEach(function(b){b.addEventListener('click',function(){weg=b.dataset.weg;});});
+f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f),ok=true;
+['name','betrieb','telefon'].forEach(function(n){var el=f.elements[n],leer=!String(d.get(n)||'').trim();el.classList.toggle('falsch',leer);if(leer)ok=false;});
+f.querySelector('.df-fehler').hidden=ok;if(!ok)return;
+function v(n){return String(d.get(n)||'').trim()||'–'}
+var t='Guten Tag,\n\nich möchte den MG Betriebsmanager kennenlernen.\n\n'+
+'Name: '+v('name')+'\nBetrieb: '+v('betrieb')+'\nOrt: '+v('ort')+'\nTelefon: '+v('telefon')+
+'\nGewerk: '+v('gewerk')+'\nMitarbeiter: '+v('mitarbeiter')+'\nDemo: '+v('art')+'\nTermin: '+v('termin')+
+'\n\nNachricht:\n'+v('nachricht')+'\n';
+if(weg==='whatsapp'){window.location.href='https://wa.me/491795498071?text='+encodeURIComponent('Demo-Anfrage MG Betriebsmanager\n\n'+t);}
+else{window.location.href='mailto:info@mgcommerce-online.de?subject='+encodeURIComponent('Demo-Anfrage MG Betriebsmanager – '+v('betrieb'))+'&body='+encodeURIComponent(t);}
+});})();
+</script>
+<script>
+(function(){var ma=document.getElementById('m-ma'),bu=document.getElementById('m-buero'),ja=document.getElementById('m-jahre'),pf=document.getElementById('m-pflege');if(!ma)return;
+function f(n){return Math.round(n).toLocaleString('de-DE')+' €'}
+function r(){var m=+ma.value,b=+bu.value,j=+ja.value,mon=j*12,proMon=b*60+m*30,miete=proMon*mon,
+pfl=pf.checked?Math.max(0,mon-12)*19:0,mg=1090+pfl,sp=miete-mg;
+document.getElementById('mo-ma').textContent=m;document.getElementById('mo-buero').textContent=b;document.getElementById('mo-jahre').textContent=j;
+document.getElementById('me-miete').textContent=f(miete);document.getElementById('me-mg').textContent=f(mg);
+document.getElementById('me-spar').textContent=sp>0?f(sp):'–';
+var mx=Math.max(miete,mg);document.getElementById('mb-miete').style.width=(miete/mx*100)+'%';document.getElementById('mb-mg').style.width=(mg/mx*100)+'%';
+var k=0,a=0,c=1090;while(k<120){k++;a+=proMon;if(pf.checked&&k>12)c+=19;if(a>=c)break;}
+document.getElementById('me-amort').textContent=k>=120?'–':k+(k==1?' Monat':' Monaten');}
+[ma,bu,ja].forEach(function(e){e.addEventListener('input',r)});pf.addEventListener('change',r);r();})();
+</script>
+<div id="bildbox" role="dialog" aria-modal="true" aria-label="Bild vergrößert"><button type="button" aria-label="Schließen">✕</button><img alt=""><p></p></div>
+<script>
+(function(){var box=document.getElementById('bildbox'),bild=box.querySelector('img'),text=box.querySelector('p'),offen=false;
+function zu(zurueck){if(!offen)return;offen=false;box.classList.remove('offen');document.body.style.overflow='';bild.removeAttribute('src');if(zurueck&&history.state&&history.state.bildbox)history.back();}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="../bilder/"]');if(!a||!/\.(jpe?g|png|webp)(\?|$)/i.test(a.getAttribute('href')))return;
+e.preventDefault();var img=a.querySelector('img'),fig=a.closest('figure'),cap=fig&&fig.querySelector('figcaption');
+bild.src=a.getAttribute('href');bild.alt=img?img.alt:'';text.textContent=cap?[].map.call(cap.childNodes,function(n){return n.textContent.trim();}).filter(Boolean).join(' – '):(img?img.alt:'');
+box.classList.add('offen');document.body.style.overflow='hidden';offen=true;history.pushState({bildbox:1},'');});
+box.addEventListener('click',function(){zu(true);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')zu(true);});
+window.addEventListener('popstate',function(){zu(false);});})();
+</script>
+</body>
+</html>

@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://mgcommerce-online.de/haendlermanager/">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <title>MG Händlermanager – Büro-Software für Online-Händler (eBay, Shopify, Etsy) | MG Commerce</title>
 <meta name="description" content="Das Büro für Ihren Online-Handel: Verkäufe aus eBay, Shopify und PayPal übernehmen, Lager und Einkauf führen, sehen was nach Gebühren und Steuern übrig bleibt. Einmal kaufen, Daten bleiben auf Ihrem PC. 28 Tage kostenlos testen.">
 <style>
-:root{--navy:#0a1f44;--blau:#0b3a8c;--gelb:#f5b324;--grund:#fbfaf7;--karte:#ffffff;--linie:#e6e2d8;--text:#1f2a3d;--leise:#5a6474;--hell:#eef3fb;--gruen:#1f7a3d;--gruenhell:#e3f2e6;--rot:#b42318}
+:root{--navy:#202124;--blau:#C2410C;--gelb:#EA5F00;--orange:#FF6C00;--grund:#ffffff;--karte:#ffffff;--linie:#e7e7ea;--text:#202124;--leise:#5f6368;--hell:#FFF1E6;--gruen:#1f7a3d;--gruenhell:#e3f2e6;--rot:#b42318}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);background:var(--grund);font-size:17px;line-height:1.6}
-a{color:var(--blau)}a:hover{color:#082a66}
+a{color:var(--blau)}a:hover{color:#9A3412}
 h1,h2,h3{color:var(--navy);line-height:1.15;margin:0}
 h1{font-size:clamp(2.2rem,5vw,3.3rem);letter-spacing:-.01em}
 h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.01em}
@@ -21,16 +22,17 @@ h3{font-size:1.12rem}
 p{margin:0}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 section{padding:76px 0;scroll-margin-top:70px}
-.kopf{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linie)}
+.kopf{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linie)}
 .kopf .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.produktname{font-weight:700;color:var(--navy);text-decoration:none;border-left:1px solid var(--linie);padding-left:14px;margin-right:auto;white-space:nowrap}.marke img{display:block;height:26px;width:auto}
 .marke{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);text-decoration:none;font-size:1.05rem}
 .marke .icon{width:34px;height:34px;border-radius:9px;background:var(--navy);display:flex;align-items:center;justify-content:center}
 .nav{display:flex;gap:22px;align-items:center}
 .nav a{color:var(--text);text-decoration:none;font-size:.95rem}
 .nav a:hover{color:var(--blau)}
 .knopf{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:12px;font-weight:700;text-decoration:none;font-size:1rem}
-.knopf.gelb{background:var(--gelb);color:var(--navy)}
-.knopf.gelb:hover{background:#e9a514;color:var(--navy)}
+.knopf.gelb{background:var(--gelb);color:#fff;font-size:1.1rem}
+.knopf.gelb:hover{background:#D95400;color:#fff}
 .knopf.rand{border:1.5px solid var(--navy);color:var(--navy);background:transparent}
 .knopf.klein{min-height:40px;padding:8px 16px;font-size:.92rem}
 @media (max-width:860px){.nav a:not(.knopf){display:none}}
@@ -47,7 +49,7 @@ section{padding:76px 0;scroll-margin-top:70px}
 .haken{width:20px;height:20px;border-radius:50%;background:var(--gruenhell);display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px}
 .klein-hinweis{font-size:.85rem;color:var(--leise);margin-top:10px}
 /* Programm-Skizze (keine echte Bildschirmaufnahme) */
-.skizze{background:#f3f5f9;border:1px solid var(--linie);border-radius:18px;padding:16px;box-shadow:0 12px 40px rgba(10,31,68,.10)}
+.skizze{background:#f3f5f9;border:1px solid var(--linie);border-radius:18px;padding:16px;box-shadow:0 12px 40px rgba(32,33,36,.10)}
 .skizze .leiste{display:flex;gap:6px;margin-bottom:12px}.skizze .leiste i{width:10px;height:10px;border-radius:50%;background:#d5d9e1;display:block}
 .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .kpi{background:#fff;border-radius:12px;padding:10px 12px;border:1px solid #e8ebf1}
@@ -110,7 +112,7 @@ footer{padding:34px 0 90px;text-align:center;color:var(--leise);font-size:.92rem
 
 <header class="kopf">
 <div class="wrap">
-<a class="marke" href="#start"><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f5b324" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg></span>MG Händlermanager</a>
+<a class="marke" href="../" aria-label="MG Commerce – Startseite"><img src="../bilder/marke/mg-commerce-logo.svg" alt="MG Commerce" height="26"></a><a class="produktname" href="#start">Händlermanager</a>
 <nav class="nav" aria-label="Hauptmenü">
 <a href="#funktionen">Funktionen</a>
 <a href="#steuer">Steuer &amp; Pflichten</a>
@@ -160,7 +162,7 @@ footer{padding:34px 0 90px;text-align:center;color:var(--leise);font-size:.92rem
 </div>
 <div class="zeilen">
 <div class="zeile"><div class="t">Umsatz je Plattform</div>
-<div><span><span class="punkt" style="background:#0b3a8c"></span>eBay</span><span>39 %</span></div>
+<div><span><span class="punkt" style="background:#EA5F00"></span>eBay</span><span>39 %</span></div>
 <div><span><span class="punkt" style="background:#2e7d32"></span>Shopify</span><span>34 %</span></div>
 <div><span><span class="punkt" style="background:#e0822a"></span>Etsy</span><span>27 %</span></div></div>
 <div class="zeile"><div class="t">Zu erledigen</div>
@@ -181,22 +183,22 @@ footer{padding:34px 0 90px;text-align:center;color:var(--leise);font-size:.92rem
 <p>Statt Excel-Listen, Ordnern und fünf Browser-Tabs: ein Programm, das Ihre Zahlen zusammenführt und Sie an das Wichtige erinnert.</p>
 </div>
 <div class="raster r3">
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></div>
 <h3>Verkäufe importieren statt abtippen</h3>
 <p>Berichte von eBay, Shopify, PayPal und Shopify Payments hochladen – Verkäufe, Provisionen, Werbung, Porto und Erstattungen landen automatisch an der richtigen Stelle. Doppelte Buchungen sind ausgeschlossen.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
 <h3>Sehen, was wirklich übrig bleibt</h3>
 <p>Einnahmen minus Ausgaben, dazu Gebühren &amp; Porto je Plattform, Rohertrag, Marge je Kanal und eine Schätzung der Steuern. Der Preisrechner sagt, welchen Preis Sie für Ihre Wunschmarge brauchen.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.3 7L12 12l8.7-5"/><path d="M12 22V12"/></svg></div>
 <h3>Lager &amp; Einkauf mit Produktfotos</h3>
 <p>Bestand mit Ampel und Foto, Einkäufe mit Versand, Zoll und Einfuhr-USt – daraus der echte Stückpreis. Verkäufe buchen den Bestand automatisch ab.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
 <h3>Rechnungen aus dem Verkauf</h3>
 <p>Verkauf auswählen – Kunde, Bestellnummer und Betrag sind schon eingetragen. Mit Ihrem Logo, als Kleinunternehmer oder mit Umsatzsteuer. Retouren und Gutschriften gleich mit.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
 <h3>Monatsabschluss für den Steuerberater</h3>
 <p>Ein Klick: Monatsbericht, Buchungslisten, Belege und – wenn Ihr Steuerberater DATEV nutzt – der Buchungsstapel als fertiges Paket. Mit GoBD-Protokoll und Verfahrensdokumentation.</p></div>
-<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b3a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg></div>
+<div class="karte"><div class="symbol"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EA5F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></svg></div>
 <h3>Erinnert an Fristen und Aufgaben</h3>
 <p>Nachbestellen, Umsatzsteuer-Voranmeldung, Meldungen ans Verpackungsregister – und Ihre eigene To-do-Liste. Alles auf der Startseite unter „Zu erledigen“.</p></div>
 </div>
@@ -336,14 +338,14 @@ footer{padding:34px 0 90px;text-align:center;color:var(--leise);font-size:.92rem
 <div class="raster r3">
 <div class="karte"><h3>Telefon &amp; WhatsApp</h3><a href="tel:+491795498071">0179 5498071</a></div>
 <div class="karte"><h3>E-Mail</h3><a href="mailto:info@helmfuchs.de">info@helmfuchs.de</a></div>
-<div class="karte"><h3>Auch für Handwerker</h3><p style="margin-top:0">Von MG Commerce gibt es außerdem den <a href="../">MG Betriebsmanager</a> für Handwerksbetriebe.</p></div>
+<div class="karte"><h3>Auch für Handwerker</h3><p style="margin-top:0">Von MG Commerce gibt es außerdem den <a href="../betriebsmanager/">MG Betriebsmanager</a> für Handwerksbetriebe.</p></div>
 </div>
 </div>
 </section>
 
 </main>
 
-<footer>MG Commerce · Inh. Manuela Geisler · Weissach im Tal · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></footer>
+<footer><a href="../">MG Commerce</a> · Inh. Manuela Geisler · Weissach im Tal · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></footer>
 <nav class="leiste-mobil" aria-label="Schnellkontakt"><a class="anruf" href="tel:+491795498071">Anrufen</a><a class="laden" href="#testen">Testen</a></nav>
 </body>
 </html>
