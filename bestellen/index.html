@@ -1,0 +1,221 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"><link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<title>Bestellen – MG Commerce</title>
+<meta name="description" content="MG Betriebsmanager oder MG Händlermanager bestellen – einmal kaufen, per Überweisung, PayPal oder in Raten.">
+<style>
+:root{--orange:#FF6C00;--knopf:#EA5F00;--knopf-hover:#D95400;--orange-text:#C2410C;--zart:#FFF1E6;--anthrazit:#202124;--leise:#5f6368;--linie:#e7e7ea;--grau:#f5f5f7}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--anthrazit);line-height:1.55;background:#fafafa}
+a{color:var(--orange-text)}
+.kopf{background:#fff;border-bottom:1px solid var(--linie)}
+.kopf .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+.logo{height:28px;display:block}
+main .wrap{padding-top:34px;padding-bottom:70px}
+h1{font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 6px;letter-spacing:-.01em}
+.unter{color:var(--leise);margin:0 0 26px;font-size:1.08rem}
+.raster{display:grid;grid-template-columns:1.6fr 1fr;gap:24px;align-items:start}
+.karte{background:#fff;border:1px solid var(--linie);border-radius:16px;padding:24px}
+.karte h2{font-size:1.15rem;margin:0 0 14px}
+.karte+.karte{margin-top:18px}
+.wahl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.option{position:relative;display:block;border:1.5px solid var(--linie);border-radius:12px;padding:14px 16px;cursor:pointer;background:#fff}
+.option input{position:absolute;opacity:0;pointer-events:none}
+.option b{display:block;font-size:1.02rem}
+.option span{color:var(--leise);font-size:.9rem}
+.option .p{float:right;color:var(--anthrazit);font-weight:800}
+.option:has(input:checked){border-color:var(--orange);background:var(--zart);box-shadow:0 0 0 1px var(--orange) inset}
+.option:has(input:focus-visible){outline:3px solid rgba(255,108,0,.45);outline-offset:2px}
+.haken{display:flex;gap:10px;align-items:flex-start;padding:8px 0;cursor:pointer}
+.haken input{width:20px;height:20px;margin-top:2px;accent-color:var(--knopf);flex:none}
+.haken small{color:var(--leise);display:block}
+.feld{display:flex;flex-direction:column;gap:4px;font-size:.9rem;font-weight:600;margin-bottom:12px}
+.feld input,.feld textarea,.feld select{font:inherit;font-weight:400;font-size:1rem;padding:11px 12px;border:1.5px solid var(--linie);border-radius:10px;background:#fff;color:var(--anthrazit);width:100%}
+.feld input:focus,.feld textarea:focus,.feld select:focus{outline:none;border-color:var(--orange)}
+.feld small{font-weight:400;color:var(--leise)}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.falsch{border-color:#c0392b!important}
+.fehler{color:#c0392b;font-weight:600}
+.summe{position:sticky;top:18px}
+.summe .zeile{display:flex;justify-content:space-between;gap:12px;padding:6px 0;color:var(--leise)}
+.summe .zeile b{color:var(--anthrazit);font-weight:600;text-align:right;white-space:nowrap}
+.summe .gesamt{border-top:1.5px solid var(--linie);margin-top:8px;padding-top:12px;display:flex;justify-content:space-between;align-items:baseline}
+.summe .gesamt strong{font-size:1.8rem;letter-spacing:-.02em}
+.summe .rate{color:var(--orange-text);font-weight:700;text-align:right}
+.klein{color:var(--leise);font-size:.85rem}
+.knopf{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;padding:12px 20px;border-radius:10px;font:inherit;font-weight:700;font-size:1.1rem;border:0;cursor:pointer;text-decoration:none;margin-top:10px}
+.knopf.voll{background:var(--knopf);color:#fff}.knopf.voll:hover{background:var(--knopf-hover)}
+.knopf.rand{background:#fff;color:var(--anthrazit);border:1.5px solid var(--anthrazit)}
+.knopf:active{transform:scale(.98)}
+.schritte{margin:0;padding-left:1.2em}.schritte li{margin:6px 0}
+.ok{display:none;background:#E8F5E9;border:1px solid #A5D6A7;border-radius:12px;padding:14px 16px;margin-top:12px}
+.ok.zeigen{display:block}
+.nur-bm,.nur-hm{display:none}
+body.bm .nur-bm,body.hm .nur-hm{display:block}
+body.bm .wahl.nur-bm,body.hm .wahl.nur-hm{display:grid}
+body.bm .haken.nur-bm,body.hm .haken.nur-hm{display:flex}
+footer{border-top:1px solid var(--linie);background:#fff;padding:22px;text-align:center;color:var(--leise);font-size:.9rem}
+@media (max-width:860px){.raster{grid-template-columns:1fr}.summe{position:static}.wahl,.zwei{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.knopf:active{transform:none}}
+</style></head>
+<body class="bm">
+<header class="kopf"><div class="wrap"><a href="../"><img class="logo" src="../bilder/marke/mg-commerce-logo.svg" alt="MG Commerce – zur Startseite"></a><a href="tel:+491795498071" style="font-weight:700;text-decoration:none">0179 5498071</a></div></header>
+<main><div class="wrap">
+<h1>Bestellen</h1>
+<p class="unter">Einmal kaufen, dauerhaft nutzen. Wählen Sie Programm und Paket – wir melden uns mit Rechnung und Freischalt-Code.</p>
+<form id="bestellung" novalidate>
+<div class="raster">
+<div>
+<div class="karte">
+<h2>1. Programm</h2>
+<div class="wahl">
+<label class="option"><input type="radio" name="programm" value="bm" checked><b>MG Betriebsmanager</b><span>Für Handwerk &amp; Service</span></label>
+<label class="option"><input type="radio" name="programm" value="hm"><b>MG Händlermanager</b><span>Für Online-Händler</span></label>
+</div>
+</div>
+
+<div class="karte">
+<h2>2. Paket</h2>
+<div class="wahl nur-bm">
+<label class="option"><input type="radio" name="bm_paket" value="grund" checked><span class="p">ab 790 €</span><b>Grundpaket</b><span>Büro, Team, Lager + Gewerke nach Wahl</span></label>
+<label class="option"><input type="radio" name="bm_paket" value="komplett"><span class="p">1.090 €</span><b>Komplett</b><span>Alle Gewerke und Finanzen</span></label>
+</div>
+<div class="nur-bm" id="gewerke" style="margin-top:14px">
+<p style="margin:0 0 4px;font-weight:600">Gewerke <span class="klein">(1 Gewerk inklusive, jedes weitere + 250 €)</span></p>
+<label class="haken"><input type="checkbox" name="gewerk" value="Maler" checked><span>Maler</span></label>
+<label class="haken"><input type="checkbox" name="gewerk" value="Dach &amp; Wand"><span>Dach &amp; Wand</span></label>
+<label class="haken"><input type="checkbox" name="gewerk" value="Hausmeister &amp; Entrümpelung"><span>Hausmeister &amp; Entrümpelung</span></label>
+</div>
+<div class="nur-bm" style="margin-top:12px">
+<p style="margin:0 0 4px;font-weight:600">Einrichtung <span class="klein">(optional)</span></p>
+<label class="haken"><input type="radio" name="einrichtung" value="keine" checked><span>Richte ich selbst ein</span></label>
+<label class="haken"><input type="radio" name="einrichtung" value="fern"><span>Per Fernwartung – 149 €</span></label>
+<label class="haken"><input type="radio" name="einrichtung" value="vorort"><span>Vor Ort bei Ihnen – 249 €</span></label>
+</div>
+<div class="wahl nur-hm">
+<label class="option"><input type="radio" name="hm_paket" value="grund" checked><span class="p">349 €</span><b>Grundpaket</b><span>Alles für den täglichen Handel</span></label>
+<label class="option"><input type="radio" name="hm_paket" value="komplett"><span class="p">449 €</span><b>Komplett</b><span>+ Compliance und Steuer &amp; Abschluss</span></label>
+</div>
+<div class="nur-hm" id="bausteine" style="margin-top:14px">
+<p style="margin:0 0 4px;font-weight:600">Einzelne Bausteine zum Grundpaket <span class="klein">(je + 79 €)</span></p>
+<label class="haken"><input type="checkbox" name="baustein" value="Compliance"><span>Compliance<small>Pflichten-Check, GPSR, Etiketten</small></span></label>
+<label class="haken"><input type="checkbox" name="baustein" value="Steuer &amp; Abschluss"><span>Steuer &amp; Abschluss<small>Monatspaket, DATEV-Export, GoBD-Protokoll</small></span></label>
+</div>
+</div>
+
+<div class="karte">
+<h2>3. Zahlung</h2>
+<label class="haken"><input type="radio" name="zahlung" value="Überweisung" checked><span>Überweisung<small>Bankverbindung steht auf der Rechnung, zahlbar in 14 Tagen</small></span></label>
+<label class="haken"><input type="radio" name="zahlung" value="PayPal"><span>PayPal<small>Sie erhalten mit der Rechnung eine PayPal-Zahlungsanforderung</small></span></label>
+<label class="haken nur-bm" id="raten"><input type="radio" name="zahlung" value="Ratenzahlung (12 Monatsraten)"><span>In 12 Monatsraten<small>z. B. 12 × 69 € (Grundpaket + 1 Gewerk) oder 12 × 95 € (Komplett). Die Freischaltung verlängert sich Monat für Monat – nach der letzten Rate gehört die Software Ihnen.</small></span></label>
+</div>
+
+<div class="karte">
+<h2>4. Ihre Angaben</h2>
+<label class="feld">Firma*<input name="firma" autocomplete="organization" required></label>
+<label class="feld">Ansprechpartner*<input name="name" autocomplete="name" required></label>
+<label class="feld">Straße und Hausnummer*<input name="strasse" autocomplete="street-address" required></label>
+<div class="zwei">
+<label class="feld">PLZ*<input name="plz" autocomplete="postal-code" inputmode="numeric" required></label>
+<label class="feld">Ort*<input name="ort" autocomplete="address-level2" required></label>
+</div>
+<div class="zwei">
+<label class="feld">E-Mail*<input name="email" type="email" autocomplete="email" required></label>
+<label class="feld">Telefon<input name="telefon" type="tel" autocomplete="tel"></label>
+</div>
+<label class="feld">USt-IdNr. <small>(falls vorhanden)</small><input name="ustid"></label>
+<label class="feld">Rechner-Kennung <small>(falls das Programm schon installiert ist: im Programm unter „Freischalten“ – sonst schicken wir Ihnen eine kurze Anleitung)</small><input name="hwid" placeholder="z. B. A1B2-C3D4-…"></label>
+<label class="feld">Nachricht <small>(optional)</small><textarea name="nachricht" rows="3"></textarea></label>
+<label class="haken"><input type="checkbox" name="agb" required><span>Ich bestelle als Unternehmer und akzeptiere die <a href="../agb.html" target="_blank">AGB &amp; Lizenzbedingungen</a>.*</span></label>
+<p class="fehler" id="fehler" hidden>Bitte die markierten Felder ausfüllen und die AGB bestätigen.</p>
+</div>
+</div>
+
+<aside class="karte summe" aria-live="polite">
+<h2>Ihre Bestellung</h2>
+<div id="posten"></div>
+<div class="gesamt"><span>Summe</span><strong id="summe">790 €</strong></div>
+<div class="rate" id="ratentext" hidden></div>
+<p class="klein">Einmalpreis. Gemäß § 19 UStG wird keine Umsatzsteuer berechnet. 12 Monate Neuerungen &amp; Support inklusive.</p>
+<button type="submit" class="knopf voll" data-weg="mail">Bestellung per E-Mail senden</button>
+<button type="submit" class="knopf rand" data-weg="whatsapp">Per WhatsApp senden</button>
+<button type="submit" class="knopf rand" data-weg="kopieren">Bestelltext kopieren</button>
+<div class="ok" id="ok"></div>
+<p class="klein">Ihr E-Mail-Programm bzw. WhatsApp öffnet sich mit der fertigen Bestellung – Sie tippen nur noch auf „Senden“. Ohne E-Mail-Programm? „Bestelltext kopieren“ und an <a href="mailto:bestellung@mgcommerce-online.de">bestellung@mgcommerce-online.de</a> schicken. (<a href="../datenschutz.html">Datenschutz</a>)</p>
+<h2 style="margin-top:18px">So geht es weiter</h2>
+<ol class="schritte klein">
+<li>Wir bestätigen den Eingang per E-Mail.</li>
+<li>Sie erhalten die Rechnung.</li>
+<li>Nach Zahlungseingang kommt Ihr Freischalt-Code – meist innerhalb von 2 Werktagen.</li>
+</ol>
+</aside>
+</div>
+</form>
+</div></main>
+<footer><a href="../">MG Commerce</a> · Weissach im Tal · <a href="../agb.html">AGB &amp; Lizenzbedingungen</a> · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></footer>
+<script>
+(function(){
+var f=document.getElementById('bestellung'),weg='mail';
+var p=new URLSearchParams(location.search);
+if(p.get('p')==='hm'){f.elements.programm.value='hm';}
+if(p.get('paket')==='komplett'){f.elements.bm_paket.value='komplett';f.elements.hm_paket.value='komplett';}
+if(p.get('zahlung')==='raten'){f.elements.zahlung.value='Ratenzahlung (12 Monatsraten)';}
+function eur(n){return n.toLocaleString('de-DE')+' €'}
+function daten(){
+  var prog=f.elements.programm.value,posten=[],summe=0,text=[];
+  if(prog==='bm'){
+    if(f.elements.bm_paket.value==='komplett'){posten.push(['MG Betriebsmanager Komplett',1090]);}
+    else{
+      var g=[].slice.call(f.querySelectorAll('input[name=gewerk]:checked')).map(function(x){return x.value.replace('&amp;','&')});
+      if(!g.length)g=['(bitte wählen)'];
+      posten.push(['MG Betriebsmanager Grundpaket mit '+g[0],790]);
+      for(var i=1;i<g.length;i++)posten.push(['Weiteres Gewerk: '+g[i],250]);
+    }
+    var e=f.elements.einrichtung.value;
+    if(e==='fern')posten.push(['Einrichtung per Fernwartung',149]);
+    if(e==='vorort')posten.push(['Einrichtung vor Ort',249]);
+  }else{
+    var bs=[].slice.call(f.querySelectorAll('input[name=baustein]:checked'));
+    if(bs.length===2){f.elements.hm_paket.value='komplett';bs.forEach(function(x){x.checked=false});}
+    if(f.elements.hm_paket.value==='komplett'){posten.push(['MG Händlermanager Komplett',449]);}
+    else{posten.push(['MG Händlermanager Grundpaket',349]);bs.forEach(function(x){posten.push(['Baustein '+x.value.replace('&amp;','&'),79])});}
+  }
+  posten.forEach(function(x){summe+=x[1]});
+  return {prog:prog,posten:posten,summe:summe};
+}
+function zeigen(){
+  var d=daten();document.body.className=d.prog;
+  document.getElementById('gewerke').style.display=(d.prog==='bm'&&f.elements.bm_paket.value==='grund')?'block':'none';
+  document.getElementById('bausteine').style.display=(d.prog==='hm'&&f.elements.hm_paket.value==='grund')?'block':'none';
+  if(d.prog==='hm'&&f.elements.zahlung.value.indexOf('Raten')===0)f.elements.zahlung.value='Überweisung';
+  document.getElementById('posten').innerHTML=d.posten.map(function(x){return '<div class="zeile"><span>'+x[0]+'</span><b>'+eur(x[1])+'</b></div>'}).join('');
+  document.getElementById('summe').textContent=eur(d.summe);
+  var rt=document.getElementById('ratentext'),r=f.elements.zahlung.value.indexOf('Raten')===0;
+  rt.hidden=!r;if(r){var bek={790:69,1090:95}[d.summe];rt.textContent=bek?'12 Monatsraten à '+eur(bek):'12 Monatsraten – die genaue Rate steht auf der Rechnung';}
+}
+f.addEventListener('change',zeigen);zeigen();
+f.querySelectorAll('button[data-weg]').forEach(function(b){b.addEventListener('click',function(){weg=b.dataset.weg;});});
+f.addEventListener('submit',function(ev){ev.preventDefault();
+  var ok=true,pflicht=['firma','name','strasse','plz','ort','email'];
+  pflicht.forEach(function(n){var el=f.elements[n],leer=!el.value.trim()||(n==='email'&&el.value.indexOf('@')<0);el.classList.toggle('falsch',leer);if(leer)ok=false;});
+  var agb=f.elements.agb.checked;f.elements.agb.parentNode.style.color=agb?'':'#c0392b';if(!agb)ok=false;
+  document.getElementById('fehler').hidden=ok;if(!ok){var x=f.querySelector('.falsch');(x||f.elements.agb).focus();return;}
+  var d=daten();function v(n){return (f.elements[n].value||'').trim()||'–'}
+  var t='Bestellung\n\n'+d.posten.map(function(x){return '• '+x[0]+': '+eur(x[1])}).join('\n')+'\nSumme: '+eur(d.summe)+' (einmalig, gemäß § 19 UStG ohne USt.)\n'+
+  'Zahlung: '+f.elements.zahlung.value+(f.elements.zahlung.value.indexOf('Raten')===0?' – '+document.getElementById('ratentext').textContent:'')+'\n\n'+
+  'Firma: '+v('firma')+'\nAnsprechpartner: '+v('name')+'\nAnschrift: '+v('strasse')+', '+v('plz')+' '+v('ort')+'\nE-Mail: '+v('email')+'\nTelefon: '+v('telefon')+'\nUSt-IdNr.: '+v('ustid')+'\nRechner-Kennung: '+v('hwid')+'\n\nNachricht:\n'+v('nachricht')+
+  '\n\nIch bestelle als Unternehmer und akzeptiere die AGB & Lizenzbedingungen (Stand 27.11.2026): https://mgcommerce-online.de/agb.html\n';
+  var titel='Bestellung '+(d.prog==='bm'?'MG Betriebsmanager':'MG Händlermanager')+' – '+v('firma');
+  var okbox=document.getElementById('ok');
+  if(weg==='whatsapp'){window.location.href='https://wa.me/491795498071?text='+encodeURIComponent(titel+'\n\n'+t);}
+  else if(weg==='kopieren'){
+    var fertig=function(){okbox.innerHTML='<b>Bestelltext kopiert.</b> Bitte in eine E-Mail an <a href="mailto:bestellung@mgcommerce-online.de">bestellung@mgcommerce-online.de</a> einfügen und senden.';okbox.classList.add('zeigen');};
+    if(navigator.clipboard){navigator.clipboard.writeText(titel+'\n\n'+t).then(fertig,function(){prompt('Bitte kopieren:',titel+'\n\n'+t)});}else{prompt('Bitte kopieren:',titel+'\n\n'+t);}
+    return;
+  }
+  else{window.location.href='mailto:bestellung@mgcommerce-online.de?subject='+encodeURIComponent(titel)+'&body='+encodeURIComponent('Guten Tag,\n\nhiermit bestelle ich:\n\n'+t);}
+  okbox.innerHTML='<b>Fast geschafft:</b> Bitte die Nachricht in Ihrem E-Mail-Programm bzw. in WhatsApp noch absenden. Hat sich nichts geöffnet? Dann „Bestelltext kopieren“.';okbox.classList.add('zeigen');
+});
+})();
+</script>
+</body></html>
